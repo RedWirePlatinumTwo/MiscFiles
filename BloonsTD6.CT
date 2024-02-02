@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="45">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>11</ID>
+      <Description>"Safe for unflagged accs"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"Infinite Tier 5s"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+000000A1</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>1</ID>
+          <Description>"Hypersonic towers"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000099</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"No ability cooldowns"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+0000008B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"Footprint Remover"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000CF</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"Free base towers 1"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000CA</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>5</ID>
+          <Description>"Free base towers 2"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"Free upgrades 1"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+00000476</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>7</ID>
+          <Description>"Free upgrades 2"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000004B </Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"boolean edit stuff"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+0000031B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"LineOfSight Bypass 1"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+000000DB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"LineOfSight Bypass 2"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000EC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"LineOfSight bypass 3"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+00000101</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>16</ID>
+          <Description>"Place towers anywhere"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000002D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>17</ID>
+          <Description>"Damage edit"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000004F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"Pierce edit"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000094</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>19</ID>
+          <Description>"immune bloon properties"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000006D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>20</ID>
+          <Description>"Hero cost to lvl up"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+0000004C</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
+          <Description>"golden bloon i-frames"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Bloons.Behaviors.GoldenBloonModel.Clone+00000089</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>12</ID>
+      <Description>"NOT safe for unflagged accs"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"Edit cash-per-pop"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+00000058</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"send bloons all at once"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055</Address>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Change of mov edx,[r8+rcx*4+20]</Description>
+      <AddressString>GameAssembly.dll+7751DD</AddressString>
+      <Before>
+        <Byte>73</Byte>
+        <Byte>32</Byte>
+        <Byte>48</Byte>
+        <Byte>63</Byte>
+        <Byte>C8</Byte>
+      </Before>
+      <Actual>
+        <Byte>41</Byte>
+        <Byte>8B</Byte>
+        <Byte>54</Byte>
+        <Byte>88</Byte>
+        <Byte>20</Byte>
+      </Actual>
+      <After>
+        <Byte>41</Byte>
+        <Byte>3B</Byte>
+        <Byte>D1</Byte>
+        <Byte>74</Byte>
+        <Byte>11</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of mov r15d,[r13+44]</Description>
+      <AddressString>GameAssembly.dll+784A2D</AddressString>
+      <Before>
+        <Byte>45</Byte>
+        <Byte>0F</Byte>
+        <Byte>B6</Byte>
+        <Byte>75</Byte>
+        <Byte>42</Byte>
+      </Before>
+      <Actual>
+        <Byte>45</Byte>
+        <Byte>8B</Byte>
+        <Byte>7D</Byte>
+        <Byte>44</Byte>
+      </Actual>
+      <After>
+        <Byte>45</Byte>
+        <Byte>8B</Byte>
+        <Byte>65</Byte>
+        <Byte>48</Byte>
+        <Byte>48</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of mov r12d,[r13+48]</Description>
+      <AddressString>GameAssembly.dll+784A31</AddressString>
+      <Before>
+        <Byte>42</Byte>
+        <Byte>90</Byte>
+        <Byte>90</Byte>
+        <Byte>90</Byte>
+        <Byte>90</Byte>
+      </Before>
+      <Actual>
+        <Byte>45</Byte>
+        <Byte>8B</Byte>
+        <Byte>65</Byte>
+        <Byte>48</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>0D</Byte>
+        <Byte>7C</Byte>
+        <Byte>8B</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of mov rax,[rsi+58]</Description>
+      <AddressString>GameAssembly.dll+801618</AddressString>
+      <Before>
+        <Byte>50</Byte>
+        <Byte>89</Byte>
+        <Byte>44</Byte>
+        <Byte>24</Byte>
+        <Byte>2C</Byte>
+      </Before>
+      <Actual>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>46</Byte>
+        <Byte>58</Byte>
+      </Actual>
+      <After>
+        <Byte>48</Byte>
+        <Byte>89</Byte>
+        <Byte>44</Byte>
+        <Byte>24</Byte>
+        <Byte>58</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+  <Comments>Info about this table:
+</Comments>
+</CheatTable>

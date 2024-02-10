@@ -188,17 +188,22 @@
         </CheatEntry>
         <CheatEntry>
           <ID>34</ID>
-          <Description>"For both damage and pierce, right click on the opcode and click "find what addresses this instruction accesses""</Description>
+          <Description>"For both damage and pierce, right click on the opcode and click"</Description>
           <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>35</ID>
-          <Description>"load into any map, click the top value, scroll all the way to the bottom,"</Description>
+          <Description>""find what addresses this instruction accesses", load into any map, click the top value,"</Description>
           <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>36</ID>
-          <Description>"hold shift and click the bottom value to select all listed values, then change it to whatever"</Description>
+          <Description>"scroll all the way to the bottom, hold shift and click the bottom value to select all listed values,"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"then change the list of values to whatever you want the damage/pierce to be"</Description>
           <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
@@ -253,17 +258,7 @@
         </CheatEntry>
         <CheatEntry>
           <ID>40</ID>
-          <Description>"Right click opcode and click "find what addresses this instruction accesses","</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>41</ID>
-          <Description>"click the top value, scroll to the bottom and hold shift and click the bottom value,"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>42</ID>
-          <Description>"then change the value to whatever you want the cash-per-pop to be"</Description>
+          <Description>"Same steps as editing damage and pierce values"</Description>
           <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>

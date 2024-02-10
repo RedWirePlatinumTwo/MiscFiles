@@ -2,6 +2,16 @@
 <CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
+      <ID>46</ID>
+      <Description>"To get each opcode from an address, right click and press "Disassemble this memory region""</Description>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>47</ID>
+      <Description>"Or just press CTRL + D with the address highlighted"</Description>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
       <ID>11</ID>
       <Description>"Safe for unflagged accs"</Description>
       <GroupHeader>1</GroupHeader>

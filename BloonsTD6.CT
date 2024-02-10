@@ -11,7 +11,12 @@
           <Description>"Infinite Tier 5s"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+000000A1</Address>
+          <Address>Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+000000AB</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"Change 20 to 21"</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>1</ID>
@@ -21,6 +26,11 @@
           <Address>Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000099</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>25</ID>
+          <Description>"Change 70 to 60"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>2</ID>
           <Description>"No ability cooldowns"</Description>
           <ShowAsSigned>0</ShowAsSigned>
@@ -28,18 +38,28 @@
           <Address>Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+0000008B</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>26</ID>
+          <Description>"Change 00000080 to 00000081"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>3</ID>
           <Description>"Footprint Remover"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000CF</Address>
+          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000E0</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"Change 44 to 24"</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>4</ID>
           <Description>"Free base towers 1"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000CA</Address>
+          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000DA</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>5</ID>
@@ -47,6 +67,11 @@
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"Change both offsets on free base towers 1 + 2 from 40 to 20"</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>6</ID>
@@ -63,11 +88,26 @@
           <Address>Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000004B </Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>29</ID>
+          <Description>"Change both offsets on free upgrades 1 + 2 from 30 to 20"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>9</ID>
           <Description>"boolean edit stuff"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+0000031B</Address>
+          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+00000327</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>22</ID>
+          <Description>"0x110 is ignoreCoopAreas, 0x111 is canAlwaysBeSold. To make these values always true,"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>23</ID>
+          <Description>"change the whole opcode to "mov eax, 1" and press yes to replace bytes with NOPs"</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>13</ID>
@@ -77,11 +117,21 @@
           <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+000000DB</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>30</ID>
+          <Description>"replace opcode with "mov r15d, 1""</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>14</ID>
           <Description>"LineOfSight Bypass 2"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000EC</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>31</ID>
+          <Description>"replace opcode with "mov ebp, 1""</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>15</ID>
@@ -91,6 +141,11 @@
           <Address>Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+00000101</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>32</ID>
+          <Description>"replace opcode with "mov eax, 1""</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>16</ID>
           <Description>"Place towers anywhere"</Description>
           <ShowAsSigned>0</ShowAsSigned>
@@ -98,11 +153,16 @@
           <Address>Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000002D</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>33</ID>
+          <Description>"replace opcode with nop or replace with code that does nothing"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>17</ID>
           <Description>"Damage edit"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000004F</Address>
+          <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+00000052</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>18</ID>
@@ -112,11 +172,31 @@
           <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000094</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>34</ID>
+          <Description>"For both damage and pierce, right click on the opcode and click "find what addresses this instruction accesses""</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>35</ID>
+          <Description>"load into any map, click the top value, scroll all the way to the bottom,"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>36</ID>
+          <Description>"hold shift and click the bottom value to select all listed values, then change it to whatever"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>19</ID>
           <Description>"immune bloon properties"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000006D</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>37</ID>
+          <Description>"Change 44 to 24"</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
         <CheatEntry>
           <ID>20</ID>
@@ -126,11 +206,21 @@
           <Address>Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+0000004C</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>38</ID>
+          <Description>"Change 34 to 24"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>21</ID>
           <Description>"golden bloon i-frames"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Bloons.Behaviors.GoldenBloonModel.Clone+00000089</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>39</ID>
+          <Description>"Change 44 to 24"</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -147,11 +237,43 @@
           <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+00000058</Address>
         </CheatEntry>
         <CheatEntry>
+          <ID>40</ID>
+          <Description>"Right click opcode and click "find what addresses this instruction accesses","</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>41</ID>
+          <Description>"click the top value, scroll to the bottom and hold shift and click the bottom value,"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>42</ID>
+          <Description>"then change the value to whatever you want the cash-per-pop to be"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
           <ID>10</ID>
-          <Description>"send bloons all at once"</Description>
+          <Description>"send bloons all at once 1"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>44</ID>
+          <Description>"Change 38 to 28"</Description>
+          <GroupHeader>1</GroupHeader>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>43</ID>
+          <Description>"send bloons all at once 2"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005A</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>45</ID>
+          <Description>"Change 3C to 2C"</Description>
+          <GroupHeader>1</GroupHeader>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>

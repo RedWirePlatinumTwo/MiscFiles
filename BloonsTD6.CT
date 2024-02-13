@@ -2,293 +2,685 @@
 <CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
-      <ID>46</ID>
-      <Description>"To get each opcode from an address, right click and press "Disassemble this memory region""</Description>
+      <ID>1</ID>
+      <Description>"MAKE SURE "ACTIVATE MONO FEATURES" IS ENABLED WHEN BTD6 IS SELECTED!!"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
-      <ID>47</ID>
-      <Description>"Or just press CTRL + D with the address highlighted"</Description>
-      <GroupHeader>1</GroupHeader>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>48</ID>
-      <Description>"(ALSO MAKE SURE "ACTIVATE MONO FEATURES" IS ENABLED WHEN BTD6 IS SELECTED)"</Description>
-      <GroupHeader>1</GroupHeader>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>11</ID>
-      <Description>"Safe for unflagged accs"</Description>
+      <ID>2</ID>
+      <Description>"Safe for unflagged accs (Check active box to enable hack)"</Description>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
           <ID>0</ID>
           <Description>"Infinite Tier 5s"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+000000AB</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>24</ID>
-          <Description>"Change 20 to 21"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>1</ID>
-          <Description>"Hypersonic towers"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000099</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>25</ID>
-          <Description>"Change 70 to 60"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>2</ID>
-          <Description>"No ability cooldowns"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+0000008B</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>26</ID>
-          <Description>"Change 00000080 to 00000081"</Description>
-          <GroupHeader>1</GroupHeader>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+000000AB)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov r12d,[rax+rcx*4+21]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 44 8B 64 88 20
+//mov r12d,[rax+rcx*4+20]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>3</ID>
-          <Description>"Footprint Remover"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000E0</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>27</ID>
-          <Description>"Change 44 to 24"</Description>
-          <GroupHeader>1</GroupHeader>
+          <Description>"Hypersonic Towers"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000099)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm6,[rbx+60]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 0F 10 73 70
+//movss xmm6,[rbx+70]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>4</ID>
-          <Description>"Free base towers 1"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+000000DA</Address>
+          <Description>"Remove ability cooldowns"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+0000008B)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm7,[rdi+00000081]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 0F 10 BF 80 00 00 00
+//movss xmm7,[rdi+00000080]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>5</ID>
-          <Description>"Free base towers 2"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>28</ID>
-          <Description>"Change both offsets on free base towers 1 + 2 from 40 to 20"</Description>
-          <GroupHeader>1</GroupHeader>
+          <Description>"Footprint remover"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000E0)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm10,[rdi+24]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 44 0F 10 57 44
+//movss xmm10,[rdi+44]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>6</ID>
-          <Description>"Free upgrades 1"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+00000476</Address>
+          <Description>"Free base towers"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000DA)
+define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm9,[rdi+20]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop
+returnhere:
+
+
+ //code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem2,2048,addy2)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
+
+newmem2: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode2:
+mulss xmm0,[rdi+20]
+
+exit2:
+jmp returnhere2
+
+addy2:
+jmp newmem2
+returnhere2:
+
+
+
+
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 44 0F 10 4F 40
+//movss xmm9,[rdi+40]
+
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem2)
+addy2:
+db F3 0F 59 47 40
+//mulss xmm0,[rdi+40]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>7</ID>
-          <Description>"Free upgrades 2"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000004B </Address>
+          <ID>8</ID>
+          <Description>"Free upgrades"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+00000476)
+define(addy2,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000004B)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movd xmm0,[rdi+20]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+returnhere:
+
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem2,2048,addy2)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
+
+newmem2: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode2:
+mov ebp,[rdi+20]
+mov r14d,[rdi+34]
+
+exit2:
+jmp returnhere2
+
+addy2:
+jmp newmem2
+nop 2
+returnhere2:
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 66 0F 6E 47 30
+//movd xmm0,[rdi+30]
+dealloc(newmem2)
+addy2:
+db 8B 6F 30 44 8B 77 34
+//mov ebp,[rdi+30]
+//mov r14d,[rdi+34]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>29</ID>
-          <Description>"Change both offsets on free upgrades 1 + 2 from 30 to 20"</Description>
-          <GroupHeader>1</GroupHeader>
+          <ID>10</ID>
+          <Description>"Place towers in co-op areas"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000327)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov eax, 1
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 0F B6 87 10 01 00 00
+//movzx eax,byte ptr [rdi+00000110]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>9</ID>
-          <Description>"boolean edit stuff"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.TowerModel.Clone+00000327</Address>
+          <ID>11</ID>
+          <Description>"Always sell towers"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000331)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov eax, 1
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 0F B6 87 11 01 00 00
+//movzx eax,byte ptr [rdi+00000111]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>22</ID>
-          <Description>"0x110 is ignoreCoopAreas, 0x111 is canAlwaysBeSold. To make these values always true,"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>23</ID>
-          <Description>"change the whole opcode to "mov eax, 1" and press yes to replace bytes with NOPs"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>13</ID>
-          <Description>"LineOfSight Bypass 1"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+000000DB</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>30</ID>
-          <Description>"replace opcode with "mov r15d, 1""</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>14</ID>
-          <Description>"LineOfSight Bypass 2"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000EC</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>31</ID>
-          <Description>"replace opcode with "mov ebp, 1""</Description>
-          <GroupHeader>1</GroupHeader>
+          <ID>12</ID>
+          <Description>"Line of sight bypass"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+000000DB)
+define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000EC)
+define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+00000101)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov r15d, 1
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+returnhere:
+
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem2,2048,addy2)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
+
+newmem2: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode2:
+mov ebp, 1
+
+exit2:
+jmp returnhere2
+
+addy2:
+jmp newmem2
+returnhere2:
+ 
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem3,2048,addy3)
+label(returnhere3)
+label(originalcode3)
+label(exit3)
+
+newmem3: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode3:
+mov eax, 1
+movss xmm8,[rdi+48]
+
+exit3:
+jmp returnhere3
+
+addy3:
+jmp newmem3
+nop 5
+returnhere3:
+
+
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 44 0F B6 7F 4C
+//movzx r15d,byte ptr [rdi+4C]
+dealloc(newmem2)
+addy2:
+db 41 0F B6 6E 5C
+//movzx ebp,byte ptr [r14+5C]
+dealloc(newmem3)
+addy3:
+db 0F B6 47 50 F3 44 0F 10 47 48
+//movzx eax,byte ptr [rdi+50]
+//movss xmm8,[rdi+48]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>15</ID>
-          <Description>"LineOfSight bypass 3"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+00000101</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>32</ID>
-          <Description>"replace opcode with "mov eax, 1""</Description>
-          <GroupHeader>1</GroupHeader>
+          <Description>"Place towers anywhere"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000002D)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 41 8B 54 88 20
+//mov edx,[r8+rcx*4+20]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>16</ID>
-          <Description>"Place towers anywhere"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000002D</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>33</ID>
-          <Description>"replace opcode with nop or replace with code that does nothing"</Description>
-          <GroupHeader>1</GroupHeader>
+          <Description>"Disable bloon immune props (magic can pop purples)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000006D)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov esi,[rbx+24]
+mov edi,[rbx+48]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 8B 73 44 8B 7B 48
+//mov esi,[rbx+44]
+//mov edi,[rbx+48]
+</AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>17</ID>
+          <Description>"Reduce hero cost to lvl up"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+0000004C)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm7,[rdi+24]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 0F 10 7F 34
+//movss xmm7,[rdi+34]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>18</ID>
+          <Description>"Remove golden bloon I-frames"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.GoldenBloonModel.Clone+00000089)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm11,[r13+24]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 45 0F 10 5D 44
+//movss xmm11,[r13+44]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
           <Description>"Damage edit"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+00000052</Address>
         </CheatEntry>
         <CheatEntry>
-          <ID>18</ID>
+          <ID>22</ID>
           <Description>"Pierce edit"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000094</Address>
         </CheatEntry>
-        <CheatEntry>
-          <ID>34</ID>
-          <Description>"For both damage and pierce, right click on the opcode and click"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>35</ID>
-          <Description>""find what addresses this instruction accesses", load into any map, click the top value,"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>36</ID>
-          <Description>"scroll all the way to the bottom, hold shift and click the bottom value to select all listed values,"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>49</ID>
-          <Description>"then change the list of values to whatever you want the damage/pierce to be"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>19</ID>
-          <Description>"immune bloon properties"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000006D</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>37</ID>
-          <Description>"Change 44 to 24"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>20</ID>
-          <Description>"Hero cost to lvl up"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+0000004C</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>38</ID>
-          <Description>"Change 34 to 24"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>21</ID>
-          <Description>"golden bloon i-frames"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Bloons.Behaviors.GoldenBloonModel.Clone+00000089</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>39</ID>
-          <Description>"Change 44 to 24"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
-      <ID>12</ID>
-      <Description>"NOT safe for unflagged accs"</Description>
+      <ID>19</ID>
+      <Description>"NOT safe for unflagged accs (Check active box to enable hack)"</Description>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>8</ID>
+          <ID>20</ID>
+          <Description>"Send bloons all at once"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055)
+define(addy2,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005A)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm6,[rbx+28]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+returnhere:
+
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem2,2048,addy2)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
+
+newmem2: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode2:
+movss xmm7,[rbx+2C]
+
+exit2:
+jmp returnhere2
+
+addy2:
+jmp newmem2
+returnhere2:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 0F 10 73 38
+//movss xmm6,[rbx+38]
+dealloc(newmem2)
+addy2:
+db F3 0F 10 7B 3C
+//movss xmm7,[rbx+3C]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>23</ID>
           <Description>"Edit cash-per-pop"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
           <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+00000058</Address>
         </CheatEntry>
-        <CheatEntry>
-          <ID>40</ID>
-          <Description>"Same steps as editing damage and pierce values"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>10</ID>
-          <Description>"send bloons all at once 1"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>44</ID>
-          <Description>"Change 38 to 28"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>43</ID>
-          <Description>"send bloons all at once 2"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005A</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>45</ID>
-          <Description>"Change 3C to 2C"</Description>
-          <GroupHeader>1</GroupHeader>
-        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
-  <Comments>Info about this table:
-</Comments>
 </CheatTable>

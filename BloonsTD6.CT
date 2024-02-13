@@ -121,43 +121,6 @@ db F3 0F 10 BF 80 00 00 00
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>5</ID>
-          <Description>"Footprint remover"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000E0)
-[ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem,2048,addy)
-label(returnhere)
-label(originalcode)
-label(exit)
-
-newmem: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode:
-movss xmm10,[rdi+24]
-
-exit:
-jmp returnhere
-
-addy:
-jmp newmem
-nop
-returnhere:
-
-
- 
- 
-[DISABLE]
-//code from here till the end of the code will be used to disable the cheat
-dealloc(newmem)
-addy:
-db F3 44 0F 10 57 44
-//movss xmm10,[rdi+44]
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
           <ID>6</ID>
           <Description>"Free base towers"</Description>
           <VariableType>Auto Assembler Script</VariableType>
@@ -322,7 +285,7 @@ db 0F B6 87 10 01 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>11</ID>
-          <Description>"Always sell towers"</Description>
+          <Description>"Make towers always sellable"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000331)
 [ENABLE]
@@ -445,9 +408,10 @@ db 0F B6 47 50 F3 44 0F 10 47 48
         </CheatEntry>
         <CheatEntry>
           <ID>15</ID>
-          <Description>"Place towers anywhere"</Description>
+          <Description>"Place towers (almost) anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000002D)
+define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+000000E0)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -469,7 +433,28 @@ jmp newmem
 returnhere:
 
 
- 
+ //code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem2,2048,addy2)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
+
+newmem2: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode2:
+movss xmm10,[rdi+24]
+
+exit2:
+jmp returnhere2
+
+addy2:
+jmp newmem2
+nop
+returnhere2:
+
+
+
  
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
@@ -477,6 +462,10 @@ dealloc(newmem)
 addy:
 db 41 8B 54 88 20
 //mov edx,[r8+rcx*4+20]
+dealloc(newmem2)
+addy2:
+db F3 44 0F 10 57 44
+//movss xmm10,[rdi+44]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

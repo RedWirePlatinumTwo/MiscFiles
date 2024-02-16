@@ -671,32 +671,5 @@ db F3 0F 10 7B 3C
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <CheatCodes>
-    <CodeEntry>
-      <Description>Change of mov edx,[r8+rcx*4+20]</Description>
-      <AddressString>GameAssembly.dll+77DE3D</AddressString>
-      <Before>
-        <Byte>73</Byte>
-        <Byte>32</Byte>
-        <Byte>48</Byte>
-        <Byte>63</Byte>
-        <Byte>C8</Byte>
-      </Before>
-      <Actual>
-        <Byte>41</Byte>
-        <Byte>8B</Byte>
-        <Byte>54</Byte>
-        <Byte>88</Byte>
-        <Byte>20</Byte>
-      </Actual>
-      <After>
-        <Byte>41</Byte>
-        <Byte>3B</Byte>
-        <Byte>D1</Byte>
-        <Byte>74</Byte>
-        <Byte>11</Byte>
-      </After>
-    </CodeEntry>
-  </CheatCodes>
   <UserdefinedSymbols/>
 </CheatTable>

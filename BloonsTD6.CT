@@ -43,8 +43,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 44 8B 64 88 20
-//mov r12d,[rax+rcx*4+20]
+db 44 8B 74 8A 20
+//mov r14d,[rdx+rcx*4+20]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -175,14 +175,14 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 44 0F 10 4F 40
-//movss xmm9,[rdi+40]
+db F3 0F 10 7F 40
+//movss xmm7,[rdi+40]
 
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem2)
 addy2:
-db F3 0F 59 47 40
-//mulss xmm0,[rdi+40]
+db F3 0F 59 46 40
+//mulss xmm0,[rsi+40]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -237,8 +237,8 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 66 0F 6E 47 30
-//movd xmm0,[rdi+30]
+db 66 0F 6E 46 30
+//movd xmm0,[rsi+30]
 dealloc(newmem2)
 addy2:
 db 8B 6F 30 44 8B 77 34
@@ -464,8 +464,8 @@ db 41 8B 54 88 20
 //mov edx,[r8+rcx*4+20]
 dealloc(newmem2)
 addy2:
-db F3 44 0F 10 57 44
-//movss xmm10,[rdi+44]
+db F3 0F 10 77 44
+//movss xmm6,[rdi+44]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

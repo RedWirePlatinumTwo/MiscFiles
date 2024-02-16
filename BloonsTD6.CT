@@ -122,7 +122,7 @@ db F3 0F 10 BF 80 00 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>6</ID>
-          <Description>"Free base towers"</Description>
+          <Description>"Free base towers (DO NOT ENABLE WITH PLACE TOWERS ANYWHERE)"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000CA)
 define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B)
@@ -423,7 +423,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-
+mov edx, edx
 
 exit:
 jmp returnhere
@@ -671,5 +671,32 @@ db F3 0F 10 7B 3C
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Change of mov edx,[r8+rcx*4+20]</Description>
+      <AddressString>GameAssembly.dll+77DE3D</AddressString>
+      <Before>
+        <Byte>73</Byte>
+        <Byte>32</Byte>
+        <Byte>48</Byte>
+        <Byte>63</Byte>
+        <Byte>C8</Byte>
+      </Before>
+      <Actual>
+        <Byte>41</Byte>
+        <Byte>8B</Byte>
+        <Byte>54</Byte>
+        <Byte>88</Byte>
+        <Byte>20</Byte>
+      </Actual>
+      <After>
+        <Byte>41</Byte>
+        <Byte>3B</Byte>
+        <Byte>D1</Byte>
+        <Byte>74</Byte>
+        <Byte>11</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
   <UserdefinedSymbols/>
 </CheatTable>

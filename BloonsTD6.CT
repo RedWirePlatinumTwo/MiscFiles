@@ -27,7 +27,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov r12d,[rax+rcx*4+21]
+mov r14d,[rdx+rcx*4+21]
 
 exit:
 jmp returnhere
@@ -137,7 +137,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm9,[rdi+20]
+movss xmm7,[rdi+20]
 
 exit:
 jmp returnhere
@@ -158,7 +158,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-mulss xmm0,[rdi+20]
+mulss xmm0,[rsi+20]
 
 exit2:
 jmp returnhere2
@@ -202,7 +202,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movd xmm0,[rdi+20]
+movd xmm0,[rsi+20]
 
 exit:
 jmp returnhere
@@ -443,7 +443,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-movss xmm10,[rdi+24]
+movss xmm6,[rdi+24]
 
 exit2:
 jmp returnhere2

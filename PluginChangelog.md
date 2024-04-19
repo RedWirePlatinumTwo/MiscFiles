@@ -1,4 +1,6 @@
 # Changelog
+# 1.2.2
+- Fixed x,y,z values for "Player harvest check tick" giving errors when on NeoForge 1.20.4
 # 1.2.1
 - Slightly changed the "timed loop iterator" and "repeat wait with tick wait time" procedure blocks to (hopefully) further prevent actions tab collapsing
 # 1.2.0

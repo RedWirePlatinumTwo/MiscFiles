@@ -1,4 +1,6 @@
 # Changelog
+# 1.2.1
+- Slightly changed the "timed loop iterator" and "repeat wait with tick wait time" procedure blocks to (hopefully) further prevent actions tab collapsing
 # 1.2.0
 - Fixed Actions tab collapsing in 2023.4
 - Fixed both sound played events not being usable in NeoForge 1.20.4

@@ -1,7 +1,7 @@
 # Changelog
 # 1.2.0
 - Fixed Actions tab collapsing in 2023.4
-- Fixed both sound played events not being usable in 2024.1
+- Fixed both sound played events not being usable in NeoForge 1.20.4
 - Added "volume" and "pitch" dependencies for both sound played events
 - Added a "Player starts using item" global trigger
 - Re-added support for the older 2024.1 version if you don't want the bugfix version.. for some reason

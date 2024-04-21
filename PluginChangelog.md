@@ -1,4 +1,6 @@
 # Changelog
+# 1.2.3
+- Fixed actions tab collapsing (FOR REAL THIS TIME I SWEAR)
 # 1.2.2
 - Fixed x,y,z values for "Player harvest check tick" giving errors when on NeoForge 1.20.4
 # 1.2.1

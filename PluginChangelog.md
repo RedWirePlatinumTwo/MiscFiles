@@ -1,4 +1,7 @@
 # Changelog
+# 1.2.4
+- Fixed x,y,z errors for both sound played events (copying straight from the "enderman teleported" code was a bad idea)
+- Added x,y,z dependencies for both anvil events (Anvil block position)
 # 1.2.3
 - Fixed actions tab collapsing (FOR REAL THIS TIME I SWEAR)
 # 1.2.2

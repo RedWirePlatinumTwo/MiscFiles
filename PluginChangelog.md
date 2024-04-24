@@ -1,4 +1,8 @@
 # Changelog
+# 1.2.5
+- Changed x,y,z dependencies for anvil events to player position for 2 reasons: 
+1. that the block position may not always be anvil
+2. there is no real way I can actually get the anvil blockpos other than getting the block you're looking at
 # 1.2.4
 - Fixed x,y,z errors for both sound played events (copying straight from the "enderman teleported" code was a bad idea)
 - Added x,y,z dependencies for both anvil events (Anvil block position)

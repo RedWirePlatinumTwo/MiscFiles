@@ -1,4 +1,6 @@
 # Changelog
+# 1.2.6
+- Fixed "(break out/continue with next iteration) of loop" procedure block giving errors with the text split procedure block
 # 1.2.5
 - Changed x,y,z dependencies for anvil events to player position for 2 reasons: 
   1. that the block position may not always be anvil

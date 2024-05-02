@@ -2,7 +2,7 @@
 # 1.2.7
 - Added a check for the "Player block speed tick" event to make sure the game won't crash if the position values are null
 - Added the null indicator image for the "Create a clone of entity" and "Get entity from UUID" procedures
-- Added a checkbox to choose whether or not the whole string should be used if the string array is empty (true by default)
+- Added a checkbox to choose whether or not the whole string should be used if the string array is empty for the text split procedure block (true by default)
 # 1.2.6
 - Fixed "(break out/continue with next iteration) of loop" procedure block giving errors with the text split procedure block
 # 1.2.5

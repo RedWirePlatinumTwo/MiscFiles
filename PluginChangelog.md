@@ -1,4 +1,8 @@
 # Changelog
+# 1.3.0
+- Removed the _stoploop boolean variable from the timed loop procedure block
+- Changed "break out of timed loop" procedure block to either break out or continue with the next iteration of the timed loop
+- Changed the current and total variables in the timed loop procedure block from double to int
 # 1.2.7
 - Added a check for the "Player block speed tick" event to prevent game crashing if the position values are null
 - Added the null indicator image for the "Create a clone of entity" and "Get entity from UUID" procedures

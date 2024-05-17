@@ -1,6 +1,6 @@
 # Changelog
 # 1.3.0
-- Removed the _stoploop boolean variable from the timed loop procedure block
+- Improved timed loop breaking
 - Changed "break out of timed loop" procedure block to either break out or continue with the next iteration of the timed loop
 - Changed the current and total variables in the timed loop procedure block from double to int
 - Fixed minor bug when using the timed loop iterator block with the "create text with" block

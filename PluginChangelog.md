@@ -1,4 +1,6 @@
 # Changelog
+# 1.3.1
+- Fixed build error that sometimes appears when using "continue with next iteration of timed loop"
 # 1.3.0
 - Improved timed loop breaking
 - Changed "break out of timed loop" procedure block to either break out or continue with the next iteration of the timed loop

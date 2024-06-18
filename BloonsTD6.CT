@@ -2,6 +2,11 @@
 <CheatTable CheatEngineTableVersion="45">
   <CheatEntries>
     <CheatEntry>
+      <ID>25</ID>
+      <Description>"Current supported version: v43.2.8081 (may crash on newer versions)"</Description>
+      <GroupHeader>1</GroupHeader>
+    </CheatEntry>
+    <CheatEntry>
       <ID>1</ID>
       <Description>"MAKE SURE "ACTIVATE MONO FEATURES" IS ENABLED WHEN BTD6 IS SELECTED!!"</Description>
       <GroupHeader>1</GroupHeader>
@@ -138,7 +143,7 @@ db F3 0F 10 BF 80 00 00 00
           <ID>6</ID>
           <Description>"Free base towers (DO NOT ENABLE WITH PLACE TOWERS ANYWHERE)"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000DA)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000CA)
 define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -172,7 +177,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-mulss xmm0,[rdi+20]
+mulss xmm0,[rsi+20]
 
 exit2:
 jmp returnhere2
@@ -195,8 +200,8 @@ db F3 44 0F 10 4F 40
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem2)
 addy2:
-db F3 0F 59 47 40
-//mulss xmm0,[rdi+40]
+db F3 0F 59 46 40
+//mulss xmm0,[rsi+40]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -264,7 +269,7 @@ db 8B 6F 30 44 8B 77 34
           <ID>10</ID>
           <Description>"Place towers in co-op areas"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000327)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+0000031B)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -301,7 +306,7 @@ db 0F B6 87 10 01 00 00
           <ID>11</ID>
           <Description>"Make towers always sellable"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000331)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000326)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -424,8 +429,8 @@ db 0F B6 47 50 F3 44 0F 10 47 48
           <ID>15</ID>
           <Description>"Place towers (almost) anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003D)
-define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+000000E0)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003F)
+define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+000000CF)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -457,7 +462,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-movss xmm10,[rdi+24]
+movss xmm6,[rdi+24]
 
 exit2:
 jmp returnhere2
@@ -478,8 +483,8 @@ db 41 8B 54 80 20
 //mov edx,[r8+rax*4+20]
 dealloc(newmem2)
 addy2:
-db F3 44 0F 10 57 44
-//movss xmm10,[rdi+44]
+db F3 0F 10 77 44 F3 44 0F 10 47 4C
+//movss xmm6,[rdi+44], movss xmm8,[rdi+4C]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

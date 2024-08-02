@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: v43.3.8118 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 44.0.8277 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -44,7 +44,7 @@
           <ID>0</ID>
           <Description>"Infinite Tier 5s"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+000000AB)
+          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+000000A1)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -56,7 +56,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov r12d,[rax+rcx*4+21]
+mov r14d,[rdx+rcx*4+21]
 
 exit:
 jmp returnhere
@@ -72,8 +72,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 44 8B 64 88 20
-//mov r12d,[rax+rcx*4+20]
+db 44 8B 74 8A 20
+//mov r14d,[rdx+rcx*4+20]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -153,7 +153,7 @@ db F3 0F 10 BF 80 00 00 00
           <ID>6</ID>
           <Description>"Free base towers (DO NOT ENABLE WITH PLACE TOWERS ANYWHERE)"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000DA)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000CA)
 define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -166,7 +166,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm9,[rdi+20]
+movss xmm7,[rdi+20]
 
 exit:
 jmp returnhere
@@ -187,7 +187,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-mulss xmm0,[rdi+20]
+mulss xmm0,[rsi+20]
 
 exit2:
 jmp returnhere2
@@ -204,14 +204,14 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 44 0F 10 4F 40
-//movss xmm9,[rdi+40]
+db F3 0F 10 7F 40
+//movss xmm7,[rdi+40]
 
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem2)
 addy2:
-db F3 0F 59 47 40
-//mulss xmm0,[rdi+40]
+db F3 0F 59 46 40
+//mulss xmm0,[rsi+40]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -279,7 +279,7 @@ db 8B 6F 30 44 8B 77 34
           <ID>10</ID>
           <Description>"Place towers in co-op areas"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000327)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+0000031B)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -316,7 +316,7 @@ db 0F B6 87 10 01 00 00
           <ID>11</ID>
           <Description>"Make towers always sellable"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000331)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000326)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -439,8 +439,8 @@ db 0F B6 47 50 F3 44 0F 10 47 48
           <ID>15</ID>
           <Description>"Place towers (almost) anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003D)
-define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+000000E0)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003F)
+define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+000000CF)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -472,7 +472,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-movss xmm10,[rdi+24]
+movss xmm6,[rdi+24]
 exit2:
 jmp returnhere2
 
@@ -488,12 +488,12 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 41 8B 54 80 20
-//mov edx,[r8+rax*4+20]
+db 41 8B 54 81 20
+//mov edx,[r9+rax*4+20]
 dealloc(newmem2)
 addy2:
-db F3 44 0F 10 57 44
-//movss xmm10,[rdi+44]
+db F3 0F 10 77 44
+//movss xmm6,[rdi+44]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -608,6 +608,43 @@ db F3 45 0F 10 5D 44
 //movss xmm11,[r13+44]
 </AssemblerScript>
         </CheatEntry>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"Bloons deal 0 damage"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.BloonModel.Clone+000001F3)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+movss xmm9,[rsi+000000C1]
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop 4
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db F3 44 0F 10 8E C0 00 00 00
+//movss xmm9,[rsi+000000C0]
+</AssemblerScript>
+        </CheatEntry>
       </CheatEntries>
     </CheatEntry>
     <CheatEntry>
@@ -680,7 +717,7 @@ db F3 0F 10 7B 3C
           <Description>"Edit cash-per-pop"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+00000058</Address>
+          <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+0000004E</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>24</ID>

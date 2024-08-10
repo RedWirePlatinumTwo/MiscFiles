@@ -1,4 +1,9 @@
 # Changelog
+# 2.0.0
+- Removed support for NeoForge 1.20.4
+- Added support for NeoForge 1.20.6
+- Fixed "change sound event to [x]" giving an error for NeoForge
+- Changed the category of "Is sound played same as [x]" to Event-specific Actions
 # 1.3.1
 - Fixed build error that sometimes appears when using "continue with next iteration of timed loop"
 # 1.3.0

@@ -1,4 +1,8 @@
 # Changelog
+# 2.1.0
+- Fixed "Player block speed tick" event giving an error with NeoForge
+- Added "Is [entity] spectating [sourceentity]"
+- Added "Get entity [entity] is spectating"
 # 2.0.0
 - Removed support for NeoForge 1.20.4
 - Added support for NeoForge 1.20.6

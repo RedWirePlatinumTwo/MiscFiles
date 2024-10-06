@@ -1,4 +1,14 @@
 # Changelog
+# 3.0.0
+- Added support for NeoForge 1.21.1
+- Removed support for NeoForge 1.20.6
+- Fixed "Get (display) name of [blockstate]" procedure not working with NeoForge because I somehow managed to make it blank.
+- Added "Set carried block of enderman [entity] to [blockstate]".
+- Added "Get block that enderman [entity] is carrying".
+- Added "Remove block enderman [entity] is carrying".
+- The "Get object from registry" procedure block now requires the world dependency.
+- "Timed loop iterator" no longer has a checkbox to start from 0 or not, making it so it always starts at 0.
+- Revised the texts in 2 procedure blocks to make it look a little better.
 # 2.1.0
 - Fixed "Player block speed tick" event giving an error with NeoForge
 - Added "Is [entity] spectating [sourceentity]"

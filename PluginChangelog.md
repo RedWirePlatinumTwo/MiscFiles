@@ -1,4 +1,10 @@
 # Changelog
+# 3.1.0
+- Changed variable names for "repeat [x] times with [y] tick wait" procedure block to more appropriately fit the procedure.
+- Added Global trigger: Chunk loaded into world
+- Added procedure block: Get block inbetween [entity] and [sourceentity] (If "can [entity] find [sourceentity]" returns false)
+- Removed global trigger "Player starts using item" (Use "Player uses item" instead)
+- The "Player harvest block tick" block pos variables now use the block pos arguments provided in NeoForge.
 # 3.0.0
 - Added support for NeoForge 1.21.1
 - Removed support for NeoForge 1.20.6

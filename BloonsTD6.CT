@@ -760,57 +760,5 @@ db 44 8B 77 34 48 8B 5F 38
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <CheatCodes>
-    <CodeEntry>
-      <Description>Change of movss [rsi+60],xmm7</Description>
-      <AddressString>GameAssembly.dll+9B0CAA</AddressString>
-      <Before>
-        <Byte>00</Byte>
-        <Byte>48</Byte>
-        <Byte>8B</Byte>
-        <Byte>45</Byte>
-        <Byte>A0</Byte>
-      </Before>
-      <Actual>
-        <Byte>F3</Byte>
-        <Byte>0F</Byte>
-        <Byte>11</Byte>
-        <Byte>7E</Byte>
-        <Byte>60</Byte>
-      </Actual>
-      <After>
-        <Byte>F3</Byte>
-        <Byte>0F</Byte>
-        <Byte>11</Byte>
-        <Byte>76</Byte>
-        <Byte>48</Byte>
-      </After>
-    </CodeEntry>
-    <CodeEntry>
-      <Description>Change of movss xmm7,[rdi+60]</Description>
-      <AddressString>GameAssembly.dll+9B0776</AddressString>
-      <Before>
-        <Byte>70</Byte>
-        <Byte>48</Byte>
-        <Byte>8B</Byte>
-        <Byte>5F</Byte>
-        <Byte>38</Byte>
-      </Before>
-      <Actual>
-        <Byte>F3</Byte>
-        <Byte>0F</Byte>
-        <Byte>10</Byte>
-        <Byte>7F</Byte>
-        <Byte>60</Byte>
-      </Actual>
-      <After>
-        <Byte>F3</Byte>
-        <Byte>0F</Byte>
-        <Byte>10</Byte>
-        <Byte>77</Byte>
-        <Byte>48</Byte>
-      </After>
-    </CodeEntry>
-  </CheatCodes>
   <UserdefinedSymbols/>
 </CheatTable>

@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 44.0.8277 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 45.3.8537 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -26,20 +26,6 @@
       <Description>"Safe for unflagged accs (Check active box to enable hack)"</Description>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
-        <CheatEntry>
-          <ID>21</ID>
-          <Description>"Damage edit"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+00000052</Address>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>22</ID>
-          <Description>"Pierce edit"</Description>
-          <ShowAsSigned>0</ShowAsSigned>
-          <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+0000009A</Address>
-        </CheatEntry>
         <CheatEntry>
           <ID>0</ID>
           <Description>"Infinite Tier 5s"</Description>
@@ -151,9 +137,9 @@ db F3 0F 10 BF 80 00 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>6</ID>
-          <Description>"Free base towers (DO NOT ENABLE WITH PLACE TOWERS ANYWHERE)"</Description>
+          <Description>"Free base towers"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000CA)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000D6)
 define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -166,7 +152,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm7,[rdi+20]
+movss xmm7,[rdi+40]
 
 exit:
 jmp returnhere
@@ -204,14 +190,14 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 7F 40
-//movss xmm7,[rdi+40]
+db F3 0F 10 7F 60
+//movss xmm7,[rdi+60]
 
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem2)
 addy2:
-db F3 0F 59 46 40
-//mulss xmm0,[rsi+40]
+db F3 0F 59 46 60
+//mulss xmm0,[rsi+60]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -231,7 +217,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movd xmm0,[rdi+20]
+movd xmm0,[rsi+20]
 
 exit:
 jmp returnhere
@@ -266,8 +252,8 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 66 0F 6E 47 30
-//movd xmm0,[rdi+30]
+db 66 0F 6E 46 30
+//movd xmm0,[rsi+30]
 dealloc(newmem2)
 addy2:
 db 8B 6F 30 44 8B 77 34
@@ -279,7 +265,7 @@ db 8B 6F 30 44 8B 77 34
           <ID>10</ID>
           <Description>"Place towers in co-op areas"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+0000031B)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000347)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -308,15 +294,15 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 0F B6 87 10 01 00 00
-//movzx eax,byte ptr [rdi+00000110]
+db 0F B6 87 28 01 00 00
+//movzx eax,byte ptr [rdi+00000128]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>11</ID>
           <Description>"Make towers always sellable"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000326)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000352)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -345,15 +331,15 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 0F B6 87 11 01 00 00
-//movzx eax,byte ptr [rdi+00000111]
+db 0F B6 87 29 01 00 00
+//movzx eax,byte ptr [rdi+00000129]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>12</ID>
           <Description>"Line of sight bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+000000E1)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000123)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000EC)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+00000101)
 [ENABLE]
@@ -440,7 +426,7 @@ db 0F B6 47 50 F3 44 0F 10 47 48
           <Description>"Place towers (almost) anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003F)
-define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+000000CF)
+define(addy2,Assets.Scripts.Models.Towers.Behaviors.CircleFootprintModel.Clone+00000021)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -452,8 +438,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov edx, edx
-
+mov edx,edx
 exit:
 jmp returnhere
 
@@ -472,7 +457,8 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-movss xmm6,[rdi+24]
+mov rbx,rcx
+movaps [rsp+20],xmm6
 exit2:
 jmp returnhere2
 
@@ -492,8 +478,8 @@ db 41 8B 54 81 20
 //mov edx,[r9+rax*4+20]
 dealloc(newmem2)
 addy2:
-db F3 0F 10 77 44
-//movss xmm6,[rdi+44]
+db 48 8B D9 0F 29 74 24 30
+//movaps [rsp+30],xmm6
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -512,15 +498,14 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov esi,[rbx+24]
-mov edi,[rbx+48]
-
+mov r15d,[r13+24]
+mov r12d,[r13+48]
 exit:
 jmp returnhere
 
 addy:
 jmp newmem
-nop
+nop 3
 returnhere:
 
 
@@ -530,9 +515,9 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 8B 73 44 8B 7B 48
-//mov esi,[rbx+44]
-//mov edi,[rbx+48]
+db 45 8B 7D 44 45 8B 65 48
+//mov r15d,[r13+44]
+//mov r12d,[r13+48]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -644,6 +629,20 @@ addy:
 db F3 44 0F 10 8E C0 00 00 00
 //movss xmm9,[rsi+000000C0]
 </AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>21</ID>
+          <Description>"Damage edit"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000004F</Address>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>22</ID>
+          <Description>"Pierce edit"</Description>
+          <ShowAsSigned>0</ShowAsSigned>
+          <VariableType>4 Bytes</VariableType>
+          <Address>Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+000000A0</Address>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
@@ -761,5 +760,57 @@ db 44 8B 77 34 48 8B 5F 38
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Change of movss [rsi+60],xmm7</Description>
+      <AddressString>GameAssembly.dll+9B0CAA</AddressString>
+      <Before>
+        <Byte>00</Byte>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>45</Byte>
+        <Byte>A0</Byte>
+      </Before>
+      <Actual>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>7E</Byte>
+        <Byte>60</Byte>
+      </Actual>
+      <After>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>11</Byte>
+        <Byte>76</Byte>
+        <Byte>48</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of movss xmm7,[rdi+60]</Description>
+      <AddressString>GameAssembly.dll+9B0776</AddressString>
+      <Before>
+        <Byte>70</Byte>
+        <Byte>48</Byte>
+        <Byte>8B</Byte>
+        <Byte>5F</Byte>
+        <Byte>38</Byte>
+      </Before>
+      <Actual>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>7F</Byte>
+        <Byte>60</Byte>
+      </Actual>
+      <After>
+        <Byte>F3</Byte>
+        <Byte>0F</Byte>
+        <Byte>10</Byte>
+        <Byte>77</Byte>
+        <Byte>48</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
   <UserdefinedSymbols/>
 </CheatTable>

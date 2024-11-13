@@ -303,6 +303,7 @@ db 0F B6 87 28 01 00 00
           <Description>"Make towers always sellable"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000352)
+define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+0000035D)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -324,7 +325,25 @@ jmp newmem
 nop 2
 returnhere:
 
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem2,2048,addy2)
+label(returnhere2)
+label(originalcode2)
+label(exit2)
 
+newmem2: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode2:
+mov eax, 0
+
+exit2:
+jmp returnhere2
+
+addy2:
+jmp newmem2
+nop 2
+returnhere2:
  
  
 [DISABLE]
@@ -333,6 +352,10 @@ dealloc(newmem)
 addy:
 db 0F B6 87 29 01 00 00
 //movzx eax,byte ptr [rdi+00000129]
+dealloc(newmem2)
+addy2:
+db 0F B6 87 2A 01 00 00
+//movzx eax,byte ptr [rdi+0000012A]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -353,13 +376,14 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov r15d, 1
-
+mov eax, 1
+mov [rsp+00000180],al
 exit:
 jmp returnhere
 
 addy:
 jmp newmem
+nop 6
 returnhere:
 
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -408,8 +432,9 @@ returnhere3:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 44 0F B6 7F 4C
-//movzx r15d,byte ptr [rdi+4C]
+db 0F B6 47 4C 88 84 24 80 01 00 00
+//movzx eax,byte ptr [rdi+4C]
+//mov [rsp+00000180],al
 dealloc(newmem2)
 addy2:
 db 41 0F B6 6E 5C

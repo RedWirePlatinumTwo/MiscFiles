@@ -378,6 +378,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 originalcode:
 mov eax, 1
 mov [rsp+00000180],al
+
 exit:
 jmp returnhere
 
@@ -448,10 +449,12 @@ db 0F B6 47 50 F3 44 0F 10 47 48
         </CheatEntry>
         <CheatEntry>
           <ID>15</ID>
-          <Description>"Place towers (almost) anywhere"</Description>
+          <Description>"Place towers anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003F)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.CircleFootprintModel.Clone+00000021)
+define(addy3,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+0000004D)
+define(addy4,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+00000055)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -464,13 +467,13 @@ newmem: //this is allocated memory, you have read,write,execute access
 
 originalcode:
 mov edx,edx
+
 exit:
 jmp returnhere
 
 addy:
 jmp newmem
 returnhere:
-
 
  //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem2,2048,addy2)
@@ -484,6 +487,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 originalcode2:
 mov rbx,rcx
 movaps [rsp+20],xmm6
+
 exit2:
 jmp returnhere2
 
@@ -492,9 +496,44 @@ jmp newmem2
 nop
 returnhere2:
 
+  //code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem3,2048,addy3)
+label(returnhere3)
+label(originalcode3)
+label(exit3)
 
+newmem3: //this is allocated memory, you have read,write,execute access
+//place your code here
 
- 
+originalcode3:
+movss xmm6,[rbp+20]
+
+exit3:
+jmp returnhere3
+
+addy3:
+jmp newmem3
+returnhere3:
+
+ //code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem4,2048,addy4)
+label(returnhere4)
+label(originalcode4)
+label(exit4)
+
+newmem4: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode4:
+movss xmm7,[rbp+20]
+
+exit4:
+jmp returnhere4
+
+addy4:
+jmp newmem4
+returnhere4:
+
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
@@ -505,6 +544,14 @@ dealloc(newmem2)
 addy2:
 db 48 8B D9 0F 29 74 24 30
 //movaps [rsp+30],xmm6
+dealloc(newmem3)
+addy3:
+db F3 0F 10 75 38
+//movss xmm6,[rbp+38]
+dealloc(newmem4)
+addy4:
+db F3 0F 10 7D 3C
+//movss xmm7,[rbp+3C]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

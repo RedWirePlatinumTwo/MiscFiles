@@ -1,4 +1,15 @@
 # Changelog
+# 3.2.3
+- Added support for Mcreator 2024.4 (Didn't need to make any code changes woohoo!!!!!!!!!)
+# 3.2.2
+- Revised the text in "Set damage to [amount]" procedure to specify what global triggers should be used in forge/neoforge for it to work
+# 3.2.1
+- "Set damage to [amount]" procedure will need to be used under "Entity is attacked" trigger for NeoForge, but will still remain as "Before entity is hurt" for Forge. The text has been changed in parentheses for this procedure.
+# 3.2.0
+- Removed "Get block inbetween [entity] and [sourceentity] (Will make procedures unusable if used)
+- Added "Get X position of block inbetween [entity] and [sourceentity]"
+- Added "Get Y position of block inbetween [entity] and [sourceentity]"
+- Added "Get Z position of block inbetween [entity] and [sourceentity]"
 # 3.1.0
 - Changed variable names for "repeat [x] times with [y] tick wait" procedure block to more appropriately fit the procedure.
 - Added Global trigger: Chunk loaded into world

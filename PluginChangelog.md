@@ -1,7 +1,7 @@
 # Changelog
 # 3.3.0
 - Removed "Enderman teleports" in favor for "Entity teleports"
-- Added procedure to check what caused teleportation (TP command, spreadplayers command, ender pearl, ender entity, or chorus fruit)
+- Added procedure to check what caused the teleportation event (TP command, spreadplayers command, ender pearl, ender entity, or chorus fruit)
 # 3.2.3
 - Added support for Mcreator 2024.4 (Didn't need to make any code changes woohoo!!!!!!!!!)
 # 3.2.2

@@ -1,6 +1,6 @@
 # Changelog
 # 3.3.1
-- The x y z values for "Entity teleports" no longer uses the target x y z values and instead uses the position before teleportation. additionally, prevX prevY prevZ have been removed in exchange for targetX targetY targetZ
+- The x y z values for "Entity teleports" no longer uses the *target* x y z values and instead uses the position before teleportation. additionally, prevX prevY prevZ have been removed in exchange for targetX targetY targetZ
 # 3.3.0
 - Removed "Enderman teleports" in favor for "Entity teleports"
 - Added procedure to check what caused the teleportation event (TP command, spreadplayers command, ender pearl, ender entity, or chorus fruit)

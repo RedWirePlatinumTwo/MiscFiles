@@ -1,4 +1,10 @@
 # Changelog
+# 3.4.0
+- Added global trigger "Entity being converted"
+- Added procedure "Is [entity] flying"
+- Added procedure "Get the fall distance of [entity]"
+- Added procedure "Are Overlays hidden"
+- Added procedure "Directly set itemstack [variable] to [itemstack]"
 # 3.3.1
 - The x y z values for "Entity teleports" no longer uses the *target* x y z values and instead uses the position before teleportation. additionally, prevX prevY prevZ have been removed in exchange for targetX targetY targetZ
 # 3.3.0

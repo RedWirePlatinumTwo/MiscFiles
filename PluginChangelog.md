@@ -1,4 +1,9 @@
 # Changelog
+# 3.5.0
+- Removed "Chunk loaded into world" event (see [Chunk Manager](https://mcreator.net/plugin/109717/chunk-manager-20) for that event + other useful chunk procedures)
+- Added procedure "Set food properties onto [item] with nutrition: [n1] saturation: [n1] can always eat: [checkbox1] eat fast: [checkbox2]"
+- Added procedure "Set max damage of [item] to [maxdmg]"
+- Added procedure "Set max stack size of [item] to [stacksize]"
 # 3.4.0
 - Added global trigger "Entity being converted"
 - Added procedure "Is [entity] flying"

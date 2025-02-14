@@ -699,7 +699,7 @@ returnhere:
 dealloc(newmem)
 addy:
 db F3 44 0F 10 8B C0 00 00 00
-//movss xmm9,[rbi+000000C0]
+//movss xmm9,[rbx+000000C0]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

@@ -874,32 +874,5 @@ db 44 8B 77 34 48 8B 5F 38
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
-  <CheatCodes>
-    <CodeEntry>
-      <Description>Change of mov edx,[r9+rax*4+20]</Description>
-      <AddressString>GameAssembly.dll+A46FCD</AddressString>
-      <Before>
-        <Byte>73</Byte>
-        <Byte>3D</Byte>
-        <Byte>48</Byte>
-        <Byte>63</Byte>
-        <Byte>C1</Byte>
-      </Before>
-      <Actual>
-        <Byte>41</Byte>
-        <Byte>8B</Byte>
-        <Byte>54</Byte>
-        <Byte>81</Byte>
-        <Byte>20</Byte>
-      </Actual>
-      <After>
-        <Byte>41</Byte>
-        <Byte>3B</Byte>
-        <Byte>D0</Byte>
-        <Byte>74</Byte>
-        <Byte>1C</Byte>
-      </After>
-    </CodeEntry>
-  </CheatCodes>
   <UserdefinedSymbols/>
 </CheatTable>

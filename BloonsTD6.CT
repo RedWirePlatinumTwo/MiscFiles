@@ -414,7 +414,7 @@ db 0F B6 47 50 F3 44 0F 10 47 48
           <ID>15</ID>
           <Description>"Place towers anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003F)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003D)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.CircleFootprintModel.Clone+00000021)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+0000004D)
 define(addy4,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+00000055)
@@ -429,7 +429,10 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov edx,edx
+mov edx, edx
+nop
+nop
+nop
 
 exit:
 jmp returnhere
@@ -871,5 +874,32 @@ db 44 8B 77 34 48 8B 5F 38
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Change of mov edx,[r9+rax*4+20]</Description>
+      <AddressString>GameAssembly.dll+A46FCD</AddressString>
+      <Before>
+        <Byte>73</Byte>
+        <Byte>3D</Byte>
+        <Byte>48</Byte>
+        <Byte>63</Byte>
+        <Byte>C1</Byte>
+      </Before>
+      <Actual>
+        <Byte>41</Byte>
+        <Byte>8B</Byte>
+        <Byte>54</Byte>
+        <Byte>81</Byte>
+        <Byte>20</Byte>
+      </Actual>
+      <After>
+        <Byte>41</Byte>
+        <Byte>3B</Byte>
+        <Byte>D0</Byte>
+        <Byte>74</Byte>
+        <Byte>1C</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
   <UserdefinedSymbols/>
 </CheatTable>

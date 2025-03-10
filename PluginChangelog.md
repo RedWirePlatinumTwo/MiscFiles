@@ -1,4 +1,26 @@
 # Changelog
+# 4.0.0
+- Forge is kil
+- Added support for NeoForge 1.21.4
+- Combining certain procedures together should no longer give you "illegal attempt to redefine an existing match binding"
+- Renamed category "Event-specific Actions" to "Global Trigger Procedures"
+- Changed category file names so procedures from this plugin won't potentially merge with another plugin
+- Added category "Utils"
+- Added "Get default name of [entity]"
+- Added "Is keybind [key] being pressed"
+- Added "Is provided world singleplayer"
+- Added "Is provided world hardcore"
+- Added "Is default game mode of provided world [gamemode]"
+- Added "Get tick rate of the provided world"
+- Added "Send command failure message [msg]"
+- Added "Send command result message [msg] inform admins [boolean]"
+- Added "Do [statement] for each world in server-side"
+- Added "Set default game mode of provided world to [gamemode]"
+- Added "Set difficulty in provided world to [difficulty] ignore difficulty lock [boolean]"
+- Added "Set tick rate of provided world to [amount]"
+- The "Is entity teleport event caused by" check is now a field dropdown instead of a datalist
+- Added event "Entity finished converting"
+- Just like MCreator, (most) of the procedures now create methods for procedure code instead of creating Objects with anonymous methods
 # 3.5.0
 - Removed "Chunk loaded into world" event (see [Chunk Manager](https://mcreator.net/plugin/109717/chunk-manager-20) for that event + other useful chunk procedures)
 - Added procedure "Set food properties onto [item] with nutrition: [n1] saturation: [n1] can always eat: [checkbox1] eat fast: [checkbox2]"

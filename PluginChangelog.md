@@ -1,4 +1,6 @@
 # Changelog
+# 4.0.1
+- "Is UUID [string] valid" procedure has been separated into a method (I forgot to do it before)
 # 4.0.0
 - Forge is kil
 - Added support for NeoForge 1.21.4

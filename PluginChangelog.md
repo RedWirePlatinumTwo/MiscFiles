@@ -28,6 +28,7 @@
 - Added procedure "Set food properties onto [item] with nutrition: [n1] saturation: [n1] can always eat: [checkbox1] eat fast: [checkbox2]"
 - Added procedure "Set max damage of [item] to [maxdmg]"
 - Added procedure "Set max stack size of [item] to [stacksize]"
+- Added procedure "Is UUID [string] valid"
 # 3.4.0
 - Added global trigger "Entity being converted"
 - Added procedure "Is [entity] flying"

@@ -21,6 +21,7 @@
 - The "Is entity teleport event caused by" check is now a field dropdown instead of a datalist
 - Added event "Entity finished converting"
 - Added procedure "Set repair cost of [item] to [amount]"
+- Added procedure "Set custom item name of [item] to [txt]"
 - Just like MCreator, (most) of the procedures now create methods for procedure code instead of creating Objects with anonymous methods
 # 3.5.0
 - Removed "Chunk loaded into world" event (see [Chunk Manager](https://mcreator.net/plugin/109717/chunk-manager-20) for that event + other useful chunk procedures)

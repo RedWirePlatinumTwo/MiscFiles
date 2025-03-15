@@ -1,4 +1,9 @@
 # Changelog
+# v4.0.3
+- Un-did util stuff for 1.21.1 because addTemplate doesn't work for Mcreator 2024.4 :((((
+# v4.0.2
+- "Text split foreach" now takes the [tosplit] string as a literal instead of regex
+- Slightly improved code for "Get object from registry [builtinregistry] class type: [class] registry id: [stringid]"
 # 4.0.1
 - "Is UUID [string] valid" procedure has been separated into a method (I forgot to do it before)
 # 4.0.0

@@ -1,4 +1,10 @@
 # Changelog
+# v4.1.1
+- For anyone that uses the "string split foreach" procedure pre-4.1.0, this change will prevent all procedures that use this from causing errors
+# v4.1.0
+- Added a "literal" checkbox for the "string split foreach" procedure that chooses whether the "tosplit" string should be taken literally or as regex
+- Added procedure "Get default instance of [item]"
+- Added procedure "Repeat [string] [amount] times"
 # v4.0.3
 - Un-did util stuff for 1.21.1 because addTemplate doesn't work for Mcreator 2024.4 :((((
 # v4.0.2

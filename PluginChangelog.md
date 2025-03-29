@@ -1,6 +1,6 @@
 # Changelog
 # 4.2.0
-- Support for Forge 1.20.1 has been re-added (5 procedures, however, simply cannot work with Forge; those have been listed to have "(NF Only)"
+- Support for Forge 1.20.1 has been re-added (5 procedures, however, simply cannot work with Forge; those have been listed to have "(NF Only)")
 # v4.1.1
 - For anyone that uses the "string split foreach" procedure pre-4.1.0, this change will prevent all procedures that use this from causing errors
 # v4.1.0

@@ -64,7 +64,7 @@ db 44 8B 74 8A 20
         </CheatEntry>
         <CheatEntry>
           <ID>3</ID>
-          <Description>"Hypersonic Towers"</Description>
+          <Description>"Hypersonic Towers (Do NOT use with Corvus)"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000099)
 [ENABLE]

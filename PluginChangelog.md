@@ -1,4 +1,10 @@
 # Changelog
+# 4.3.0
+- "Break out of/Continue with next iteration of timed loop" procedure no longer accepts procedures under it
+- Added procedure "Does [itemstack] have [datacomponent] (NF Only)"
+- Added event "Modify default components of item (NF Only)"
+- Added procedure "Set default component [datacomponent] of [item] to [value] (NF Only)"
+- Added procedure "Remove default component [datacomponent] of [item] (NF Only)"
 # 4.2.0
 - Support for Forge 1.20.1 has been re-added (5 procedures, however, simply cannot work with Forge; those have been listed to have "(NF Only)")
 # v4.1.1

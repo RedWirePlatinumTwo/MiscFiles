@@ -1,4 +1,7 @@
 # Changelog
+# 4.3.1
+- Procedures "Remove default component [datacomp] of [item]" and "Set default component [datacomp] of [item] to [value]" no longer use the "provided itemstack" procedure output, instead using the item picker procedure.
+- "Set default component [datacomp] of [item] to [value]" now allows the following to be edited more simply: DAMAGE, MAX_DAMAGE, MAX_STACK_SIZE, REPAIR_COST, ITEM_NAME, CUSTOM_NAME, USE_COOLDOWN, NOTE_BLOCK_SOUND, ITEM_MODEL, TOOLTIP_STYLE. (I currently do not have enough time to explain what value types these datacomponents allow specifically, but I will explain it later)
 # 4.3.0
 - "Break out of/Continue with next iteration of timed loop" procedure no longer accepts procedures under it
 - Added procedure "Does [itemstack] have [datacomponent] (NF Only)"

@@ -1,8 +1,48 @@
 To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Mutable-Components)
 # RedWires Plugin
-## test sub-title
-### test sub-sub-title
-- ough
+## Actions
+### Copy properties of [block] onto [block]
+- Copies all enum properties of the first blockstate onto the second blockstate
+### Deal [number] custom damage to [entity] localized as [text] (.player/.item) with custom source [damagesource]
+- The old "deal custom damage" procedure block, except with a completely customizable death message and editable procedure. I am aware this is not very useful with the creation of damage sources, however... I still have some uses for this so.. yeah. Also, since the official block has been deleted as of 2024.1, I unofficially declare this its successor.
+### Execute command / [cmd] in the name of [entity] with permission level [number]
+- Same thing as the regular "execute command" procedure block, except you can control how high the permissions can go. For example: If you have a command that executes a sub-command as a string, you can prevent players using /ban if they do not have OP privileges
+### Execute command / [cmd] at [x] [y] [z] with permission level [number]
+- same as above, but from a position instead of from a player
+### FORCE-add potion [potioneffect] with level [level] for [duration] ticks ambient [isambient] particles [showparticles] to [entity]
+- Allows you to give potion effects to entities that are normally immune to certain/all effects. In the instance of vanilla minecraft, you can apply whatever you want to the Wither and Ender dragon
+### Get object from registry [builtinregistry] class type: [class] registry id: [stringid] (Var name: "_regobject")
+- This is something more catered to my mod specifically. With this, you can get a specific object that matches the given stringid. This does not have to include the namespace (ex: "minecraft:sharpness" OR "sharpness"), however, you should beware if there are conflicting mods that share the same id of the same object
+### Repeat [number] times as timedloopiterator with tick wait time [tick]
+- Allows you to do something in a loop but have every action be delayed
+### (Break out/Continue with next iteration) of timed loop
+- The normal break out/continue with next iteration block won't work with the timed loop block because the procedure uses a recursive call instead of being an actual loop
+### Set invulnerable time of [entity] to [number] ticks
+- Sets the invincibility-frames (AKA I-Frames) to the given number
+### For each text in [textToSplit] split as [Splitter] ([literalcheck] literal) as stringiterator do [foreach] ([checkbox] use whole text if array is empty)
+- The String.split method. The literal check will toggle if the [Splitter] string should be taken as a literal string or regex. If you're not too savvy with coding, just keep the checkbox on. The checkbox for using the whole text simply does as it says, iterating only once but using the whole string if empty
+### For each entity in the current world as entityiterator do [foreach]
+- Didn't like the range limit with the given entity iterator for MCreator, so I made my own version
+### Set ticks in timed loop to [number]
+- Changes the tick wait time in the timed loop while the iteration is occurring
+### Directly set itemstack [variable] to [itemstack]
+- The 2024.4 update made it so that setting itemstack variables will always return a copy of said variable instead of the direct itemstack. This procedure not only allows you to set itemstack variables to the direct item, but also removes ".copy()" from the inserted itemstack code, allowing you to always get the direct itemstack (exception being itemstack iterator). NOTE: There is a reason why Klemen changed this, only use this if you are sure this won't cause issues
+### Set custom item name of [item] to [txt] (NF Only)
+- Unlike a display name, the txt won't be in italics. However, it can easily be replaced by setting a display name for it
+### Send command result message [msg] inform admins [boolean]
+- Unlike sending a regular message to the player, this procedure: Respects the SendCommandFeedback gamerule, won't show the message when executing this from a procedure, AND works for getting the command result as a string
+### Send command failure message [msg]
+- Same thing as above, but the text is in all red
+### Do [statement] for each world in server-side
+- Iterates each dimension and does the given statement. This does count as a loop, so you can use the "(break out/continue with next iteration) of loop" procedure with it
+### Set tick rate of provided world to [amount] (NF Only)
+- Works for both client and server; using a client-side check is recommended
+### Set default component [datacomponent] of [item] to [value] (NF Only)
+- Note: The value input accepts anything and has checks but only for *some* datacomponents. Those datacomponents, and the value types you can use are:
+- DAMAGE / MAX_DAMAGE / MAX_STACK_SIZE / REPAIR_COST / USE_COOLDOWN: number
+- ITEM_NAME / CUSTOM_NAME: text
+- NOTE_BLOCK_SOUND / TOOLTIP_STYLE: text (though it should be formatted as a resourcelocation, ex: `minecraft:diamond`)
+- ITEM_MODEL: itemstack
 
 # Mutable Components
 

@@ -1,5 +1,6 @@
 To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Mutable-Components)
 # RedWires Plugin
+
 ## Actions
 ### Copy properties of [block] onto [block]
 - Copies all enum properties of the first blockstate onto the second blockstate
@@ -43,6 +44,34 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - ITEM_NAME / CUSTOM_NAME: text
 - NOTE_BLOCK_SOUND / TOOLTIP_STYLE: text (though it should be formatted as a resourcelocation, ex: `minecraft:diamond`)
 - ITEM_MODEL: itemstack
+
+## Data
+### Get permission level of [entity]
+- Always is 0 for non-player entities
+### Get distance between [entity] and [sourceentity]
+- If sourceentity is null, returns -1
+### Get display name of mod from id [modid]
+- This applies *only* to currently active mods in your mod folder
+### Get version string of mod from id [modid]
+- Same as above
+### Is [entity] moving
+- Requested by someone in the NeoToolKit discord
+### Can [entity] find [sourceentity]
+- Checks if sourceentity isn't obscured from entity behind blocks. Always returns false if the distance is greater than 128 (this is not my doing, just something that is part of the method I used)
+### Get X/Y/Z position of block inbetween [entity] and [sourceentity]
+- Returns 0 if there is no block in the way
+### Are Overlays hidden
+- Overlays are hidden when you press F1, with this procedure check you can make your custom overlays also hide when F1 is pressed
+### Is keybind [key] being pressed
+- not actual key names (ex: A,B, C, etc) but the keybinds listed in the control settings. Includes custom keybinds. For example: If the selected keybind is "Attack" and "Attack/Destroy" in the games Key Bind settings is set to Left Button, then the procedure will return true if Left Button is currently being pressed
+### Is provided world singleplayer
+- Server sided check; will never return true in client
+### Is provided world hardcore
+- Same as above
+### Is default game mode of provided world [gamemode]
+- Same as above
+### Get tick rate of the provided world (NF Only)
+- Includes both server and client, so checking for client-side is recommended
 
 # Mutable Components
 

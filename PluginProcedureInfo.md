@@ -88,6 +88,11 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - returns true if the given string can be used as a UUID
 
 ## Global Triggers
+### Entity teleports
+### On anvil updated
+- Fires when either the left or right item slot of an anvil is changed
+### Item output taken from anvil
+- Fires when the output slot of an anvil is taken
 ### Player harvest block tick
 - does not fire for unbreakable blocks, such as bedrock
 ### Player block speed tick

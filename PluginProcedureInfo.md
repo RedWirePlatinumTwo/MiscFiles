@@ -73,6 +73,20 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 ### Get tick rate of the provided world (NF Only)
 - Includes both server and client, so checking for client-side is recommended
 
+## Global Trigger Procedures
+### Set break speed to [breakspeed] (Player block speed tick)
+- Changes your break speed of the block to the given number, not the break speed of the block itself
+### Set canHarvest of block to [boolean] (Player harvest block tick)
+- Whether or not the block being mined should drop its loot (does not act as the "silk touch" enchantment, so breaking a glass block with an item without the enchantment will still drop nothing)
+### Set level cost to [amount] (On anvil updated)
+- The level XP needed to upgrade an anvil item. The minimum amount needed is 1. Setting it to 0 will make it impossible to take the anvil output.
+### Set material cost to [amount] (On anvil updated)
+- The stack of items needed in item slot 2 to upgrade the item in slot 1
+
+## Utils
+### Is UUID [string] valid
+- returns true if the given string can be used as a UUID
+
 # Mutable Components
 
 You're MOM!!!!!!!!!!!!

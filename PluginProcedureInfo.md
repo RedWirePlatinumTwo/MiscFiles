@@ -1,7 +1,7 @@
-To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#MutableComponents)
+To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Mutable-Components)
 # RedWires Plugin
 ## test sub-title
 
-# MutableComponents
+# Mutable Components
 
 You're MOM!!!!!!!!!!!!

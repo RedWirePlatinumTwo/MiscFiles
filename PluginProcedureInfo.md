@@ -116,7 +116,7 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 ### For each sibling appending to [component] as [componentiterator] do [statement]
 - Iterates through each sibling component in [component]
 ### Send command result component [component] inform admins [true]
-- See [here for explanation](I'll put a link later smh)
+- See [here for explanation](PluginProcedureInfo.md#send-command-result-message-msg-inform-admins-boolean)
 ### Send command failure component [component]
 - Sends an error message (note: This is always colored red due to the way it's coded)
 ### Set custom item name of [item] to [component] (NF Only)

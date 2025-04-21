@@ -87,6 +87,22 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 ### Is UUID [string] valid
 - returns true if the given string can be used as a UUID
 
+## Global Triggers
+### Player harvest block tick
+- does not fire for unbreakable blocks, such as bedrock
+### Player block speed tick
+- does not fire for unbreakable blocks, such as bedrock. The breakspeed number variable represents your break speed, not the blocks hardness
+### Sound played at position
+- - (Some sounds - from both sound events - cannot be changed unfortunately. Some of these i've noticed are block breaking sounds and the glass shattering sound when throwing a potion)
+### Sound played from entity
+- Same as above
+### Entity being converted
+- NOTE: the "entityOutcome" for this event isn't the *actual* entity it transforms to considering event.getOutcome() only returns an EntityType for LivingConversionEvent.Pre. Basically, this just means its a reference to the entity it transforms to, not the actual transformed entity
+### Entity finished converting
+- The entity for this trigger *is* the outcome of the entity (and not just a reference to it)
+### Modify default components of item (NF Only)
+- As the name states, allows you to set the default components of an item or remove it. For example, you could set the max stack size of Snowballs to 64, or remove Max Damage of a sword to make it have unlimited uses
+
 # Mutable Components
 
 You're MOM!!!!!!!!!!!!

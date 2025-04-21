@@ -1,4 +1,4 @@
-To jump to info for Mutable Components, [click this](PluginProcedureInfo#MutableComponents)
+To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#MutableComponents)
 
 # MutableComponents
 

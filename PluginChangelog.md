@@ -1,4 +1,9 @@
 # Changelog
+# 4.4.0
+- Added procedure "For each enchantment applied to [item] as ID [string iterator] do [statement]"
+- Added procedure "Enchantment level iterator" in Utils utils for the applied enchantment loop
+- Added procedure "Attempt to do [statement1] if failure, do [statement2] [printerrorcheck] print error to console" in Utils
+- The procedure for getting an object from its (neo)forge registry is now 2 lines shorter in code
 # 4.3.2
 - DataComponent ITEM_MODEL takes an item as a value instead of a string for setting default components
 # 4.3.1

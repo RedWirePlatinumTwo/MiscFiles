@@ -44,6 +44,8 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - ITEM_NAME / CUSTOM_NAME: text
 - NOTE_BLOCK_SOUND / TOOLTIP_STYLE: text (though it should be formatted as a resourcelocation, ex: `minecraft:diamond`)
 - ITEM_MODEL: itemstack
+### Attempt to do [statement1] if failure, do [statement2] [printerrorcheck] print error to console
+- Attempts to run the contents of [statement1]. If something is encountered in the code that would result in a crash, it starts running [statement2].
 
 ## Data
 ### Get permission level of [entity]

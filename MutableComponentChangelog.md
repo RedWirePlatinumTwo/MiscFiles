@@ -1,3 +1,7 @@
+#v1.2.2
+- Added proper labeling for mutablecomponent-related stuff
+#v1.2.1
+- Added 2025002 in the list of supported versions
 # 1.2.0
 - Added Forge 1.20.1 support (Setting custom item name isn't possible for Forge, but at least setting display name is)
 # 1.1.3

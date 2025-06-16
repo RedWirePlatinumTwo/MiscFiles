@@ -1,4 +1,9 @@
 # Changelog
+# 4.5.0
+- Changed entity-from-UUID procedure text to "Get entity from UUID [string] from provided world" just to clarify that it only searches in that given world/dimension
+- Added 2025002 to the list of supported versions in plugin.json so 2025002 will be supported whenever the full release comes out
+- Added procedure "Get numerical ID of [entity]" (requested by mooth (bnuuy) from the NeoToolKit server)
+- Added procedure "Get entity from numeric id [number]" (also requested by mooth (bnuuy) from the NeoToolKit server)
 # 4.4.0
 - Added procedure "For each enchantment applied to [item] as ID [string iterator] do [statement]"
 - Added procedure "Enchantment level iterator" in Utils utils for the applied enchantment loop

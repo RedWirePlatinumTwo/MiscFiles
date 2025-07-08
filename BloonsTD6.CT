@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 49.0.9315 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 49.3.9410 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -451,13 +451,14 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-movss xmm6,[rbx+14]
+movss xmm6,[r14+14]
 
 exit2:
 jmp returnhere2
 
 addy2:
 jmp newmem2
+nop
 returnhere2:
 
   //code from here to '[DISABLE]' will be used to enable the cheat
@@ -470,7 +471,7 @@ newmem3: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode3:
-movss xmm6,[rbp+20]
+movss xmm6,[rbx+20]
 
 exit3:
 jmp returnhere3
@@ -489,7 +490,7 @@ newmem4: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode4:
-movss xmm7,[rbp+20]
+movss xmm7,[rbx+20]
 
 exit4:
 jmp returnhere4
@@ -506,15 +507,15 @@ db 41 8B 54 81 20
 //mov edx,[r9+rax*4+20]
 dealloc(newmem2)
 addy2:
-db F3 0F 10 73 38
+db F3 41 0F 10 76 38
 //movss xmm6,[rbx+38]
 dealloc(newmem3)
 addy3:
-db F3 0F 10 75 38
-//movss xmm6,[rbp+38]
+db F3 0F 10 73 38
+//movss xmm6,[rbx+38]
 dealloc(newmem4)
 addy4:
-db F3 0F 10 7D 3C
+db F3 0F 10 7B 3C
 //movss xmm7,[rbp+3C]
 </AssemblerScript>
         </CheatEntry>
@@ -828,7 +829,7 @@ db 8B 47 30 48 8B 5F 38
           <Description>"Edit cash-per-pop"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+0000004E</Address>
+          <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+00000058</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>24</ID>

@@ -786,6 +786,45 @@ db F3 0F 10 7B 3C
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
+          <ID>30</ID>
+          <Description>"No bloons"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005F)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov ebp,[rbx+20]
+call GameAssembly.mono_method_get_class+50
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop 3
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 8B 6B 40 E8 D9 85 83 FF
+//mov ebp,[rbx+40]
+//call GameAssembly.mono_method_get_class+50
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
           <ID>10</ID>
           <Description>"Free powers"</Description>
           <VariableType>Auto Assembler Script</VariableType>

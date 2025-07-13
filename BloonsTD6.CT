@@ -508,7 +508,7 @@ db 41 8B 54 81 20
 dealloc(newmem2)
 addy2:
 db F3 41 0F 10 76 38
-//movss xmm6,[rbx+38]
+//movss xmm6,[r14+38]
 dealloc(newmem3)
 addy3:
 db F3 0F 10 73 38
@@ -516,7 +516,7 @@ db F3 0F 10 73 38
 dealloc(newmem4)
 addy4:
 db F3 0F 10 7B 3C
-//movss xmm7,[rbp+3C]
+//movss xmm7,[rbx+3C]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -646,14 +646,13 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm11,[r13+24]
+movss xmm6,[rsi+24]
 
 exit:
 jmp returnhere
 
 addy:
 jmp newmem
-nop
 returnhere:
 
 
@@ -663,8 +662,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 45 0F 10 5D 44
-//movss xmm11,[r13+44]
+db F3 0F 10 76 44
+//movss xmm6,[rsi+44]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

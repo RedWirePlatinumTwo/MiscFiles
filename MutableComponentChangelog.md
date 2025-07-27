@@ -1,3 +1,8 @@
+# 2.0.0
+- Added support for NeoForge 1.20.6
+- Added support for NeoForge 1.20.4
+- Added support for Forge 1.19.4
+- The "(NF Only)" text for the few procedures that have it will now show the minimum generator version that the procedure supports.
 # 1.2.2
 - Added proper labeling for mutablecomponent-related stuff
 # 1.2.1

@@ -1,3 +1,5 @@
+# 2.1.0
+- Added support for Forge 1.19.2
 # 2.0.0
 - Added support for NeoForge 1.20.6
 - Added support for NeoForge 1.20.4

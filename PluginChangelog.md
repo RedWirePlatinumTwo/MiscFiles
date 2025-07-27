@@ -1,4 +1,10 @@
 # Changelog
+# 5.0.0
+I said I wouldn't be supporting lower versions... but I've decided that's a lie.
+- (Re)Added support for NF 1.20.6
+- Added support for NF 1.20.4
+- Added support for Forge 1.19.4 (To the one who asked me to make a backport of either 1.19.2 or 1.19.4 a year ago, your wish finally came true)
+- The "(NF Only)" text for the few procedures that have it will now show the minimum generator version that the procedure supports.
 # 4.5.0
 - Changed entity-from-UUID procedure text to "Get entity from UUID [string] from provided world" just to clarify that it only searches in that given world/dimension
 - Added 2025002 to the list of supported versions in plugin.json so 2025002 will be supported whenever the full release comes out

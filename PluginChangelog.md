@@ -1,6 +1,6 @@
 # Changelog
 # 5.1.0
-- Added support for 1.19.2 for anyone that still uses that
+- Added support for Forge 1.19.2 for anyone that still uses that
 # 5.0.0
 I said I wouldn't be supporting lower versions... but I've decided that's a lie.
 - (Re)Added support for NF 1.20.6

@@ -125,6 +125,7 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 ### Set custom item name of [item] to [component] (NF Only)
 - See [here for explanation](PluginProcedureInfo.md#set-custom-item-name-of-item-to-txt-nf-only). Unlike setting a display name, the (custom) item name won't be italicized by default
 ### Set text of sign block at [x] [y] [z] at line [number] to [component] front side [boolean]
+- NOTE: For versions 1.19.4 and under, the "front side [boolean]" has no effect as you cannot edit the back side of signs on versions below 1.20.x
 - The boolean determines what side of the sign should be changed. If it's true, the front will be edited, otherwise the back will be edited
 
 ## Data

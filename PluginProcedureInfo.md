@@ -5,7 +5,7 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 ### Copy properties of [block] onto [block]
 - Copies all enum properties of the first blockstate onto the second blockstate
 ### Deal [number] custom damage to [entity] localized as [text] (.player/.item) with custom source [damagesource]
-- NOTE: Although the fully-customized death message (should) work, the damage source does nothing on 1.19.2
+- NOTE: Although the fully-customized death message (should) work, the damage source input does nothing on 1.19.2
 - The old "deal custom damage" procedure block, except with a completely customizable death message and editable procedure. I am aware this is not very useful with the creation of damage sources, however... I still have some uses for this so.. yeah. Also, since the official block has been deleted as of 2024.1, I unofficially declare this its successor.
 ### Execute command / [cmd] in the name of [entity] with permission level [number]
 - Same thing as the regular "execute command" procedure block, except you can control how high the permissions can go. For example: If you have a command that executes a sub-command as a string, you can prevent players using /ban if they do not have OP privileges

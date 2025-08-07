@@ -1,4 +1,6 @@
 # Changelog
+# 5.1.1
+- "Is provided world hardcore" is no longer a server-side only check
 # 5.1.0
 - Added support for Forge 1.19.2 for anyone that still uses that
 # 5.0.0

@@ -69,8 +69,6 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - not actual key names (ex: A,B, C, etc) but the keybinds listed in the control settings. Includes custom keybinds. For example: If the selected keybind is "Attack" and "Attack/Destroy" in the games Key Bind settings is set to Left Button, then the procedure will return true if Left Button is currently being pressed
 ### Is provided world singleplayer
 - Server sided check; will never return true in client
-### Is provided world hardcore
-- Same as above
 ### Is default game mode of provided world [gamemode]
 - Same as above
 ### Get tick rate of the provided world (NF Only)

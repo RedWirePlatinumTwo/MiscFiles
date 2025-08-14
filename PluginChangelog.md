@@ -1,4 +1,8 @@
 # Changelog
+# 5.1.2
+- Slightly changed the text_split_foreach procedure code to use the default value operator instead of re-assigning a (potential) missing value
+- Added a procedure "Attempt to do [x] print error to console [y]", which is a copy of an already-existing procedure, just without the statement if it fails
+- Slightly changed the text.properties line for try_and_catch
 # 5.1.1
 - "Is provided world hardcore" is no longer a server-side only check
 # 5.1.0

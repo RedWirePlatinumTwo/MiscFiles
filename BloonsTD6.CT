@@ -904,7 +904,7 @@ returnhere:
 dealloc(newmem)
 addy:
 db 44 8B 6F 34 48 8B 5F 38
-//mov r14d,[rdi+34]
+//mov r13d,[rdi+34]
 //mov rbx,[rdi+38]
 </AssemblerScript>
         </CheatEntry>
@@ -913,3 +913,4 @@ db 44 8B 6F 34 48 8B 5F 38
   </CheatEntries>
   <UserdefinedSymbols/>
 </CheatTable>
+

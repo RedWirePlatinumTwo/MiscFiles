@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 50.1.9701 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 50.2.9762 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -102,7 +102,7 @@ db F3 0F 10 73 70
           <ID>4</ID>
           <Description>"Remove ability cooldowns"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+00000085)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+00000091)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -114,7 +114,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm6,[rdi+00000081]
+movss xmm7,[rdi+00000091]
 
 exit:
 jmp returnhere
@@ -131,8 +131,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 B7 88 00 00 00
-//movss xmm6,[rdi+00000088]
+db F3 0F 10 BF 90 00 00 00
+//movss xmm7,[rdi+00000090]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -470,7 +470,7 @@ newmem3: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode3:
-movss xmm6,[rbx+20]
+movss xmm6,[rbp+20]
 
 exit3:
 jmp returnhere3
@@ -824,45 +824,6 @@ db 8B 6B 40 E8 59 8D 7E FF
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>10</ID>
-          <Description>"Free powers"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Powers.PowerModel.Clone+00000077)
-[ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem,2048,addy)
-label(returnhere)
-label(originalcode)
-label(exit)
-
-newmem: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode:
-mov r15d,[rsi+20]
-movzx r12d,byte ptr [rsi+34]
-
-exit:
-jmp returnhere
-
-addy:
-jmp newmem
-nop 4
-returnhere:
-
-
-
-
-[DISABLE]
-//code from here till the end of the code will be used to disable the cheat
-dealloc(newmem)
-addy:
-db 44 8B 7E 30 44 0F B6 66 34
-//mov r15d,[rsi+30]
-//movzx r12d,byte ptr [rsi+34]
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
           <ID>23</ID>
           <Description>"Edit cash-per-pop"</Description>
           <ShowAsSigned>0</ShowAsSigned>
@@ -913,4 +874,3 @@ db 44 8B 6F 34 48 8B 5F 38
   </CheatEntries>
   <UserdefinedSymbols/>
 </CheatTable>
-

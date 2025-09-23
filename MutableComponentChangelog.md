@@ -1,3 +1,10 @@
+# 2.2.0
+- Fixed getting R, G, and B values from an RGB color causing build errors if using a variable as the RGB value
+- Improved the code look of converting RGB to number
+- Added procedure "Convert R:[a] G:[b] B:[c] Alpha:[d] to number" to Utils
+- Added procedure "Get Alpha from RGB [x]" to Utils
+- Added procedure "Color [x] to RGB (Built-in)"
+- Added procedure "Color [x] to RGB (2025.3+)" (Note: 2025.3 is currently not supported and I don't want to add support for unstable snapshot versions. For versions 2025.3 or lower, the option to pick a color will not appear as its something specifically added to 2025.3+)
 # 2.1.0
 - Added support for Forge 1.19.2
 # 2.0.0

@@ -1,3 +1,5 @@
+# 2.2.1
+- Fixed "Color [x] to RGB (Built-in)" not working because I mis-named the java.ftl file
 # 2.2.0
 - Fixed getting R, G, and B values from an RGB color causing build errors if using a variable as the RGB value
 - Improved the code look of converting RGB to number

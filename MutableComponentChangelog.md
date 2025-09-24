@@ -1,3 +1,6 @@
+# 2.2.2
+- "Convert R:[a] G:[b] B:[c] Alpha:[d] to number" procedure will now provide a default Alpha value of 255
+- Slightly changed text for 2 procedures
 # 2.2.1
 - Fixed "Color [x] to RGB (Built-in)" not working because I mis-named the java.ftl file
 # 2.2.0

@@ -1,7 +1,7 @@
 # Changelog
 # v5.1.3
 - Added UUID randomizing to prevent cloned entities from despawning on world reload
-- Added procedure "Static cloned entity of [entity] (no spawning)", functioning similar to "Static entity instance of type [x] (no spawning), except it'll create a static entity with the same data as the entity input
+- Added procedure "Static cloned entity of [entity] (no spawning)", functioning similarly to "Static entity instance of type [x] (no spawning), except it'll create a static entity with the same data as the entity input
 # 5.1.2
 - Slightly changed the text_split_foreach procedure code to use the default value operator instead of re-assigning a (potential) missing value
 - Added a procedure "Attempt to do [x] print error to console [y]", which is a copy of an already-existing procedure, just without the statement if it fails

@@ -1,5 +1,6 @@
 # Changelog
 # v5.1.3
+- Changed text of procedure "Get default name of [entity]" to "Get name type of [entity]"
 - Added UUID randomizing to prevent cloned entities from despawning on world reload
 - Added procedure "Static cloned entity of [entity] (no spawning)", functioning similarly to "Static entity instance of type [x] (no spawning), except it'll create a static entity with the same data as the entity input
 # 5.1.2

@@ -1,4 +1,10 @@
 # Changelog
+# 5.2.0
+- Slightly changed text for the "Create clone of [entity]" procedure just to clarify that it also spawns said entity
+- Removed "Client-side only" indicator from "On anvil updated" event (No idea why I thought it was client-side only but it fires on both sides)
+- Removed "Server-side only" indicator from "Item output taken from anvil" event for the same reason as above
+- Added procedure "End procedure" in Utils. Literally just return;, stopping any code below this block from running. DO NOT USE IN PROCEDURES USED TO RETURN VALUES. IT WILL CAUSE BUILD ERRORS. Some loop procedures will error with this, so I recommend breaking out of the loop then using this.
+- Added procedure "Set new target for source entity to [entity] (Entity sets attack target)". Noticed that if you set the attack target of source entity directly from the event, it can cause a stack overflow, so this procedure helps avoid that. ("No entity" also works as an entity input)
 # 5.1.4
 - Added a null-check for the static cloned entity procedure
 # v5.1.3

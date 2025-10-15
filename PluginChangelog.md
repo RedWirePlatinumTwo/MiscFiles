@@ -1,6 +1,6 @@
 # Changelog
 # 5.3.0
-- Revised all procedure colors to allow visual changes if the Blockly editor saturation/brightness values are edited instead of a fixed hex value
+- Revised all procedure colors to allow visual changes if the Blockly editor saturation/brightness values are edited instead of a fixed RGB value
 # 5.2.0
 - Slightly changed text for the "Create clone of [entity]" procedure just to clarify that it also spawns said entity
 - Removed "Client-side only" indicator from "On anvil updated" event (No idea why I thought it was client-side only but it fires on both sides)

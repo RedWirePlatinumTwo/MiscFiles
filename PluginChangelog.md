@@ -1,6 +1,6 @@
 # Changelog
 # 5.4.2
-- Re-named the "Get literal UUID of [entity]" procedure so it doesn't clash with MCreators string uuid getter
+- Re-named the file of "Get literal UUID of [entity]" procedure so it doesn't clash with MCreators string uuid getter
 - Added some extra strings in text.properties for UUID-related var stuff, although currently useless
 # 5.4.1
 - Added procedure "Is literal UUID [uuid] same as [uuid2]" (I forgot to include this before 😔)

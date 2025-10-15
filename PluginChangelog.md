@@ -2,6 +2,7 @@
 # 5.4.2
 - Re-named the file of "Get literal UUID of [entity]" procedure so it doesn't clash with MCreators string uuid getter
 - Added some extra strings in text.properties for UUID-related var stuff, although currently useless
+- Moved "Is literal UUID [uuid] same as [uuid2] to the MCreator logic tab
 # 5.4.1
 - Added procedure "Is literal UUID [uuid] same as [uuid2]" (I forgot to include this before 😔)
 - Changed text of the UUID-NBT-get procedure to line up with the other NBT procedures

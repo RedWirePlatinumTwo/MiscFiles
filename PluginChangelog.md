@@ -1,6 +1,7 @@
 # Changelog
 # 5.4.1
 - Added procedure "Is literal UUID [uuid] same as [uuid2]" (I forgot to include this before 😔)
+- Changed text of the UUID-NBT-get procedure to line up with the other NBT procedures
 # 5.4.0
 - Slightly changed text for "Is UUID [txt] valid" and "Get entity from UUID [txt] from provided world" to clarify that it uses *string* UUIDs.
 - Added procedure "Get literal UUID of [entity]"

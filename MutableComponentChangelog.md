@@ -1,3 +1,6 @@
+# 2.3.0
+- Revised all procedure colors to allow visual changes if the Blockly editor saturation/brightness values are edited instead of a fixed hex value
+- Added procedure "Component from translatable key [text]"
 # 2.2.2
 - "Convert R:[a] G:[b] B:[c] to number" procedure will now provide a default Alpha value of 255
 - Slightly changed text for 2 procedures

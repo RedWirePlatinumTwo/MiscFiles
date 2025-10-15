@@ -1,4 +1,11 @@
 # Changelog
+# 5.4.0
+- Slightly changed text for "Is UUID [txt] valid" and "Get entity from UUID [txt] from provided world" to clarify that it uses *string* UUIDs.
+- Added procedure "Get literal UUID of [entity]"
+- Added procedure "Does [entity] have custom UUID NBT tag [tagname]"
+- Added procedure "Get UUID from [entity] custom NBT tag [tagname]"
+- Added procedure "Set [entity] custom UUID NBT tag [tagname] to [uuid]"
+- Added procedure "Get entity from literal UUID [uuid] from provided world". Main reason I did all this is because I learned that parsing a string UUID every tick can tank performance in comparison to directly using UUID
 # 5.3.0
 - Revised all procedure colors to allow visual changes if the Blockly editor saturation/brightness values are edited instead of a fixed RGB value
 # 5.2.0

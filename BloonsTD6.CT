@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 50.2.9762 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 51.0.9931 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -325,7 +325,7 @@ db 0F B6 86 2A 01 00 00
           <ID>12</ID>
           <Description>"Line of sight bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000123)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000126)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000E6)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+0000010A)
 [ENABLE]
@@ -414,7 +414,7 @@ db 0F B6 47 50 F3 44 0F 10 4F 48
           <ID>15</ID>
           <Description>"Place towers anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000003F)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000000E)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.CircleFootprintModel.Clone+00000048)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+0000004D)
 define(addy4,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+00000055)
@@ -429,16 +429,14 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov edx, edx
-nop
-nop
-nop
+//i forgor 💀
 
 exit:
 jmp returnhere
 
 addy:
-jmp newmem
+mov rax,[rcx+000000B8]
+cmp byte ptr [rax+31],01
 returnhere:
 
  //code from here to '[DISABLE]' will be used to enable the cheat
@@ -470,7 +468,7 @@ newmem3: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode3:
-movss xmm6,[rbp+20]
+movss xmm6,[rbx+20]
 
 exit3:
 jmp returnhere3
@@ -489,7 +487,7 @@ newmem4: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode4:
-movss xmm7,[rbp+20]
+movss xmm7,[rbx+20]
 
 exit4:
 jmp returnhere4
@@ -502,19 +500,20 @@ returnhere4:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 41 8B 54 81 20
-//mov edx,[r9+rax*4+20]
+db 48 8B 81 B8 00 00 00 80 78 31 00
+//mov rax,[rcx+000000B8]
+//cmp byte ptr [rax+31],00
 dealloc(newmem2)
 addy2:
 db F3 0F 10 73 38
 //movss xmm6,[rbx+38]
 dealloc(newmem3)
 addy3:
-db F3 0F 10 75 38
+db F3 0F 10 73 38
 //movss xmm6,[rbp+38]
 dealloc(newmem4)
 addy4:
-db F3 0F 10 7D 3C
+db F3 0F 10 7B 3C
 //movss xmm7,[rbx+3C]
 </AssemblerScript>
         </CheatEntry>
@@ -828,7 +827,7 @@ db 8B 6B 40 E8 59 8D 7E FF
           <Description>"Edit cash-per-pop"</Description>
           <ShowAsSigned>0</ShowAsSigned>
           <VariableType>4 Bytes</VariableType>
-          <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+0000004E</Address>
+          <Address>Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+00000058</Address>
         </CheatEntry>
         <CheatEntry>
           <ID>24</ID>
@@ -846,15 +845,14 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov r13d,[rdi+24]
-mov rbx,[rdi+38]
+//ermmm idk
 
 exit:
 jmp returnhere
 
 addy:
-jmp newmem
-nop 3
+mov r13d,[rdi+24]
+mov rbx,[rdi+38]
 returnhere:
 
 

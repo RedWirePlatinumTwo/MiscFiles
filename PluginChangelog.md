@@ -1,4 +1,6 @@
 # Changelog
+# 5.5.0
+- Added get, has and set UUID data tag procedures for both items and blocks
 # 5.4.2
 - Re-named the file of "Get literal UUID of [entity]" procedure so it doesn't clash with MCreators string uuid getter
 - Added some extra strings in text.properties for UUID-related var stuff, although currently useless

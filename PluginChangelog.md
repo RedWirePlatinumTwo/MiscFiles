@@ -1,4 +1,6 @@
 # Changelog
+# 5.5.1
+- Added server-side indicator for getting entity from string/literal UUID and executing command from entity/world with permission level (Note: getting entity from numeric ID works both sides, so that is intentionally left without an indicator)
 # 5.5.0
 - Added get, has and set UUID data tag procedures for both items and blocks
 # 5.4.2

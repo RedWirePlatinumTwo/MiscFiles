@@ -817,7 +817,7 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 8B 6B 40 E8 59 8D 7E FF
+db 8B 6B 40 E8 F9 35 7C FF
 //mov ebp,[rbx+40]
 //call GameAssembly.il2cpp_method_get_class+60
 </AssemblerScript>

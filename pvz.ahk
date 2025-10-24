@@ -1,8 +1,12 @@
-﻿originalX := 800
+originalX := 800
 originalY := 600
 calculateX(screenX, windowX, windowY) {
 	scaleFactor := Min(windowX / originalX, windowY / originalY)
-	return (screenX * scaleFactor) + ((windowX - (originalX * scaleFactor))/2)
+	retVal := (screenX * scaleFactor) + ((windowX - (originalX * scaleFactor))/2)
+	if (retVal == 0) {
+		retVal := screenX
+	}
+	return retVal
 }
 ~+2::{
 	if WinActive("Plants vs. Zombies") {

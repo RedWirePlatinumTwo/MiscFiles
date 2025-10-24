@@ -2,11 +2,7 @@ originalX := 800
 originalY := 600
 calculateX(screenX, windowX, windowY) {
 	scaleFactor := Min(windowX / originalX, windowY / originalY)
-	retVal := (screenX * scaleFactor) + ((windowX - (originalX * scaleFactor))/2)
-	if (retVal == 0) {
-		retVal := screenX
-	}
-	return retVal
+	return (screenX * scaleFactor) + ((windowX - (originalX * scaleFactor))/2)
 }
 ~+2::{
 	if WinActive("Plants vs. Zombies") {
@@ -80,3 +76,4 @@ calculateX(screenX, windowX, windowY) {
 	ControlClick "x" String(calculateX(625, x, y)) " y" String((60/originalY)*y), "A"
 	}
 }
+

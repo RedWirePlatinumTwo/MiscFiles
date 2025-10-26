@@ -1,4 +1,6 @@
 # Changelog
+# 5.5.3
+- Fixed a thing where I accidentally screwed up "Get entity from string uuid" in versions 1.20.6 or lower
 # 5.5.2
 - Changed code of "Get entity from literal uuid [uuid]" to be a simple one-liner instead of creating a method (or anonymous object, depending on the Minecraft version)
 - Moved all UUID-related procedures (except for UUID comparison) to a new plugin tab labeled "UUID"

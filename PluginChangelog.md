@@ -1,4 +1,10 @@
 # Changelog
+# 5.5.2
+- Changed code of "Get entity from literal uuid [uuid]" to be a simple one-liner instead of creating a method (or anonymous object, depending on the Minecraft version)
+- Moved all UUID-related procedures (except for UUID comparison) to a new plugin tab labeled "UUID"
+- Removed the "regclasses.yaml" datalist
+- Improved the "forgeregs" datalist to include the data from regclasses.yaml
+- The "Get object from registry" plugin no longer uses a second field for defining class type
 # 5.5.1
 - Added server-side indicator for getting entity from string/literal UUID and executing command from entity/world with permission level (Note: getting entity from numeric ID works both sides, so that is intentionally left without an indicator)
 # 5.5.0

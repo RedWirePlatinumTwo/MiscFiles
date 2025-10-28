@@ -1,4 +1,7 @@
 # Changelog
+# 5.5.4
+- Getting the entity that a player is spectating will no longer (manually) return null if it's spectating itself/isn't spectating anything
+- Added customBlockIndex stuff for certain data procedures to prevent potential build errors (thanks Klemen for removing backwards compatibility btw. very helpful)
 # 5.5.3
 - Fixed a thing where I accidentally screwed up "Get entity from string uuid" in versions 1.20.6 or lower
 # 5.5.2

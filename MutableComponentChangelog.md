@@ -1,3 +1,5 @@
+# 2.3.1
+- Improved data code on certain procedures on Minecraft versions 1.20.4 or lower to avoid generated code clutter with ${input$component} being used twice
 # 2.3.0
 - Revised all procedure colors to allow visual changes if the Blockly editor saturation/brightness values are edited instead of a fixed RGB value
 - Added procedure "Component from translatable key [text]"

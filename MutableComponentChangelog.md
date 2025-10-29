@@ -1,3 +1,6 @@
+# 2.3.2
+- Slightly changed data code for procedures on Minecraft versions 1.20.4 or lower to prevent variable-collision build errors
+- Fixed "Get entity name from hover event of [component]" being broken for Minecraft versions 1.20.4 or lower post-v2.3.1
 # 2.3.1
 - Improved data code on certain procedures on Minecraft versions 1.20.4 or lower to avoid generated code clutter with ${input$component} being used twice
 # 2.3.0

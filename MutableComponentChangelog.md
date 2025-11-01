@@ -1,3 +1,5 @@
+# 3.0.0
+- Added support for 2025.3 / NeoForge 1.21.8
 # 2.3.2
 - Slightly changed data code for procedures on Minecraft versions 1.20.4 or lower to prevent variable-collision build errors
 - Fixed "Get entity name from hover event of [component]" being broken for Minecraft versions 1.20.4 or lower post-v2.3.1

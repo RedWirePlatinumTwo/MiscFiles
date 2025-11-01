@@ -1,4 +1,8 @@
 # Changelog
+# 6.0.0
+- Added support for 2025.3 / NeoForge 1.21.8
+- Added event "Item crafted from anvil (1.21.8<), mainly serving as a replacement for "Item output taken from anvil" as both events function differently.
+- Changed markings for procedures/events that are only supported on specific minecraft versions with  < and > (ex: 1.20.4< means 1.20.4 or greater, 1.21.4> means 1.21.4 or lower)
 # 5.5.4
 - Getting the entity that a player is spectating will no longer (manually) return null if it's spectating itself/isn't spectating anything
 - Added customBlockIndex stuff for certain data procedures to prevent potential build errors (thanks Klemen for removing backwards compatibility btw. very helpful)

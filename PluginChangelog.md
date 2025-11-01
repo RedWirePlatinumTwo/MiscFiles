@@ -1,4 +1,6 @@
 # Changelog
+# 6.0.1
+- Added null-checks to the 1.21.8 get/has NBT UUID util files to prevent crashes on world load
 # 6.0.0
 - Added support for 2025.3 / NeoForge 1.21.8
 - Added event "Item crafted from anvil (1.21.8<), mainly serving as a replacement for "Item output taken from anvil" as both events function differently.

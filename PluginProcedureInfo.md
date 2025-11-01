@@ -94,9 +94,9 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - Fires when either the left or right item slot of an anvil is changed
 ### Item output taken from anvil
 - Fires when the output slot of an anvil is taken
-### Player harvest block tick
+### Player harvest block checker tick update
 - does not fire for unbreakable blocks, such as bedrock
-### Player block speed tick
+### Player block speed checker tick update
 - does not fire for unbreakable blocks, such as bedrock. The breakspeed number variable represents your break speed, not the blocks hardness
 ### Sound played at position
 - - (Some sounds - from both sound events - cannot be changed unfortunately. Some of these i've noticed are block breaking sounds and the glass shattering sound when throwing a potion)

@@ -92,7 +92,7 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 ### Entity teleports
 ### On anvil updated
 - Fires when either the left or right item slot of an anvil is changed
-### Item output taken from anvil
+### Item output taken from anvil (1.21.4>)
 - Fires when the output slot of an anvil is taken
 ### Player harvest block checker tick update
 - does not fire for unbreakable blocks, such as bedrock
@@ -108,6 +108,9 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - The entity for this trigger *is* the outcome of the entity (and not just a reference to it)
 ### Modify default components of item (NF Only)
 - As the name states, allows you to set the default components of an item or remove it. For example, you could set the max stack size of Snowballs to 64, or remove Max Damage of a sword to make it have unlimited uses
+### Item crafted from anvil (1.21.8<)
+- Same as Item output taken from anvil, but functions differently for 1.21.8
+- NOTE: **Canceling the event will cancel anvil damage, BUT will prevent charging the player XP and removing the input items**. Handle accordingly.
 
 # Mutable Components
 

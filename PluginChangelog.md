@@ -1,6 +1,6 @@
 # Changelog
 # 6.0.3
-- Small but appreciable error change for the tagGetUUID error throwing if tag is null
+- Small but appreciable error change for the 1.21.8 tagGetUUID error-throwing if tag is null
 # 6.0.2
 - Removed the OnlyIn(Dist.CLIENT) thing for ALL versions of "On anvil updated" global event. Was entirely un-needed (I forgot it was even there tbh) and allows you to skip the game warnings about OnlyIn for said procedures that use the event (on 1.21.8).
 - "Player block speed tick" and "Player harvest check tick" have both been renamed to better fit with the other tick-update events (this includes text *and* files as well). You will now see the tick info text at the bottom of your screen like the others, but you will have to manually re-select the event from the dropdown list.

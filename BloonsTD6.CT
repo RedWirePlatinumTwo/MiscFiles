@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 51.1.9967 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 51.2.9998 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -173,7 +173,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-mulss xmm0,[rsi+20]
+mulss xmm0,[rax+20]
 
 exit2:
 jmp returnhere2
@@ -196,8 +196,8 @@ db F3 0F 10 7E 60
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem2)
 addy2:
-db F3 0F 59 46 60
-//mulss xmm0,[rsi+60]
+db F3 0F 59 40 60
+//mulss xmm0,[rax+60]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -644,14 +644,13 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm11,[r13+24]
+movss xmm6,[rsi+24]
 
 exit:
 jmp returnhere
 
 addy:
 jmp newmem
-nop
 returnhere:
 
 
@@ -661,7 +660,7 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 45 0F 10 5D 44
+db F3 0F 10 76 44
 //movss xmm11,[r13+44]
 </AssemblerScript>
         </CheatEntry>
@@ -819,7 +818,7 @@ dealloc(newmem)
 addy:
 db 8B 6B 40 E8 F9 35 7C FF
 //mov ebp,[rbx+40]
-//call GameAssembly.il2cpp_method_get_class+60
+//call GameAssembly.il2cpp_method_get_declaring_type+60
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

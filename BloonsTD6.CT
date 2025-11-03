@@ -799,7 +799,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 
 originalcode:
 mov ebp,[rbx+20]
-call GameAssembly.il2cpp_method_get_declaring_type+60
+call GameAssembly.il2cpp_runtime_class_init+1520
 
 exit:
 jmp returnhere
@@ -818,7 +818,7 @@ dealloc(newmem)
 addy:
 db 8B 6B 40 E8 F9 35 7C FF
 //mov ebp,[rbx+40]
-//call GameAssembly.il2cpp_method_get_declaring_type+60
+//call GameAssembly.il2cpp_runtime_class_init+1520
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

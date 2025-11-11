@@ -1,4 +1,9 @@
 # Changelog
+# 6.0.4
+- Moved all UUID-related procedures (except for get entity from string UUID) over to my new plugin
+- Added data procedure "Remove ".copy()" from itemstack code [itemstack]"
+- Slightly changed text of "Directly set itemstack [var] to [itemstack]" to clarify that it removes ".copy()" from its code
+- Added "event" Placeholder Event. This does not exist in normal means, and is only really there if you wish to use the blockly UI in procedures whilst executing said procedure somewhere else (or modify the cancel behavior) in custom code.
 # 6.0.3
 - Small but appreciable error change for the 1.21.8 tagGetUUID error-throwing if tag is null
 # 6.0.2

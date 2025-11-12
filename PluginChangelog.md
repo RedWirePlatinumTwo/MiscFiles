@@ -1,4 +1,7 @@
 # Changelog
+# 6.0.5
+- Removed x, y, and z fields from PlaceholderEvent in replacement for Vec3 pos
+- Added damagesource, direction, and dimension dependencies to the Placeholder event
 # 6.0.4
 - Moved all UUID-related procedures (except for get entity from string UUID) over to my new plugin
 - Added data procedure "Remove ".copy()" from itemstack code [itemstack]"

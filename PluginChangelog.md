@@ -1,4 +1,7 @@
 # Changelog
+# 6.0.7
+- Fixed Builder.sourceEntity(Entity) in PlaceholderEvent not properly setting sourceEntity (woops)
+- Changed extras to allow it to be part of Builder
 # 6.0.6
 - Changed most PlaceholderEvent private final fields to public final (and removed the getter methods)
 - Added a public extras Map field to pass any optional arguments not listed

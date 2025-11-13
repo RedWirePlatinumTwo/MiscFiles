@@ -1,4 +1,7 @@
 # Changelog
+# 6.0.6
+- Changed most PlaceholderEvent private final fields to public final (and removed the getter methods)
+- Added a public extras Map field to pass any optional arguments not listed
 # 6.0.5
 - Removed x, y, and z fields from PlaceholderEvent in replacement for Vec3 pos
 - Added damagesource, direction, and dimension dependencies to the Placeholder event

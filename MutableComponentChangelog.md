@@ -1,3 +1,8 @@
+# 3.0.2
+- Shifted the "Empty component" block in "Append [component1] to [ccomponent2]" over to component1
+- Moved "Component with text [txt]", "Component from translatable key [txt]", and "Text from component [comp]" over to Utils
+# 3.0.1
+- Changed all procedures that used a variable getter as a mutablecomponent placeholder to instead use "Empty Component"
 # 3.0.0
 - Added support for 2025.3 / NeoForge 1.21.8
 # 2.3.2

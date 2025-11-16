@@ -1,4 +1,9 @@
 # Changelog
+# 6.1.0
+- Added client-side indicator to the "Is keybind pressed" procedure(This does still work on both sides on singleplayer sessions, but will only be true on the client for multiplayer sessions)
+- Added @Nullable annotations for each of the PlaceholderEvent fields (just in case)
+- "Is provided world singleplayer" is now works on both sides instead of server-only
+- Added procedure "Local player" in Utils
 # 6.0.7
 - Fixed Builder.sourceEntity(Entity) in PlaceholderEvent not properly setting sourceEntity (woops)
 - Changed extras to allow it to be part of Builder

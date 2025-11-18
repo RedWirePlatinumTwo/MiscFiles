@@ -1,4 +1,7 @@
 # Changelog
+# 6.1.1
+- Added client-side indicator to "Is [entity] moving" procedure (curse you deltamovement \*shakes fist at air*)
+- Added client-side indicator to "Are overlays hidden" (This one probably should have been more obvious, but still)
 # 6.1.0
 - Added client-side indicator to the "Is keybind pressed" procedure (This does still work on both sides on singleplayer sessions, but will only be true on the client for multiplayer sessions)
 - Added @Nullable annotations for each of the PlaceholderEvent fields (just in case)

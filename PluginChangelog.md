@@ -1,4 +1,6 @@
 # Changelog
+# 6.1.2
+- Added a method override for "isCancelable" for the Forge version of PlaceholderEvent to actually allow event "canceling"
 # 6.1.1
 - Added client-side indicator to "Is [entity] moving" procedure (curse you deltamovement \*shakes fist at air*)
 - Added client-side indicator to "Are overlays hidden" (This one probably should have been more obvious, but still)

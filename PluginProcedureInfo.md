@@ -67,10 +67,8 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - Overlays are hidden when you press F1, with this procedure check you can make your custom overlays also hide when F1 is pressed
 ### Is keybind [key] being pressed
 - not actual key names (ex: A,B, C, etc) but the keybinds listed in the control settings. Includes custom keybinds. For example: If the selected keybind is "Attack" and "Attack/Destroy" in the games Key Bind settings is set to Left Button, then the procedure will return true if Left Button is currently being pressed
-### Is provided world singleplayer
-- Server sided check; will never return true in client
 ### Is default game mode of provided world [gamemode]
-- Same as above
+- Server sided check; will never return true in client
 ### Get tick rate of the provided world (NF Only)
 - Includes both server and client, so checking for client-side is recommended
 
@@ -111,6 +109,8 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 ### Item crafted from anvil (1.21.8<)
 - Same as Item output taken from anvil, but functions differently for 1.21.8
 - NOTE: **Canceling the event will cancel anvil damage, BUT will prevent charging the player XP and removing the input items**. Handle accordingly.
+### Client tick update
+- Fires per-tick *BUT* will perform even without a defined world or player. MCreator already has a entity null-check, but a manual null-check for "world" dependency (if used) is required to prevent potential crashes.
 
 # Mutable Components
 

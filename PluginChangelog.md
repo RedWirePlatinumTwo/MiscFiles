@@ -1,4 +1,7 @@
 # Changelog
+# 6.2.0
+- Set all util methods for 1.21.4< procedures to "private static" (not that it really matters procedure-wise anyway)
+- Added global trigger "Client tick update". This is *not* the same as "doing something on player tick but client-only", as this event can fire each tick even if target entity or world is null. (With that being said, null-checks are highly recommended to avoid crashing). Personally, I added this for my C2S packets.
 # 6.1.2
 - Added a method override for "isCancelable" for the Forge version of PlaceholderEvent to actually allow event "canceling"
 # 6.1.1

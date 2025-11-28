@@ -1,4 +1,7 @@
 # Changelog
+# 6.2.1
+- The world dependency for "Client tick update" global trigger now uses Minecraft.level instead of Minecraft.player.level()
+- Added some automatic null-checks if a procedure using the "Client tick update" global trigger requires the "world" dependency or "x, y, z" (which null-checks Minecraft.player)
 # 6.2.0
 - Set all util methods for 1.21.4< procedures to "private static" (not that it really matters procedure-wise anyway)
 - Added global trigger "Client tick update". This is *not* the same as "doing something on player tick but client-only", as this event can fire each tick even if target entity or world is null. (With that being said, null-checks are highly recommended to avoid crashing). Personally, I added this for my C2S packets.

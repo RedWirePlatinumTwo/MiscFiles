@@ -110,7 +110,7 @@ To jump to info for Mutable Components, [click this](PluginProcedureInfo.md#Muta
 - Same as Item output taken from anvil, but functions differently for 1.21.8
 - NOTE: **Canceling the event will cancel anvil damage, BUT will prevent charging the player XP and removing the input items**. Handle accordingly.
 ### Client tick update
-- Fires per-tick *BUT* will perform even without a defined world or player. MCreator already has a entity null-check, but a manual null-check for "world" dependency (if used) is required to prevent potential crashes.
+- Fires per-tick *BUT* will perform even without a defined world or player. Null-checks will be automatically given if a procedure using this global trigger requires the "world" or any of the "x", "y", or "z" position dependencies.
 
 # Mutable Components
 

@@ -1,4 +1,6 @@
 # Changelog
+# 6.2.2
+- Added (value = Dist.CLIENT) to the @EventBusSubscriber of "Client tick update" to prevent dedicated server crashes (teehee woopsies)
 # 6.2.1
 - The world dependency for "Client tick update" global trigger now uses Minecraft.level instead of Minecraft.player.level()
 - Added some automatic null-checks if a procedure using the "Client tick update" global trigger requires the "world" dependency or "x, y, z" (which null-checks Minecraft.player)

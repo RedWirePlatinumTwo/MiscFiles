@@ -1,6 +1,6 @@
 # Changelog
 # 6.2.3
-- Re-vamped functionality of the timed loop procedure for 1.21.4+. For versions older than that, the variable names have been changed to prevent possible compile errors.
+- Revamped functionality of the timed loop procedure for 1.21.4+. For versions older than that, the variable names have been changed to prevent possible compile errors.
 # 6.2.2
 - Added (value = Dist.CLIENT) to the @EventBusSubscriber of "Client tick update" to prevent dedicated server crashes (teehee woopsies)
 # 6.2.1

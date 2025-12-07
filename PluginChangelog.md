@@ -1,4 +1,7 @@
 # Changelog
+# 6.3.1
+- Moved "Remove all instances of .copy() from [statement]" to the Utils category
+- Changed the text in "Directly set itemstack" procedure to specify that it only works with *local* variables. For global variables, use the regular variable-set block + the new statement procedure.
 # 6.3.0
 - Minor improvements to RedwiresTimedLoop util class
 - Added procedure "Get spawn egg from [entity] or AIR if no item exists

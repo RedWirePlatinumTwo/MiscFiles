@@ -1,4 +1,8 @@
 # Changelog
+# 6.3.0
+- Minor improvements to RedwiresTimedLoop util class
+- Added procedure "Get spawn egg from [entity] or AIR if no item exists
+- Added procedure "Remove all instances of ".copy()" from [statement]"
 # 6.2.3
 - Revamped functionality of the timed loop procedure for 1.21.4+. For versions older than that, the variable names have been changed to prevent possible compile errors.
 # 6.2.2

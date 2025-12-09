@@ -1,3 +1,8 @@
+# 3.1.0
+- Added procedure "[component] with shadow color [number]"
+- Added procedure "Does [component] have shadow color"
+- Added procedure "Get shadow color of [component]" (returns black by default if nonexistent)
+- Note: All 3 procedures listed above work in versions 1.21.4 and above
 # 3.0.2
 - Shifted the "Empty component" block in "Append [component1] to [ccomponent2]" over to component1
 - Moved "Component with text [txt]", "Component from translatable key [txt]", and "Text from component [comp]" over to Utils

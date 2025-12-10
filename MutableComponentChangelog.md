@@ -1,3 +1,5 @@
+# 3.1.1
+- Slight changes to executing command from entity/world position for 1.21.4+ to prevent any unintentional _resultComp overwrites
 # 3.1.0
 - Added procedure "[component] with shadow color [number]"
 - Added procedure "Does [component] have shadow color"

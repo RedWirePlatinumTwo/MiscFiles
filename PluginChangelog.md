@@ -1,4 +1,6 @@
 # Changelog
+# 6.3.2
+- Attempting to set a global variable with "Directly set *LOCAL* itemstack [var dropdown] to [item]" will now error on purpose because I'm EVIL!!!!!!!!! (the real reason being to prevent confusion regarding unintentionally writing to a *local* variable of the same name and type)
 # 6.3.1
 - Moved "Remove all instances of .copy() from [statement]" to the Utils category
 - Changed the text in "Directly set itemstack" procedure to specify that it only works with *local* variables. For global variables, use the regular variable-set block + the new statement procedure.

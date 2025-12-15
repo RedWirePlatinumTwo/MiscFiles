@@ -1,4 +1,6 @@
 # Changelog
+# 6.3.4
+- Version constraint syntax is confusing (Flipped greater/lesser than signs to appropriately tell what version certain procedures/events support)
 # 6.3.3
 - Slight code change to sending a successful command message for versions 1.20.1< (turns out I didn't need a final boolean)
 - Added customBlockIndex to the code of the try-and-catch util procedure to prevent variable collisions

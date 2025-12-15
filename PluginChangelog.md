@@ -1,4 +1,8 @@
 # Changelog
+# 6.3.3
+- Slight code change to sending a successful command message for versions 1.20.1< (turns out I didn't need a final boolean)
+- Added customBlockIndex to the code of the try-and-catch util procedure to prevent variable collisions
+- Added a checkbox for both try-and-catch and try-only procedures to catch Throwable instead of Exception (which should only be enabled if you know what you're doing)
 # 6.3.2
 - Attempting to set a global variable with "Directly set *LOCAL* itemstack [var dropdown] to [item]" will now error on purpose because I'm EVIL!!!!!!!!! (the real reason being to prevent confusion regarding unintentionally writing to a *local* variable of the same name and type)
 # 6.3.1

@@ -1,3 +1,5 @@
+# 3.1.2
+- Shaved one(1) line of code from the "send successful command message" procedure for versions 1.20.1< by removing redundant final boolean line
 # 3.1.1
 - Slight changes to executing command from entity/world position for 1.21.4+ to prevent any unintentional _resultComp overwrites
 # 3.1.0

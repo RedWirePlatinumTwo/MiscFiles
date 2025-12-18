@@ -1,4 +1,3 @@
-# Changelog
 # 6.3.5
 - Yknow what? Screw version constraint syntax. Procedures limited by versions will instead read (min x.xx.x) or (max x.xx.x)
 # 6.3.4

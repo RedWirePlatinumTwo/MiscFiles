@@ -1,4 +1,6 @@
 # Changelog
+# 6.3.5
+- Yknow what? Screw version constraint syntax. Procedures limited by versions will instead read (min x.xx.x) or (max x.xx.x)
 # 6.3.4
 - Version constraint syntax is confusing (Flipped greater/lesser than signs to appropriately tell what version certain procedures/events support)
 # 6.3.3

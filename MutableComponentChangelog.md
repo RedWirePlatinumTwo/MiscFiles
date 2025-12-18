@@ -1,3 +1,5 @@
+# 3.1.3
+- I've decided that version constraint syntax is stupid, actually, so procedures with a version limit will now read (min x.xx.x)
 # 3.1.2
 - Shaved one(1) line of code from the "send successful command message" procedure for versions 1.20.1> by removing redundant final boolean line
 - Revised some of the procedure texts to make the greater/lesser-than signs point *properly* in terms of versions it supports

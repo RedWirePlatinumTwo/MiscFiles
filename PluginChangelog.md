@@ -1,3 +1,8 @@
+# 6.3.6
+- Slightly improved several procedures with the main goal being reducing generated line output + adding customBlockIndex to more procedures (likely more than I should have, but eh)
+- Improved "Get object from registry" procedure to only require a registry field. forgeregs.yaml is now basically reverted to how it was before I merged regclasses.yaml into it
+- "Set sound event" procedure now uses a safer holder wrapper: `BuiltInRegistries.SOUND_EVENT.wrapAsHolder` instead of `Holder.direct` to prevent any crashes
+- The "set damage to [x]" procedure for global damage triggers now better separates what event should be picked based on Forge/NeoForge (mind the gap inbetween NeoForge and the event name, I intentionally added a miniscule server-side icon just to "bypass" the 3-dot text cutoff)
 # 6.3.5
 - Yknow what? Screw version constraint syntax. Procedures limited by versions will instead read (min x.xx.x) or (max x.xx.x)
 # 6.3.4

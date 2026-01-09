@@ -1,3 +1,6 @@
+# 6.3.7
+- Improved all global trigger procedures to include a warning line at the bottom of the procedure UI (so I'm not limited to the procedure blocks UI size)
+- Try-only, try-and-catch, and directly set itemstack variable procedures have some unique warnings of their own
 # 6.3.6
 - Slightly improved several procedures with the main goal being reducing generated line output + adding customBlockIndex to more procedures (likely more than I should have, but eh)
 - Improved "Get object from registry" procedure to only require a registry field. forgeregs.yaml is now basically reverted to how it was before I merged regclasses.yaml into it

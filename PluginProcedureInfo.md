@@ -12,7 +12,7 @@
 - same as above, but from a position instead of from a player
 ### FORCE-add potion [potioneffect] with level [level] for [duration] ticks ambient [isambient] particles [showparticles] to [entity]
 - Allows you to give potion effects to entities that are normally immune to certain/all effects. In the instance of vanilla minecraft, you can apply whatever you want to the Wither and Ender dragon
-### Get object from registry [builtinregistry] class type: [class] registry id: [stringid] (Var name: "_regobject")
+### Get object from registry [builtinregistry] registry id: [stringid] (Var name: "_regobject")
 - This is something more catered to my mod specifically. With this, you can get a specific object that matches the given stringid. This does not have to include the namespace (ex: "minecraft:sharpness" OR "sharpness"), however, you should beware if there are conflicting mods that share the same id of the same object
 ### Repeat [number] times as timedloopiterator with tick wait time [tick]
 - Allows you to do something in a loop but have every action be delayed

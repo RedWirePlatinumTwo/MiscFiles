@@ -1,3 +1,6 @@
+# 3.1.4
+- Edited several procedures to add customBlockIndex, reducing the chances of a variable collision error
+- "Get sent chat/Set sent chat" procedures both include a warning at the bottom of the procedure UI to mention that it only works for the "Player sent chat" trigger (as opposed to having the event name being part of the procedure text)
 # 3.1.3
 - I've decided that version constraint syntax is stupid, actually, so procedures with a version limit will now read (min x.xx.x)
 # 3.1.2

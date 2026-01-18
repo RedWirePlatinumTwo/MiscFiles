@@ -3,7 +3,7 @@
 - Slightly changed procedure text of "Get object from registry" procedure + added a "warning" comment with variables that can be used inside the statement
 - Added a warning line for both "Get (display name/version string) of mod from id" procedures to clarify that it only checks active mods
 - Re-colored the "Modify/Remove default component of [item]" procedures to fit in with the other global trigger procedures + changed texts
-- Improved code for getting spawn egg item from entity type (Forge 1.20.1 and lower uses ForgeSpawnEggItem.fromEntityType)
+- Improved code for getting spawn egg item from entity type (Forge 1.20.1 and lower uses `ForgeSpawnEggItem.fromEntityType`)
 - Reverted code change for getting block that enderman is holding *just* to avoid the ever-so-slight overhead with creating Optional instances
 # 6.3.7
 - Improved all global trigger procedures to include a warning line at the bottom of the procedure UI (so I'm not limited to the procedure blocks UI size)

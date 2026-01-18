@@ -1,3 +1,5 @@
+# 3.1.5
+- MutableComponent color-setting for Forge 1.20.1 and lower will use an anonymous object method to avoid using `${input$component}` twice, as `MutableComponent.withColor` does not exist in those earlier versions
 # 3.1.4
 - Edited several procedures to add customBlockIndex, reducing the chances of a variable collision error
 - "Get sent chat/Set sent chat" procedures both include a warning at the bottom of the procedure UI to mention that it only works for the "Player sent chat" trigger (as opposed to having the event name being part of the procedure text)

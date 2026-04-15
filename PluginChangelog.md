@@ -1,3 +1,6 @@
+# 6.4.1
+Sorry for lack of updates lately. you see: retail drains the absolute life out of me. anyways.
+- Added support for MCreator 2026.1 
 # 6.4.0
 - Added procedure "Clamp number [x] between min: [y] and max: [z]" in Utils
 - Slightly changed procedure text of "Get object from registry" procedure + added a "warning" comment with variables that can be used inside the statement

@@ -1,3 +1,13 @@
+# 6.5.0
+Sowwy 4 lack of updates, heres some actual content to make up for it:
+- Added procedure "Get tick delay of timed loop" in Utils
+- Added procedure "Is mob [entity] persistent"
+- Added procedure "Make mob [entity] persistent"
+- Added procedure "Can mob [entity] pick up loot"
+- Added procedure "Set CanPickUpLoot of [entity] to [boolean]"
+- Added procedure "Get lifetime of world in ticks"
+- Shortened the RedwiresTimedLoop class for NeoForge 1.21.4 or higher upon realizing that I didn't need setTicks or getIterator as I could just access the fields directly
+- The procedure code for "Does [itemstack] have [datacomponent]" now uses ItemStack.has(DataComponent) instead of using (ItemStack.get(DataComponent) != null) (just a style preference)
 # 6.4.1
 Sorry for lack of updates lately. you see: retail drains the absolute life out of me. anyways.
 - Added support for MCreator 2026.1 

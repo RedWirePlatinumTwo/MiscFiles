@@ -1,3 +1,7 @@
+# 3.2.0
+- Added an alternate procedure for appending MutableComponents to another but using a blockly mutator, reducing the need to copy-paste the old procedure multiple times. (I also don't really know how to "convert" the old non-mutator procedure to the new one, so I just made it separate. Also thank u NerdyPuzzle for helping)
+# 3.1.6
+- Added support for 2026.1 for my ploogin
 # 3.1.5
 - MutableComponent color-setting for Forge 1.20.1 and lower will use an anonymous object method to avoid using `${input$component}` twice, as `MutableComponent.withColor` does not exist in those earlier versions
 # 3.1.4

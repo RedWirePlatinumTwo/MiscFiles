@@ -1,3 +1,5 @@
+# 1.0.3
+- Added support for MCreator 2026.1
 # 1.0.2
 - Minor improvements on a few procedures to prevent any possible variable name collision errors
 - Added a warning comment to the "Set UUID of entity" procedure

@@ -1,5 +1,5 @@
 # 3.2.1
-- Added another alternate procedure which is basically what the newer Component-append but as a data block (I know, I know, I've been adding some *real* unique stuff with these 2 updates /s)
+- Added another alternate procedure which is basically the newer Component-append mutator but as a data block (I know, I know, I've been adding some *real* unique stuff with these 2 updates /s)
 # 3.2.0
 - Added an alternate procedure for appending MutableComponents to another but using a blockly mutator, reducing the need to copy-paste the old procedure multiple times. (I also don't really know how to "convert" the old non-mutator procedure to the new one, so I just made it separate. Also thank u NerdyPuzzle for helping)
 # 3.1.6

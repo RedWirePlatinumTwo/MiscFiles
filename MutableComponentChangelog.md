@@ -1,3 +1,13 @@
+# 3.3.0
+big update (wowie)
+- Added procedure "Create book contents and do [statement]" in Actions
+- Added procedure "Add component as pages to book:" in Utils
+- Added procedure "Apply book contents to [itemstack] with title: [string] author: [string] generation: [number]" in Utils. Additional note: the number is automatically clamped from 0 to 3. The above procedures added also means that the CHANGE_PAGE Click Event finally has a use yippee!!!!!!!!!! 
+- Added procedure "Get component from book [itemstack] at page index [number]". Note: the number is auto-clamped from 0 to 99 to minimize crashes.
+- Added procedure "Convert [component] to JSON" (You could store components as global variable strings with this perhaps, at least until I (maybe) add support for directly saving Components as global variables other than GLOBAL_SESSION)
+- Added procedure "Convert [JSON string] to Component"
+- The number input in the get/set sign text procedures are no longer silently subtracted by 1 in the generated code. Additionally, the procedures will now read "line index" instead of just "line" just for clarification. This does also mean you will have to update any existing procedures if either the get/set blocks are used (tee-hee sorry)
+- Added procedure "[component] with ChangePage ClickEvent with page index [number] (min 1.21.8)". This is primarily because the ClickEvent class has changed between 1.21.4 and 1.21.8, and the ChangePage inner-class uses an integer instead of a string.
 # 3.2.1
 - Added another alternate procedure which is basically the newer Component-append mutator but as a data block (I know, I know, I've been adding some *real* unique stuff with these 2 updates /s)
 # 3.2.0

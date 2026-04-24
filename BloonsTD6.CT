@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 52.2.10179 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 54.2.10673 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -66,7 +66,7 @@ db 44 8B 74 8A 20
           <ID>3</ID>
           <Description>"Hypersonic Towers (Do NOT use with Corvus)"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000099)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000073)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -102,7 +102,7 @@ db F3 0F 10 73 70
           <ID>4</ID>
           <Description>"Remove ability cooldowns"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+00000091)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+00000088)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -131,8 +131,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 BF 90 00 00 00
-//movss xmm7,[rdi+00000090]
+db F3 0F 10 BF 9C 00 00 00
+//movss xmm7,[rdi+0000009C]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -196,8 +196,8 @@ db F3 0F 10 7E 60
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem2)
 addy2:
-db F3 0F 59 40 60
-//mulss xmm0,[rax+60]
+db F3 0F 59 40 30
+//mulss xmm0,[rax+30]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -313,12 +313,12 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 0F B6 86 31 01 00 00
-//movzx eax,byte ptr [rdi+00000131]
-dealloc(newmem2)
-addy2:
 db 0F B6 86 32 01 00 00
 //movzx eax,byte ptr [rdi+00000132]
+dealloc(newmem2)
+addy2:
+db 0F B6 86 33 01 00 00
+//movzx eax,byte ptr [rdi+00000133]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -645,7 +645,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm6,[rsi+24]
+movss xmm11,[r13+24]
 
 exit:
 jmp returnhere
@@ -817,7 +817,7 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 8B 6B 40 E8 79 0C 67 FF
+db 8B 6B 40 E8 B9 92 52 FF
 //mov ebp,[rbx+40]
 //call GameAssembly.il2cpp_method_get_declaring_type+60
 </AssemblerScript>

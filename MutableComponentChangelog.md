@@ -1,3 +1,7 @@
+# 3.4.0
+- Updated the procedure "Get component from book [item] at page index [int]" to be safer & return an empty component if it fails
+- Added procedure "Get total number of pages for book [item]" in Utils
+- All generators will be able to use helper methods if your MCreator version allows @addTemplate usage (otherwise, fallback to anonymous Object method)
 # 3.3.0
 big update (wowie)
 - Added procedure "Create book contents and do [statement]" in Actions

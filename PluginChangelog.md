@@ -1,3 +1,5 @@
+# 6.5.2
+- I forgot to include a closing parenthesis in the regex pattern for including the split content in the string-split-foreach procedure, resulting in runtime crashes (woops)
 # 6.5.1
 - All plugin versions will now be able to use helper methods in the generated code if your MCreator versions allows for it. Basically: If you're on 2025.1 or higher, but on a generator of 1.20.1 Forge, your generated code will use helper methods (instead of ugli cringe anonymous Object methods, blegh)
 - Improved the code of a few helper methods to shave off unneeded lines

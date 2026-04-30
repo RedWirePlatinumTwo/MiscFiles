@@ -2,6 +2,7 @@
 - All plugin versions will now be able to use helper methods in the generated code if your MCreator versions allows for it. Basically: If you're on 2025.1 or higher, but on a generator of 1.20.1 Forge, your generated code will use helper methods (instead of ugli cringe anonymous Object methods, blegh)
 - Improved the code of a few helper methods to shave off unneeded lines
 - The string-split procedure now includes a checkbox to include the split content itself in the array. By default, this is off.
+- The procedure to deal damage with custom dmg source + localized text is no longer supported on 1.19.2
 # 6.5.0
 Sowwy 4 lack of updates, heres some actual content to make up for it:
 - Added procedure "Get tick delay of timed loop" in Utils

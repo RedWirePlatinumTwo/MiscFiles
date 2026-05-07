@@ -1,3 +1,5 @@
+# 6.5.5
+- The default text for the "Get object from registry" procedure now reads "minecraft:sharpness OR sharpness" to show that a namespace isn't required (it's always been that way, this update simply aims to make it clearer)
 # 6.5.4
 - Trimmed the text on the procedure for dealing damage to entity with custom death key + damage source because text too long and me no likey
 - Added "Get level of applied enchantment" as a placeholder input for the applied-enchantment-foreach procedure (Existing procedures will have a blank placeholder input, but no issues will arise from it)

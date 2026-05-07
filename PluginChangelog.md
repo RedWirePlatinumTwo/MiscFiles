@@ -1,7 +1,7 @@
 # 6.5.4
 - Trimmed the text on the procedure for dealing damage to entity with custom death key + damage source because text too long and me no likey
 - Added "Get level of applied enchantment" as a placeholder input for the applied-enchantment-foreach procedure (Existing procedures will have a blank placeholder input, but no issues will arise from it)
-- Moved the "literal" textbox in the text-split-foreach procedure to a more fitting location
+- Moved the "literal" checkbox in the text-split-foreach procedure to a more fitting location
 # 6.5.3
 - Minor improvements to the string-split-foreach procedure (string inputs are now only evaluated once)
 - Added procedure "Set level of applied enchantment to [num]" to Utils (for use inside the "For each enchantment applied to [item] as [stringiterator] do" procedure)

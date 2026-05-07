@@ -1,3 +1,6 @@
+# 6.5.3
+- Minor improvements to the string-split-foreach procedure (string inputs are now only evaluated once)
+- Added procedure "Set level of applied enchantment to [num]" to Utils (for use inside the "For each enchantment applied to [item] as [stringiterator] do" procedure)
 # 6.5.2
 - I forgot to include a closing parenthesis in the regex pattern for including the split content in the string-split-foreach procedure, resulting in runtime crashes (woops)
 # 6.5.1

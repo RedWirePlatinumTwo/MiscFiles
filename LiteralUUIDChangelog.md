@@ -1,3 +1,5 @@
+# 1.0.5
+- NBT UUID tag get/has procedures for block entities will use an improved inline check instead of a helper/anonymous object method
 # 1.0.4
 - All generator versions will be able to use helper methods if you're using MCreator 2025.1 or higher
 - Slightly improved tryOrDefault

@@ -1,3 +1,6 @@
+# 1.0.4
+- All generator versions will be able to use helper methods if you're using MCreator 2025.1 or higher
+- Slightly improved tryOrDefault
 # 1.0.3
 - Added support for MCreator 2026.1
 # 1.0.2

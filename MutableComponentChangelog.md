@@ -1,3 +1,8 @@
+# v3.4.2
+- Added parentheses to the procedures for getting the display name of an item/entity to prevent potential build errors
+- The procedure "Convert JSON [jsontxt] to Component" will now safely return an empty component if parsing fails
+# v3.4.1
+- Re-named the blockly mutator file to prevent clashes with Just Enough Recipes
 # 3.4.0
 - Updated the procedure "Get component from book [item] at page index [int]" to be safer & return an empty component if it fails
 - Added procedure "Get total number of pages for book [item]" in Utils

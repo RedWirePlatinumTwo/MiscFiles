@@ -1,3 +1,13 @@
+# 3.5.0
+The Translatable Component Update™
+- Added procedure "Is [component] translatable"
+- Added procedure "Get translation key of [component]"
+- Added procedure "Does translatable [component] have fallback (min 1.19.4)"
+- Added procedure "Get fallback of [component] if translatable (min 1.19.4)"
+- Added procedure "Get death message from [damagesource] with [entity] as victim (min 1.19.4)"
+- Added procedure "Is key [txt] valid for current language (Note: "current language" literally just means whatever language the game itself is on)
+- Moved "Add components as pages to book:" and "Apply book contents to [item] with title: [txt] author: [txt] generation: [num]" to Actions, just because keeping them in Utils while the main book content creator is in Actions felt weird
+- Added procedure "Component from translatable key [txt] ([checkbox] with fallback: [txt]) with translation args:". The accepted inputs for translations args include text, booleans, numbers, and components. NOTE: 1.19.2 has no fallback string, so the input + checkbox will be ignored entirely.
 # v3.4.2
 - Added parentheses to the procedures for getting the display name of an item/entity to prevent potential build errors
 - The procedure "Convert JSON [jsontxt] to Component" will now safely return an empty component if parsing fails

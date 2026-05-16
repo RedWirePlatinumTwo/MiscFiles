@@ -1,3 +1,8 @@
+# 3.6.0
+- Moved procedure "Get total number of pages for book [item]" to the data category
+- Added procedure "For each translatable argument stored in [component] do [statement]"
+- Added procedure "Is translation argument a [type]" in Utils
+- Added procedure "Get translation argument as [type]" in Utils (Changes colors!!! wowie!!!)
 # 3.5.0
 The Translatable Component Update™
 - Added procedure "Is [component] translatable"

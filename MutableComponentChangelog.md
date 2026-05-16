@@ -1,3 +1,5 @@
+# 3.6.1
+- "Get translation argument as [Number]" will now properly get a double (Turns out casting double to Number isn't very safe, woops)
 # 3.6.0
 - Moved procedure "Get total number of pages for book [item]" to the data category
 - Added procedure "For each translatable argument stored in [component] do [statement]"

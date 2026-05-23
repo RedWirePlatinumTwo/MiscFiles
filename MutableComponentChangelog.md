@@ -1,3 +1,10 @@
+# 3.7.0
+- Added procedure "Is translation arg for [component] at index [number] a [type]" in Data
+- Added procedure [Get translation arg for [component] at index [number as [type]" in Data
+- Added procedure "Get number of translation arguments for [component]" in Data
+- Added procedure "Does [item] have book contents" in Data
+- Added procedure "For each page in [item] as [component iterator] do [foreach]" in Actions
+- Added a checkbox for the "Get display name of [item] as component" to optionally remove surrounding brackets
 # 3.6.1
 - "Get translation argument as [Number]" will now properly get a double (Turns out casting double to Number isn't very safe, woops)
 # 3.6.0

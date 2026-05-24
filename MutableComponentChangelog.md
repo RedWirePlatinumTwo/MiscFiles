@@ -2,7 +2,7 @@
 - Added the "is_custom_loop" extension for the book-page-foreach procedure because I overlooked it (now it allows break/continue)
 # 3.7.0
 - Added procedure "Is translation arg for [component] at index [number] a [type]" in Data
-- Added procedure [Get translation arg for [component] at index [number as [type]" in Data
+- Added procedure "Get translation arg for [component] at index [number as [type]" in Data
 - Added procedure "Get number of translation arguments for [component]" in Data
 - Added procedure "Does [item] have book contents" in Data
 - Added procedure "For each page in [item] as [component iterator] do [foreach]" in Actions

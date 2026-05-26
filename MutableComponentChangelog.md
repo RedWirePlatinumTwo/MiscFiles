@@ -1,3 +1,5 @@
+# 4.0.1
+- Global components for versions 1.20.4+ will now only copy the result if read is successful (Just a minor code cleanup)
 # 4.0.0
 The BIG one™️
 - ALL global variable scopes are now supported!! Woohoo, yippee!!!!!!!!!!!! (If any errors arise, write something in either the issue tracker or comment on this page; and please, PLEASE be specific with what the issue is. Other than that, have fun :D )

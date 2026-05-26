@@ -1,3 +1,5 @@
+# 4.0.2
+- Removed now-redundant MutableComponent casts for 1.20.4+ Component globals code (Yet another minor cleanup)
 # 4.0.1
 - Global components for versions 1.20.4+ will now only copy the result if read is successful (Just a minor code cleanup)
 # 4.0.0

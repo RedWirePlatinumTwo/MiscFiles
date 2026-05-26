@@ -1,6 +1,6 @@
 # 4.0.0
 The BIG one™️
-- ALL global variable scopes are now supported!! Woohoo, yippee!!!!!!!!!!!! (If any errors arise, write something in either the issue tracker or comment on this page; and please, PLEASE be specific with what the issue is. Other than that, ur welcome with new update :) )
+- ALL global variable scopes are now supported!! Woohoo, yippee!!!!!!!!!!!! (If any errors arise, write something in either the issue tracker or comment on this page; and please, PLEASE be specific with what the issue is. Other than that, have fun :D )
 # 3.7.1
 - Added the "is_custom_loop" extension for the book-page-foreach procedure because I overlooked it (now it allows break/continue)
 # 3.7.0

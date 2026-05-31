@@ -1,5 +1,5 @@
 # 6.5.6
-- Removed support for Forge 1.19.2 and changed minimal supported MCreator version to 2023.4 because I just actually checked if my plugin actually supports 2022.3, and turns out it never did
+- Removed support for Forge 1.19.2 and changed minimal supported MCreator version to 2023.4 because I just actually checked if my plugin truly does supports 2022.3, and turns out it never did
 # 6.5.5
 - The default text for the "Get object from registry" procedure now reads "minecraft:sharpness OR sharpness" to show that a namespace isn't required (it's always been that way, this update simply aims to make it clearer)
 # 6.5.4

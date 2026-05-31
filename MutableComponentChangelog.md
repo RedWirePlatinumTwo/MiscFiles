@@ -1,3 +1,7 @@
+# 4.0.3
+- Dropped support for Forge 1.19.2 and made the minimum MCreator supported version 2023.4 due to plugin compatibility issues
+- Component appending now accepts strings alongside components
+- Cleaned up nbt component storage code for global world variables for 1.21.8
 # 4.0.2
 - Removed now-redundant MutableComponent casts for 1.20.4+ Component globals code (Yet another minor cleanup)
 # 4.0.1

@@ -1,3 +1,5 @@
+# 2.0.0
+- Added support for all global variable scopes (yippee)
 # 1.0.6
 - Removed support for 1.19.2 and changed minimum MCreator supported version to 2023.4 due to incompatibility
 # 1.0.5

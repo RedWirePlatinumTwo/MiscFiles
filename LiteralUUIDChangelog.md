@@ -1,3 +1,5 @@
+# 1.0.6
+- Removed support for 1.19.2 and changed minimum MCreator supported version to 2023.4 due to incompatibility
 # 1.0.5
 - NBT UUID tag get/has procedures for block entities will use an improved inline check instead of a helper/anonymous object method
 # 1.0.4

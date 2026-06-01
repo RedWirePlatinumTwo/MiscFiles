@@ -1,3 +1,5 @@
+# 4.0.5
+- Slightly changed the forge-generator check on component player variables to make it more accurate
 # 4.0.4
 - Global component player variables should no longer error if on an MCreator version 2023.4-2024.4 on a Forge generator
 - Encoding a component to Json will now safely return a JsonPrimitive if something goes wrong

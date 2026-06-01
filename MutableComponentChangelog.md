@@ -1,3 +1,5 @@
+# 4.0.6
+- Changed BlocklyVariableType of variable from mutablecomponent to MutableComponent. This does, however, mean you will have to re-create local variables in any procedure that uses it. Global variables, however, are unchanged.
 # 4.0.5
 - Slightly changed the forge-generator check on component player variables to make it more accurate
 # 4.0.4

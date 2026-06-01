@@ -1,3 +1,5 @@
+# 2.0.2
+- Slightly changed the forge-generator checker for UUID global player variables for accuracy
 # 2.0.1
 - UUID global player variables now *truly* work with MCreator versions 2023.4-2024.4 on Forge generators
 # 2.0.0

@@ -1,3 +1,5 @@
+# 2.0.4
+- Added missing text.properties line for the "Return UUID" procedure block
 # 2.0.3
 - Re-named BlocklyVariableType for variable from uuid to UUID. You will however have to re-do local uuid variables, sorry tee hee
 # 2.0.2

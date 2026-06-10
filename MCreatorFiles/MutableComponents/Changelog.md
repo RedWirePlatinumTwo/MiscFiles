@@ -1,3 +1,5 @@
+# 4.0.8
+- Minor change to the js file of this plugin so it doesn't conflict with another plugin (that I am still working on)
 # 4.0.7
 - Added missing text.properties line for the "Return mutablecomponent" procedure block
 # 4.0.6

@@ -1,3 +1,5 @@
+# 6.5.7
+- Moved "Get entity from string uuid [string] from provided world" back to the Data category (I never moved it back after migrating UUID procedures to its own plugin)
 # 6.5.6
 - Removed support for Forge 1.19.2 and changed minimal supported MCreator version to 2023.4 because I just actually checked if my plugin truly does support 2022.3, and turns out it never did
 # 6.5.5

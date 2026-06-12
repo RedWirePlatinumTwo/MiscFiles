@@ -1,3 +1,5 @@
+# 2.0.5
+- Added head/tail compatibility support for all generators lower than 1.21.8
 # 2.0.4
 - Added missing text.properties line for the "Return UUID" procedure block
 # 2.0.3

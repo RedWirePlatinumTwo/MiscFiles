@@ -1,3 +1,5 @@
+# 2.0.6
+- Added (unofficial) language support for simplified chinese
 # 2.0.5
 - Added head/tail compatibility support for all generators lower than 1.21.8
 # 2.0.4

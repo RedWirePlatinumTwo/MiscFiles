@@ -1,3 +1,5 @@
+# 6.5.8
+- Added (unofficial) language support for simplified chinese
 # 6.5.7
 - Moved "Get entity from string uuid [string] from provided world" back to the Data category (I never moved it back after migrating UUID procedures to its own plugin)
 # 6.5.6

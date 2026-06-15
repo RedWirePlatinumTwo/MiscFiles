@@ -1,3 +1,6 @@
+# 1.0.4
+- Minor improvements on reading array tag global variables
+- Generic tags can now be be used as a local or global session variable
 # 1.0.3
 - Added (unofficial) language support for simplified chinese
 # 1.0.2

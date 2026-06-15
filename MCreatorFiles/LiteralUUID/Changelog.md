@@ -1,3 +1,7 @@
+# 2.1.0
+- Added procedure "Get most bits of [uuid]"
+- Added procedure "Get least bits of [uuid]"
+- Slightly changed wording on UUID constructor procedure for clarification
 # 2.0.6
 - Added (unofficial) language support for simplified chinese
 # 2.0.5

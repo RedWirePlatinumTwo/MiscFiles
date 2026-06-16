@@ -1,3 +1,5 @@
+# 6.5.9
+- Fixed "Get Z position of block between two entities" returning X for generators 1.21.1 and lower
 # 6.5.8
 - Added (unofficial) language support for simplified chinese
 # 6.5.7

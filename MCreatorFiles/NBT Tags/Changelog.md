@@ -1,3 +1,6 @@
+# 1.0.5
+- Slight re-wording for the "Get number from tag or default" procedure
+- Slightly changed the default value for array tags
 # 1.0.4
 - Minor improvements on reading array tag global variables
 - Generic tags can now be be used as a local or global session variable

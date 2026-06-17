@@ -1,3 +1,6 @@
+# 1.0.6
+- Re-worded the "Is tag empty" procedure for clarity
+- Adding tags to List/Compound tags will now primarily create copies only of existing tags before insertion
 # 1.0.5
 - Slight re-wording for the "Get number from tag or default" procedure
 - Slightly changed the default value for array tags

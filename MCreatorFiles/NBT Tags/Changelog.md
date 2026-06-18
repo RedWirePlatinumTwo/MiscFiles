@@ -1,7 +1,7 @@
 # 1.1.0
 - Split "Tag Utils" and "Utils" blockly categories with "Utils" containing more "generic" procedures
 - Added procedure "Sync updates of block at x y z to client/server" to Utils - Base MCreator automatically sends updates when you change block entity NBT values, but because of how this plugin is built, I can't automatically send updates. This only needs to be used once after all the updates are applied.
-- Added procedure "Convert [any tag] to pretty component" - Requires the Mutable Components plugin
+- Added procedure "Convert [any tag] to pretty component" to Utils - Requires the Mutable Components plugin
 - Added procedure "Get snapshot of global [world/map] variables"
 - Added procedure "Get snapshot of global player variables for [entity]"
 # 1.0.6

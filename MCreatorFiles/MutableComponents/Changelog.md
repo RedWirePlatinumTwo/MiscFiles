@@ -1,3 +1,5 @@
+# 4.0.10
+- The datalist for the "Component with text format style" has been converted to a dropdown list. Existing procedures will not be impacted by this change (I just wanted to remove an unnecessary element from the plugin)
 # 4.0.9
 - Added head/tail compatibility support for all generators lower than 1.21.8
 # 4.0.8

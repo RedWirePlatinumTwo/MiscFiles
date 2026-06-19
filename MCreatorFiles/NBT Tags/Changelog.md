@@ -1,3 +1,6 @@
+# 1.2.0
+- Added simplified chinese translations for 1.1.0 additions
+- Added procedure "Attempt to spawn entity from data [compound tag]" to the Compound Tag category
 # 1.1.0
 - Split "Tag Utils" and "Utils" blockly categories with "Utils" containing more "generic" procedures
 - Added procedure "Sync updates of block at x y z to client/server" to Utils - Base MCreator automatically sends updates when you change block entity NBT values, but because of how this plugin is built, I can't automatically send updates. This only needs to be used once after all the updates are applied.

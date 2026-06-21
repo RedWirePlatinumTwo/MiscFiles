@@ -1,3 +1,5 @@
+# 6.5.10
+- The datalists for registries and data components have been updated to include all possible usable entries for that version (Fun fact: Data components had 67 entries across all versions, but 1.20.6, the minimal version that supports data components, only has 56 (valid) entries. So... no more potential compile errors with that)
 # 6.5.9
 - Fixed "Get Z position of block between two entities" returning X for generators 1.21.1 and lower
 # 6.5.8

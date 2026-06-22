@@ -1,3 +1,5 @@
+# 1.2.1
+- Fixed potential crashes with getting custom data of itemstack for generators 1.20.6 or higher
 # 1.2.0
 - Added simplified chinese translations for 1.1.0 additions
 - Added procedure "Attempt to spawn entity from data [compound tag]" to the Compound Tag category

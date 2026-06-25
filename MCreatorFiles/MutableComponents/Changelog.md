@@ -1,3 +1,6 @@
+# 4.0.11
+- Improved code generation for procedures that need a template or an anonymous object method
+- Setting text color of a component for 1.20.1 and 1.19.4 will no longer error if the number input isn't an integer
 # 4.0.10
 - The datalist for the "Component with text format style" has been converted to a dropdown list. Existing procedures will not be impacted by this change (I just wanted to remove an unnecessary element from the plugin)
 # 4.0.9

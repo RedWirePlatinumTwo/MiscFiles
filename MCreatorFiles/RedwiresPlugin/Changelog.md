@@ -1,3 +1,5 @@
+# 6.5.11
+- Improved code generation for procedures that need a template or anonymous object method. This also essentially kills the old timed loop anonymous object method in favor for the more modern class, even if *that* is wrapped in an object. Procedure-wise, nothing changes. Code-wise, things are more consistent across versions (which also prevents stuff like v6.5.9 from occurring in the future)
 # 6.5.10
 - The datalists for registries and data components have been updated to include all possible usable entries for that version (Fun fact: Data components had 67 entries across all versions, but 1.20.6, the minimal version that supports data components, only has 56 (valid) entries. So... no more potential compile errors with that)
 # 6.5.9

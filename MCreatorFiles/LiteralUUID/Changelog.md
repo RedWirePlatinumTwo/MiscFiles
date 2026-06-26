@@ -1,3 +1,5 @@
+# 2.1.1
+- Minor code generation improvements for the procedures "Is string UUID valid" and "UUID from string" for generator versions 1.21.1 or lower
 # 2.1.0
 - Added procedure "Get most bits of [uuid]"
 - Added procedure "Get least bits of [uuid]"

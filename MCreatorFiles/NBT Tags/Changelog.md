@@ -1,3 +1,5 @@
+# 1.2.2
+- Slight improvement to storing all data of entity as compound tag for 1.21.8
 # 1.2.1
 - Fixed potential crashes with getting custom data of itemstack for generators 1.20.6 or higher
 # 1.2.0

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="46">
+<CheatTable UsesMono="1" CheatEngineTableVersion="52">
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 54.2.10673 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 55.2.10954 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -262,6 +262,43 @@ db 8B 47 30 48 8B 7F 58
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
+          <ID>29</ID>
+          <Description>"Place towers in co-op areas"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000328)
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048,addy)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov eax, 1
+
+exit:
+jmp returnhere
+
+addy:
+jmp newmem
+nop 2
+returnhere:
+
+
+ 
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+addy:
+db 0F B6 86 30 01 00 00
+//movzx eax,byte ptr [rdi+00000130]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
           <ID>11</ID>
           <Description>"Make towers always sellable"</Description>
           <VariableType>Auto Assembler Script</VariableType>
@@ -326,7 +363,7 @@ db 0F B6 86 33 01 00 00
           <Description>"Line of sight bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000126)
-define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000E3)
+define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000DF)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+0000010A)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
@@ -360,7 +397,7 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-mov r15d, 1
+mov r12d, 1
 
 exit2:
 jmp returnhere2
@@ -401,8 +438,8 @@ db 0F B6 47 4C 88 84 24 88 01 00 00
 //mov [rsp+00000188],al
 dealloc(newmem2)
 addy2:
-db 44 0F B6 7B 5C
-//movzx r15d,byte ptr [rbx+5C]
+db 44 0F B6 63 5C
+//movzx r12d,byte ptr [rbx+5C]
 dealloc(newmem3)
 addy3:
 db 0F B6 47 50 F3 44 0F 10 4F 48
@@ -516,43 +553,6 @@ dealloc(newmem4)
 addy4:
 db F3 0F 10 7B 3C
 //movss xmm7,[rbx+3C]
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>29</ID>
-          <Description>"Place towers in co-op areas"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000328)
-[ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem,2048,addy)
-label(returnhere)
-label(originalcode)
-label(exit)
-
-newmem: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode:
-mov eax, 1
-
-exit:
-jmp returnhere
-
-addy:
-jmp newmem
-nop 2
-returnhere:
-
-
- 
- 
-[DISABLE]
-//code from here till the end of the code will be used to disable the cheat
-dealloc(newmem)
-addy:
-db 0F B6 86 30 01 00 00
-//movzx eax,byte ptr [rdi+00000130]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

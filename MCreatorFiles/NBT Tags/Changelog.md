@@ -1,3 +1,6 @@
+# 1.3.0
+- Added procedure "Sync NBT changes of [itemstack] to clients (min 1.20.6)" in Utils.
+- Fixed display text of "Attempt to spawn entity from data" not having all inputs for simplified chinese
 # 1.2.2
 - Slight improvement to storing all data of entity as compound tag for 1.21.8
 # 1.2.1

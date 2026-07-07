@@ -5,7 +5,23 @@ Locate the Resources folder of your mod. You can do this either by opening the "
 Example: `C:\Users\USER\MCreatorWorkspaces\WORKSPACE_NAME\src\main\resources`
 # Step 2
 <img width="561" height="282" alt="image" src="https://github.com/user-attachments/assets/df65fec6-1c7d-4007-a3fa-dfa86cfbbc86" />
-<img width="800" height="237" alt="image" src="https://github.com/user-attachments/assets/72828b50-8667-4714-81bc-9292c0a3cd1c" />
+<img width="735" height="171" alt="image" src="https://github.com/user-attachments/assets/7a8e518b-33f3-4f8e-8aca-08e964a56eed" />
 
-Go to `assets/MOD_ID/font` within the resources folder. If there is no `font` folder, simply create a new folder with the name. Inside, put the font file(s) you want inside it
+Go to `assets/MOD_ID/font` within the resources folder. If there is no `font` folder, simply create one with the name. Inside, put the font file(s) you want inside it. **NOTE: The names for the actual font file and JSON file defining the font should only contain lowercase characters and underscores.** For example, the original name of the font file was "8bitoperator", but I renamed it to "pixel_font" as minecraft doesn't allow numbers in the ID name.
 # Step 3
+<img width="763" height="187" alt="image" src="https://github.com/user-attachments/assets/068b09e3-ab21-401a-9fbd-1522408a6c47" />
+Go to `assets/MOD_ID/fonts` within the resources folder (again, create it if it's not there).
+Create a JSON file inside the fonts folder. The name of this JSON file will be the actual font ID that the game will use. Inside, paste the following contents:
+```json
+{
+  "providers": [
+    {
+      "type": "ttf",
+      "file": "yourmodid:font/your_font.ttf",
+      "shift": [0, 0],
+      "size": 12.0,
+      "oversample": 4.0
+    }
+  ]
+}
+```

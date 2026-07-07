@@ -27,3 +27,8 @@ Create a JSON file inside the fonts folder. The name of this JSON file will be t
 }
 ```
 Replace `MOD_ID` with the id of your mod, and `your_font` with the name of the (actual) file inside `assets/MOD_ID/font`.
+**JSON Keys:**
+- type: This tells Minecraft the type of the font file you will be using. (for example, my `pixel_font.ttf` will be using `"ttf"`)
+- shift: Offsets the font display in-game. For example, a shift value of `[0, 2]` will offset the font down by 2 pixels.
+- size: The font size
+- oversample: The render resolution. Higher numbers can make the text quality clearer, but can take more resources to load.

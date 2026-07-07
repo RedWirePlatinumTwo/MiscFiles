@@ -13,7 +13,7 @@ Go to `assets/MOD_ID/font` within the resources folder. If there is no `font` fo
 Go to `assets/MOD_ID/fonts` within the resources folder (again, create it if it's not there).
 Create a JSON file inside the fonts folder. The name of this JSON file will be the actual font ID that the game will use. Inside, paste the following contents:
 
-```
+```json
 {
   "providers": [
     {

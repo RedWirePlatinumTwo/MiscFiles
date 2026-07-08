@@ -1,3 +1,5 @@
+# 7.0.1
+- Added new keys for DataComponents and Registries for NeoForge 26.1.2
 # 7.0.0
 - Added support for MCreator 2026.2 + NeoForge 26.1.2
 # 6.5.11

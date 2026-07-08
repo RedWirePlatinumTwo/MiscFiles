@@ -1,3 +1,5 @@
+# 7.0.0
+- Added support for MCreator 2026.2 + NeoForge 26.1.2
 # 6.5.11
 - Improved code generation for procedures that need a template or anonymous object method. This also essentially replaces the old timed loop anonymous object method in favor for the more modern class, even if *that* is wrapped in an object. Procedure-wise, nothing changes. Code-wise, things are more consistent across versions (which also prevents stuff like v6.5.9 from occurring in the future)
 # 6.5.10

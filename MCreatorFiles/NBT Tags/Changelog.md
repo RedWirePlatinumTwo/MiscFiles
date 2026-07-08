@@ -1,3 +1,6 @@
+# 2.0.0
+- Added support for MCreator 2026.2 + NeoForge 26.1.2
+- Added procedure "Set custom data of [item] to [compoundtag] (min 1.20.6)" - This procedure is ***required*** for 26.1.2 or higher, as the compound tag result for getting itemstack custom data is a copy
 # 1.3.0
 - Added procedure "Sync NBT changes of [itemstack] to clients (min 1.20.6)" in Utils.
 - Fixed display text of "Attempt to spawn entity from data" not having all inputs for simplified chinese

@@ -11,7 +11,7 @@ Go to (or create a folder) `assets/MOD_ID/font` within the resources folder. Ins
 # Step 3
 <img width="753" height="207" alt="image" src="https://github.com/user-attachments/assets/f826ada4-981c-47d5-8813-c5d41c5a9dca" />
 
-Go to `assets/MOD_ID/font` and a JSON file inside the fonts folder. The name of this JSON file will be the actual font ID that the game will use. Inside, paste the following contents:
+Go to `assets/MOD_ID/font` and a JSON file inside the main "font" folder. The name of this JSON file will be the actual font ID that the game will use. Inside, paste the following contents:
 
 ```json
 {

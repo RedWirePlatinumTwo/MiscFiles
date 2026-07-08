@@ -18,7 +18,7 @@ Go to `assets/MOD_ID/font` and a JSON file inside the fonts folder. The name of 
   "providers": [
     {
       "type": "ttf",
-      "file": "MOD_ID:font/your_font.ttf",
+      "file": "MOD_ID:fonts/your_font.ttf",
       "shift": [0, 0],
       "size": 12.0,
       "oversample": 4.0
@@ -26,7 +26,7 @@ Go to `assets/MOD_ID/font` and a JSON file inside the fonts folder. The name of 
   ]
 }
 ```
-Replace `MOD_ID` with the id of your mod, and `your_font` with the name of the (actual) file inside `assets/MOD_ID/font`.
+Replace `MOD_ID` with the id of your mod, and `your_font` with the name of the (actual) file inside `assets/MOD_ID/font/fonts`.
 ## JSON Keys:
 - type: This tells Minecraft the type of the font file you will be using. (for example, my `8bitoperator.ttf` will be using `"ttf"`)
 - shift: Offsets the font display in-game. For example, a shift value of `[0, 2]` will offset the font down by 2 pixels.

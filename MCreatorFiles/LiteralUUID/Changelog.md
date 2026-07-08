@@ -1,3 +1,5 @@
+# 3.0.0
+- Added support for MCreator 2026.2 + NeoForge 26.1.2 (I didn't need to make any changes LOL)
 # 2.1.1
 - Minor code generation improvements for the procedures "Is string UUID valid" and "UUID from string" for generator versions 1.21.1 or lower
 # 2.1.0

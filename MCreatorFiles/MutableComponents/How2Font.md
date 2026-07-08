@@ -32,3 +32,8 @@ Replace `MOD_ID` with the id of your mod, and `your_font` with the name of the (
 - shift: Offsets the font display in-game. For example, a shift value of `[0, 2]` will offset the font down by 2 pixels.
 - size: The font size
 - oversample: The render resolution. Higher numbers can make the text quality clearer, but can take more resources to load.
+# Step 4
+<img width="654" height="174" alt="image" src="https://github.com/user-attachments/assets/fffbee54-31b1-4b00-a242-37bd4eb1e9ec" />
+<img width="414" height="163" alt="image" src="https://github.com/user-attachments/assets/037e22a9-b422-4733-b295-f53b58259ec9" />
+
+To use your new custom font anywhere with the plugin, simply format it like `modid:font_name`. In this example, my JSON file name is `pixel_font`, so i'll be using `redwiresmod:pixel_font`

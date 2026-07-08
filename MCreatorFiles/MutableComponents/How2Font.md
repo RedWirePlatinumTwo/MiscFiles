@@ -7,7 +7,7 @@ Example: `C:\Users\USER\MCreatorWorkspaces\WORKSPACE_NAME\src\main\resources`
 <img width="561" height="282" alt="image" src="https://github.com/user-attachments/assets/df65fec6-1c7d-4007-a3fa-dfa86cfbbc86" />
 <img width="730" height="159" alt="image" src="https://github.com/user-attachments/assets/af5b33bf-5f06-474f-861b-0a6156b46367" />
 
-Go to (or create a folder) `assets/MOD_ID/font` within the resources folder. Inside, create another folder called `fonts` put the font file(s) you want inside it. **NOTE: The names for the actual font file and JSON file defining the font should only contain lowercase characters, numbers, and underscores.**
+Go to (or create a folder) `assets/MOD_ID/font` within the resources folder. Inside, create another folder called `fonts`, then put the font file(s) you want inside it. **NOTE: The names for the actual font file and JSON file defining the font should only contain lowercase characters, numbers, and underscores.**
 # Step 3
 <img width="753" height="207" alt="image" src="https://github.com/user-attachments/assets/f826ada4-981c-47d5-8813-c5d41c5a9dca" />
 

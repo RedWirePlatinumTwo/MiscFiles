@@ -1,3 +1,5 @@
+# 2.0.1
+- Added chinese translations for recent procedure additions
 # 2.0.0
 - Added support for MCreator 2026.2 + NeoForge 26.1.2
 - Added procedure "Set custom data of [item] to [compoundtag] (min 1.20.6)" - This procedure is ***required*** for 26.1.2 or higher, as the compound tag result for getting itemstack custom data is a copy

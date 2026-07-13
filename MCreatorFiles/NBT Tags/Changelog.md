@@ -1,3 +1,8 @@
+# 2.0.2
+**IF any procedures use the old "sync itemstack changes" procedure, replace it with the "Set custom data of itemstack" procedure instead before updating the plugin**
+- Removed the "Sync NBT changes of [item] to clients" procedure
+- Procedure "Get custom data of item" will now return a copy instead of a direct reference for 1.20.6 or higher. A warning line has been added for the procedure with this change.
+- Removed redundant copy for the code of "Set custom data of [item] to [compoundtag]"
 # 2.0.1
 - Added chinese translations for recent procedure additions
 # 2.0.0

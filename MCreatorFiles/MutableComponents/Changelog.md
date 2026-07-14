@@ -1,3 +1,10 @@
+# 5.0.1
+- Fixed "Get x from entity from hover event of [component]" procedures for 1.21.8+
+- Improved code of "Get name of entity from hover event of [component]" for generators 1.20.4+
+# 5.0.0
+-  Added support for MCreator 2026.2 + NeoForge 26.1.2
+- Added procedure "[component] with custom font [font id]" (To make fonts, a link has been added to this page for a tutorial)
+- Added procedure "Get font ID of [component]"
 # 4.0.11
 - Improved code generation for procedures that need a template or an anonymous object method
 - Setting text color of a component for any generators 1.21.1 or lower will no longer error if the number input isn't an integer (I never used opt.toInt on those apparently????)

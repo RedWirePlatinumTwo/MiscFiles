@@ -1,5 +1,5 @@
 # 5.0.1
-- Fixed "Get x from entity from hover event of [component]" procedures for 1.21.8+
+- Fixed "Get [x] from entity from hover event of [component]" procedures for 1.21.8+
 - Improved code of "Get name of entity from hover event of [component]" for generators 1.20.4+
 # 5.0.0
 -  Added support for MCreator 2026.2 + NeoForge 26.1.2

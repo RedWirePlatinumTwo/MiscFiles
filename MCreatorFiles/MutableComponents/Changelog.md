@@ -1,3 +1,6 @@
+# 5.1.0
+- Improved helper method code of "withClickEvent" for 1.21.8+
+- Added procedure "Get page from ChangePage click event of [component] (min 1.21.8)", allowing you to directly get the page value as a number instead of a stringified version of it
 # 5.0.3
 - Improved "Get copy of item from hover event of [component]" for 26.1.2
 # 5.0.2

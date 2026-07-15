@@ -1,5 +1,5 @@
 # 5.0.2
-- Improved the (helper method code for "Get component from book [item] at page index [#]" + removed artificial 100-size cap for 1.20.6+
+- Improved the (helper method) code for "Get component from book [item] at page index [#]" + removed artificial 100-size cap for 1.20.6+
 - Improved code for the following procedures: "Get total number of pages for book [item]" and "For each page in [item] as [component iterator] do [x]" 
 - The title string will be capped to 32 characters for 1.20.6+ when applying book contents to item
 # 5.0.1

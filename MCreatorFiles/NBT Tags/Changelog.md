@@ -1,8 +1,8 @@
 # 2.1.0
-- Added procedure "Convert int array tag [tag] to UUID" in Array Tag -- requires *Literal UUID Procedures* for usage
-- Added procedure "Convert UUID [uuid] to int array tag" in Array Tag -- requires *Literal UUID Procedures* for usage
-- Added procedure "Convert component [component] to tag" in Data -- requires *Mutable Components* for usage
-- Added procedure "Convert tag [tag] to component" in Data  -- requires *Mutable Components* for usage
+- Added procedure "Convert int array tag [tag] to UUID" in Array Tag -- requires *Literal UUID Procedures*
+- Added procedure "Convert UUID [uuid] to int array tag" in Array Tag -- requires *Literal UUID Procedures*
+- Added procedure "Convert component [component] to tag" in Data -- requires *Mutable Components*
+- Added procedure "Convert tag [tag] to component" in Data  -- requires *Mutable Components*
 - Shortened procedure texts for "Get string/boolean/number tag or default"
 # 2.0.2
 **IF any procedures use the old "sync itemstack changes" procedure, replace it with the "Set custom data of itemstack" procedure instead before updating the plugin**

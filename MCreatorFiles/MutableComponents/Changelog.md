@@ -1,3 +1,8 @@
+# 5.2.0
+- Slightly improved helper method code of "withClickEvent" for 1.21.8+ (again)
+- Added procedure "[Component] with insertion [text]"
+- Added procedure "Does [component] have insertion"
+- Added procedure "Get insertion of [component]"
 # 5.1.0
 - Improved helper method code of "withClickEvent" for 1.21.8+
 - Added procedure "Get page from ChangePage click event of [component] (min 1.21.8)", allowing you to directly get the page value as a number instead of a stringified version of it

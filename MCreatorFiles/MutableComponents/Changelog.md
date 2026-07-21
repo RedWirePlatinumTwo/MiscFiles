@@ -1,3 +1,7 @@
+# 5.3.0
+- Added procedure "Get color of text format style [style]" in Utils
+- Added procedure "Remove format style [style] from [component]" in Actions
+- Slightly improved generated code for "Get insertion of [component]" and "Get shadow color of [component]"
 # 5.2.0
 - Slightly improved helper method code of "withClickEvent" for 1.21.8+ (again)
 - Added procedure "[Component] with insertion [text]"

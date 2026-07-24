@@ -1,8 +1,8 @@
 # 5.4.0
 - Added updateJSONURL to the plugin itself
-- Improved helper method code \"getPageOrEmpty\" for minecraft versions 1.20.4 or lower
+- Improved helper method code "getPageOrEmpty" for minecraft versions 1.20.4 or lower
 - Slightly improved procedure code for: Get color of [component]
-- Added procedure: [component] with custom click event of id [id] NBT data [nbt] (min 26.1.2)
+- Added procedure: [component] with custom click event of id [id] NBT data [nbt] (min 26.1.2) -- NBT Tags plugin required to send NBT data
 - Added global trigger: On custom click event (min 26.1.2). Cancelling is not required but recommended so MinecraftServer doesn't print a line in console every time your custom event is fired
 # 5.3.0
 - Added procedure "Get color of text format style [style]" in Utils

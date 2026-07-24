@@ -3,9 +3,9 @@
     "latest": "5.4.0",
 	"changes": [
 		"Improved helper method code \"getPageOrEmpty\" for minecraft versions 1.20.4 or lower",
-    "Slightly improved procedure code for: Get color of [component]",
-    "Added procedure: [component] with custom click event of id [id] NBT data [nbt] (min 26.1.2)",
-    "Added global trigger: On custom click event (min 26.1.2). Cancelling is not required but recommended so MinecraftServer doesn't print a line in console every time your custom event is fired"
+    	"Slightly improved procedure code for: Get color of [component]",
+    	"Added procedure: [component] with custom click event of id [id] NBT data [nbt] (min 26.1.2)",
+    	"Added global trigger: On custom click event (min 26.1.2). Cancelling is not required but recommended so MinecraftServer doesn't print a line in console every time your custom event is fired"
 	]
   }
 }

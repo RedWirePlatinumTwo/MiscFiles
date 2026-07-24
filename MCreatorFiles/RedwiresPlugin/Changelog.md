@@ -1,3 +1,5 @@
+# 7.0.2
+- Added updateJSONURL and pluginPageID to plugin.json
 # 7.0.1
 - Added new keys for DataComponents and Registries for NeoForge 26.1.2
 # 7.0.0

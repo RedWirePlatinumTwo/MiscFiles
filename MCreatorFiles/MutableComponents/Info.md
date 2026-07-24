@@ -30,3 +30,6 @@
 - The boolean thing is already explained in the actions tab
 ###  [component] with hover event with entity [entity]
 - Not entirely sure where this is used in 1.21.1, but in 1.21.4 you can see the info of the given entity for command messages
+## Global Triggers
+### On custom click event (min 26.1.2)
+- Cancelling is not required but recommended so MinecraftServer doesn't print a line in console every time your custom event is fired

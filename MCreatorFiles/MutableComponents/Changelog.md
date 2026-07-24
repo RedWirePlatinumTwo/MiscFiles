@@ -1,5 +1,5 @@
 # 5.4.0
-- Added updateJSONURL to the plugin itself
+- Added updateJSONURL + pluginPageID to plugin.json
 - Improved helper method code "getPageOrEmpty" for minecraft versions 1.20.4 or lower
 - Slightly improved procedure code for: Get color of [component]
 - Added procedure: [component] with custom click event of id [id] NBT data [nbt] (min 26.1.2) -- NBT Tags plugin required to send NBT data

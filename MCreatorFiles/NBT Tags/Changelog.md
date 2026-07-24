@@ -1,3 +1,5 @@
+# 2.1.1
+- Added updateJSONURL and pluginPageID to plugin.json
 # 2.1.0
 - Added procedure "Convert int array tag [tag] to UUID" in Array Tag -- requires *Literal UUID Procedures*
 - Added procedure "Convert UUID [uuid] to int array tag" in Array Tag -- requires *Literal UUID Procedures*

@@ -1,8 +1,8 @@
 {
   "literaluuid": {
-    "latest": "3.0.0",
+    "latest": "3.0.1",
 	"changes": [
-		"Added support for MCreator 2026.2 + NeoForge 26.1.2 (I didn't need to make any changes LOL)"
+		"Added updateJSONURL and pluginPageID to plugin.json"
 	]
   }
 }

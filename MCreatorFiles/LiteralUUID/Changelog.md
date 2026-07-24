@@ -1,3 +1,5 @@
+# 3.0.1
+- Added updateJSONURL and pluginPageID to plugin.json
 # 3.0.0
 - Added support for MCreator 2026.2 + NeoForge 26.1.2 (I didn't need to make any changes LOL)
 # 2.1.1

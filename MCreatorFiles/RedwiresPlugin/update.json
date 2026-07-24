@@ -1,0 +1,8 @@
+{
+  "redwiresplugin": {
+  "latest": "7.0.1",
+	"changes": [
+		"Added new keys for DataComponents and Registries for NeoForge 26.1.2"
+	]
+  }
+}

@@ -1,3 +1,6 @@
+# 7.0.3
+- Improved code for the PlaceholderEvent class for both Forge + NeoForge (this also changes how the event gets the dependencies)
+- Slightly improved code of "Get spawn egg from [entity] or AIR if no item exists" for versions 1.21.8 and lower
 # 7.0.2
 - Added updateJSONURL and pluginPageID to plugin.json
 # 7.0.1

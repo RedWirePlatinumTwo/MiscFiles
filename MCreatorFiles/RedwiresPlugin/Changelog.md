@@ -1,3 +1,5 @@
+# 7.0.4
+- Improved generated code for the text-split-foreach procedure so ${statement$foreach} is only used once
 # 7.0.3
 - Improved code for the PlaceholderEvent class for both Forge + NeoForge (this also changes how the global trigger gets the dependencies)
 - Slightly improved code of "Get spawn egg from [entity] or AIR if no item exists" for versions 1.21.8 and lower

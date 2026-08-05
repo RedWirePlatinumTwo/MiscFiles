@@ -1,3 +1,6 @@
+# 2.1.2
+- Emphasized procedure text on saving/loading all data of an entity, item, or block
+- Improved procedure code for "Sync block updates at xyz" so block entity changes actually save
 # 2.1.1
 - Added updateJSONURL and pluginPageID to plugin.json
 # 2.1.0

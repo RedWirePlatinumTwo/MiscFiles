@@ -1,8 +1,9 @@
 {
   "redwiresplugin": {
-  "latest": "7.0.4",
+  "latest": "7.0.5",
 	"changes": [
-		"Improved generated code for the text-split-foreach procedure so ${statement$foreach} is only used once"
+		"Optimized generated code for the text-split-foreach procedure",
+		"(7.0.4): Improved generated code for the text-split-foreach procedure so ${statement$foreach} is only used once"
 	]
   }
 }

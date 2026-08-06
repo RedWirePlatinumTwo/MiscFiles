@@ -1,3 +1,5 @@
+# 7.0.5
+- Optimized generated code for the text-split-foreach procedure
 # 7.0.4
 - Improved generated code for the text-split-foreach procedure so ${statement$foreach} is only used once
 # 7.0.3

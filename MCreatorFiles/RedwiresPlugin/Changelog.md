@@ -1,3 +1,7 @@
+# 7.1.0
+- Added procedure "Set XP amount to [x] for global trigger"
+- Added procedure "Set XP level amount to [x] for global trigger"
+- Further slightly optimized code for the text-split-foreach procedure (the _splitContent will only show up as a variable if delimiter is included in the array)
 # 7.0.5
 - Optimized generated code for the text-split-foreach procedure
 # 7.0.4

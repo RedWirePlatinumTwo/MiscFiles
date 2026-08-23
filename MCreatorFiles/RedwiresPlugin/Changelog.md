@@ -1,3 +1,5 @@
+# 7.1.1
+- Added proper chinese translations for recent procedure additions
 # 7.1.0
 - Added procedure "Set XP amount to [x] for global trigger"
 - Added procedure "Set XP level amount to [x] for global trigger"

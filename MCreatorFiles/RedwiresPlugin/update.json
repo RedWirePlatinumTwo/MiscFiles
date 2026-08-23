@@ -1,10 +1,11 @@
 {
   "redwiresplugin": {
-  "latest": "7.1.0",
+  "latest": "7.1.1",
 	"changes": [
-		"Added procedure \"Set XP amount to [x] for global trigger\"",
-		"Added procedure \"Set XP level amount to [x] for global trigger\"",
-		"Further slightly optimized code for the text-split-foreach procedure (the _splitContent will only show up as a variable if delimiter is included in the array)"
+		"Added proper chinese translations for recent procedure additions",
+		"(7.1.0) Added procedure \"Set XP amount to [x] for global trigger\"",
+		"(7.1.0) Added procedure \"Set XP level amount to [x] for global trigger\"",
+		"(7.1.0) Further slightly optimized code for the text-split-foreach procedure (the _splitContent will only show up as a variable if delimiter is included in the array)"
 	]
   }
 }

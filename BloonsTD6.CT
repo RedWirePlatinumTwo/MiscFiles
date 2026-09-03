@@ -3,7 +3,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 55.2.10954 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 56.3.11937 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -94,8 +94,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 73 70
-//movss xmm6,[rbx+70]
+db F3 0F 10 73 68
+//movss xmm6,[rbx+68]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -131,16 +131,15 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 BF 9C 00 00 00
-//movss xmm7,[rdi+0000009C]
+db F3 0F 10 BF 94 00 00 00
+//movss xmm7,[rdi+00000094]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>6</ID>
+          <ID>31</ID>
           <Description>"Free base towers"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000BD)
-define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000024B)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -152,7 +151,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movss xmm7,[rsi+40]
+movss xmm7,[rsi+60]
 
 exit:
 jmp returnhere
@@ -162,52 +161,21 @@ jmp newmem
 nop
 returnhere:
 
-
- //code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem2,2048,addy2)
-label(returnhere2)
-label(originalcode2)
-label(exit2)
-
-newmem2: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode2:
-mulss xmm0,[rax+20]
-
-exit2:
-jmp returnhere2
-
-addy2:
-jmp newmem2
-returnhere2:
-
-
-
-
  
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 7E 60
-//movss xmm7,[rsi+60]
-
-//code from here till the end of the code will be used to disable the cheat
-dealloc(newmem2)
-addy2:
-db F3 0F 59 40 30
-//mulss xmm0,[rax+30]
+db F3 0F 10 7E 58
+//movss xmm7,[rsi+58]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>8</ID>
           <Description>"Free upgrades"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+0000045E)
-define(addy2,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+00000063)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+00000063)
 [ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
 label(returnhere)
 label(originalcode)
@@ -217,55 +185,32 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-movd xmm0,[rsi+20]
+mov eax,[rdi+40]
+mov rdi,[rdi+50]
 
 exit:
 jmp returnhere
 
 addy:
 jmp newmem
-returnhere:
-
-//code from here to '[DISABLE]' will be used to enable the cheat
-alloc(newmem2,2048,addy2)
-label(returnhere2)
-label(originalcode2)
-label(exit2)
-
-newmem2: //this is allocated memory, you have read,write,execute access
-//place your code here
-
-originalcode2:
-mov eax,[rdi+20]
-mov rdi,[rdi+58]
-
-exit2:
-jmp returnhere2
-
-addy2:
-jmp newmem2
 nop 2
-returnhere2:
+returnhere:
  
  
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 66 0F 6E 46 30
-//movd xmm0,[rsi+30]
-dealloc(newmem2)
-addy2:
-db 8B 47 30 48 8B 7F 58
-//mov eax,[rdi+30]
-//mov rdi,[rdi+58]
+db 8B 47 28 48 8B 7F 50
+//mov eax,[rdi+28]
+//mov rdi,[rdi+50]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>29</ID>
           <Description>"Place towers in co-op areas"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000328)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000336)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -294,7 +239,7 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 0F B6 86 30 01 00 00
+db 0F B6 86 28 01 00 00
 //movzx eax,byte ptr [rdi+00000130]
 </AssemblerScript>
         </CheatEntry>
@@ -302,8 +247,8 @@ db 0F B6 86 30 01 00 00
           <ID>11</ID>
           <Description>"Make towers always sellable"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000333)
-define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+0000033E)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000341)
+define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+0000034C)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -350,21 +295,21 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 0F B6 86 32 01 00 00
-//movzx eax,byte ptr [rdi+00000132]
+db 0F B6 86 2A 01 00 00
+//movzx eax,byte ptr [rsi+0000012A]
 dealloc(newmem2)
 addy2:
-db 0F B6 86 33 01 00 00
-//movzx eax,byte ptr [rdi+00000133]
+db 0F B6 86 2B 01 00 00
+//movzx eax,byte ptr [rdi+0000012B]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>12</ID>
           <Description>"Line of sight bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000126)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+00000120)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+000000DF)
-define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+0000010A)
+define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+0000010D)
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048,addy)
@@ -417,7 +362,7 @@ newmem3: //this is allocated memory, you have read,write,execute access
 
 originalcode3:
 mov eax, 1
-movss xmm9,[rdi+48]
+movss xmm9,[rdi+40]
 
 exit3:
 jmp returnhere3
@@ -433,25 +378,25 @@ returnhere3:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 0F B6 47 4C 88 84 24 88 01 00 00
-//movzx eax,byte ptr [rdi+4C]
+db 0F B6 47 44 88 84 24 88 01 00 00
+//movzx eax,byte ptr [rdi+44]
 //mov [rsp+00000188],al
 dealloc(newmem2)
 addy2:
-db 44 0F B6 63 5C
-//movzx r12d,byte ptr [rbx+5C]
+db 44 0F B6 63 54
+//movzx r12d,byte ptr [rbx+54]
 dealloc(newmem3)
 addy3:
-db 0F B6 47 50 F3 44 0F 10 4F 48
-//movzx eax,byte ptr [rdi+50]
-//movss xmm9,[rdi+48]
+db 0F B6 47 48 F3 44 0F 10 4F 40
+//movzx eax,byte ptr [rdi+48]
+//movss xmm9,[rdi+40]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>15</ID>
           <Description>"Place towers anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+0000000E)
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType+00000015)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.CircleFootprintModel.Clone+00000048)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+0000004D)
 define(addy4,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone+00000055)
@@ -466,14 +411,15 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-//i forgor 💀
+//cmp byte ptr [rax+29],01
+//jne GameAssembly.dll+10901D7
 
 exit:
 jmp returnhere
 
 addy:
-mov rax,[rcx+000000C0]
-cmp byte ptr [rax+31],01
+cmp byte ptr [rax+29],01
+jne GameAssembly.dll+10901D7
 returnhere:
 
  //code from here to '[DISABLE]' will be used to enable the cheat
@@ -486,14 +432,13 @@ newmem2: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode2:
-movss xmm6,[r14+14]
+movss xmm6,[rbx+20]
 
 exit2:
 jmp returnhere2
 
 addy2:
 jmp newmem2
-nop
 returnhere2:
 
   //code from here to '[DISABLE]' will be used to enable the cheat
@@ -538,21 +483,21 @@ returnhere4:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 48 8B 81 C0 00 00 00 80 78 31 00
-//mov rax,[rcx+000000C0]
-//cmp byte ptr [rax+31],00
+db 80 78 29 00 75 4C
+//cmp byte ptr [rax+29],00
+//jne GameAssembly.dll+10901D7
 dealloc(newmem2)
 addy2:
-db F3 41 0F 10 76 38
-//movss xmm6,[r14+38]
+db F3 0F 10 73 30
+//movss xmm6,[rbx+30]
 dealloc(newmem3)
 addy3:
-db F3 0F 10 73 38
-//movss xmm6,[rbp+38]
+db F3 0F 10 73 30
+//movss xmm6,[rbx+30]
 dealloc(newmem4)
 addy4:
-db F3 0F 10 7B 3C
-//movss xmm7,[rbx+3C]
+db F3 0F 10 7B 34
+//movss xmm7,[rbx+34]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -571,8 +516,8 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov r15d,[rdi+24]
-mov r12d,[rdi+48]
+mov r15d,[rdi+20]
+mov r12d,[rdi+40]
 exit:
 jmp returnhere
 
@@ -588,14 +533,14 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 44 8B 7F 44 44 8B 67 48
-//mov r15d,[rdi+44]
-//mov r12d,[rdi+48]
+db 44 8B 7F 3C 44 8B 67 40
+//mov r15d,[rdi+3C]
+//mov r12d,[rdi+40]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
           <ID>17</ID>
-          <Description>"Reduce hero cost to lvl up"</Description>
+          <Description>"11 dollah hero upgrades"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+0000004C)
 [ENABLE]
@@ -652,17 +597,18 @@ jmp returnhere
 
 addy:
 jmp newmem
+nop
 returnhere:
 
 
- 
- 
+
+
 [DISABLE]
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 76 44
-//movss xmm11,[r13+44]
+db F3 45 0F 10 5D 3C
+//movss xmm11,[r13+3C]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -698,8 +644,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 44 0F 10 8E C0 00 00 00
-//movss xmm9,[rsi+000000C0]
+db F3 44 0F 10 8E B8 00 00 00
+//movss xmm9,[rsi+000000B8]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -725,7 +671,7 @@ db F3 44 0F 10 8E C0 00 00 00
       <CheatEntries>
         <CheatEntry>
           <ID>20</ID>
-          <Description>"Send bloons all at once"</Description>
+          <Description>"Rapidly-sent bloons"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055)
 define(addy2,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005A)
@@ -775,12 +721,12 @@ returnhere2:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db F3 0F 10 73 38
-//movss xmm6,[rbx+38]
+db F3 0F 10 73 30
+//movss xmm6,[rbx+30]
 dealloc(newmem2)
 addy2:
-db F3 0F 10 7B 3C
-//movss xmm7,[rbx+3C]
+db F3 0F 10 7B 34
+//movss xmm7,[rbx+34]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -799,7 +745,7 @@ newmem: //this is allocated memory, you have read,write,execute access
 //place your code here
 
 originalcode:
-mov ebp,[rbx+20]
+mov ebp,[rbx+1B]
 call GameAssembly.il2cpp_method_get_declaring_type+60
 
 exit:
@@ -817,8 +763,8 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 8B 6B 40 E8 B9 92 52 FF
-//mov ebp,[rbx+40]
+db 8B 6B 38 E8 19 65 3E FF
+//mov ebp,[rbx+38]
 //call GameAssembly.il2cpp_method_get_declaring_type+60
 </AssemblerScript>
         </CheatEntry>
@@ -851,8 +797,8 @@ exit:
 jmp returnhere
 
 addy:
-mov r13d,[rdi+24]
-mov rbx,[rdi+38]
+mov r13d,[rdi+1B]
+mov rbx,[rdi+30]
 returnhere:
 
 
@@ -862,9 +808,9 @@ returnhere:
 //code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 addy:
-db 44 8B 6F 34 48 8B 5F 38
-//mov r13d,[rdi+34]
-//mov rbx,[rdi+38]
+db 44 8B 6F 2C 48 8B 5F 30
+//mov r13d,[rdi+2C]
+//mov rbx,[rdi+30]
 </AssemblerScript>
         </CheatEntry>
       </CheatEntries>

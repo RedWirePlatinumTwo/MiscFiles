@@ -209,13 +209,16 @@ nop 5
 ret3:
 
 [DISABLE]
+dealloc(newmem)
 addy:
 db 0F B6 47 44 88 84 24 88 01 00 00
 //movzx eax,byte ptr [rdi+44]
 //mov [rsp+00000188],al
+dealloc(newmem2)
 addy2:
 db 44 0F B6 63 54
 //movzx r12d,byte ptr [rbx+54]
+dealloc(newmem3)
 addy3:
 db 0F B6 47 48 F3 44 0F 10 4F 40
 //movzx eax,byte ptr [rdi+48]

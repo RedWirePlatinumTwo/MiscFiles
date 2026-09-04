@@ -401,16 +401,18 @@ db F3 0F 10 77 30
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"NOT safe for unflagged accs (Check active box to enable hack)"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
         <CheatEntry>
-          <ID>19</ID>
-          <Description>"NOT safe for unflagged accs (Check active box to enable hack)"</Description>
-          <GroupHeader>1</GroupHeader>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>20</ID>
-              <Description>"Rapidly-sent bloons"</Description>
-              <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055)
+          <ID>20</ID>
+          <Description>"Rapidly-sent bloons"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055)
 define(addy2,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005A)
 [ENABLE]
 addy:
@@ -427,12 +429,12 @@ addy2:
 db F3 0F 10 7B 34
 //movss xmm7,[rbx+34]
 </AssemblerScript>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>30</ID>
-              <Description>"Multi-bloon sends"</Description>
-              <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+000000C9)
+        </CheatEntry>
+        <CheatEntry>
+          <ID>30</ID>
+          <Description>"Multi-bloon sends"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+000000C9)
 [ENABLE]
 alloc(newmem,2048,addy)
 label(ret)
@@ -458,21 +460,21 @@ db 89 6B 38 48 8B 5C 24 50
 //mov [rbx+38],ebp
 //mov rbx,[rsp+50]
 </AssemblerScript>
-              <CheatEntries>
-                <CheatEntry>
-                  <ID>35</ID>
-                  <Description>"multiplier"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>4 Bytes</VariableType>
-                  <Address>bloonMultiplier</Address>
-                </CheatEntry>
-              </CheatEntries>
-            </CheatEntry>
+          <CheatEntries>
             <CheatEntry>
-              <ID>34</ID>
-              <Description>"Cash-per-pop hack"</Description>
-              <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+0000008F)
+              <ID>35</ID>
+              <Description>"multiplier"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>bloonMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>34</ID>
+          <Description>"Cash-per-pop hack"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+0000008F)
 [ENABLE]
 alloc(newmem,2048,addy)
 label(ret)
@@ -500,12 +502,12 @@ db 0F 11 77 28 40 88 77 38
 //movups [rdi+28],xmm6
 //mov [rdi+38],sil
 </AssemblerScript>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>24</ID>
-              <Description>"Free XP upgrades"</Description>
-              <VariableType>Auto Assembler Script</VariableType>
-              <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000003D)
+        </CheatEntry>
+        <CheatEntry>
+          <ID>24</ID>
+          <Description>"Free XP upgrades"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000003D)
 [ENABLE]
 addy:
 mov r13d,[rdi+1B]
@@ -517,8 +519,6 @@ db 44 8B 6F 2C 48 8B 5F 30
 //mov r13d,[rdi+2C]
 //mov rbx,[rdi+30]
 </AssemblerScript>
-            </CheatEntry>
-          </CheatEntries>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>

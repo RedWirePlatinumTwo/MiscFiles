@@ -273,7 +273,7 @@ db F3 0F 10 7B 34
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+00000074)
 [ENABLE]
 addy:
-mov r15d,[rdi+20]
+mov r15d,[rdi+2C]
 mov r12d,[rdi+40]
 
 [DISABLE]

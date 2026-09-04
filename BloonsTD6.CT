@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CheatTable UsesMono="1" CheatEngineTableVersion="52">
+  <Forms>
+    <UDF1 Class="TCEForm" Encoding="Ascii85">Yi3_z2nldAU:MM2b.}cxWeIh0Gi32eO*Ft$Wn{Y6%{mcIVLrjY9Fkwal+AgInNpGg/gz.[7L.V;:dpp6vpVPJ/QK7,nwm23x#X87/*k^5rlqA8rKWIlx#j1T:t1Pae+MZI5_CJwnpc9Vii3dx00</UDF1>
+  </Forms>
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
@@ -327,20 +330,19 @@ db F3 44 0F 10 8E B8 00 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>32</ID>
-          <Description>"High pierce hack"</Description>
+          <Description>"Pierce hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+000000A0)
 [ENABLE]
 alloc(newmem,2048,addy)
 label(ret)
-label(customPierce)
 
 newmem:
-movss xmm10, [customPierce]
+push rax
+mov rax, customPierce
+movss xmm10, [rax]
+pop rax
 jmp ret
-
-customPierce:
-dd (float)10000.0
 
 addy:
 jmp newmem
@@ -353,23 +355,31 @@ addy:
 db F3 44 0F 10 57 3C
 //movss xmm10,[rdi+3C]
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>37</ID>
+              <Description>"Pierce value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>customPierce</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>33</ID>
-          <Description>"Pop damage hack"</Description>
+          <Description>"Projectile damage hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+0000005D)
 [ENABLE]
 alloc(newmem,2048,addy)
 label(ret)
-label(customDamage)
 
 newmem:
-movss xmm6, [customDamage]
+push rax
+mov rax, customDamage
+movss xmm6, [rax]
+pop rax
 jmp ret
-
-customDamage:
-dd (float)100000.0
 
 addy:
 jmp newmem
@@ -381,19 +391,26 @@ addy:
 db F3 0F 10 77 30
 //movss xmm6,[rdi+30]
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>36</ID>
+              <Description>"Damage value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>customDamage</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
-      </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>19</ID>
-      <Description>"NOT safe for unflagged accs (Check active box to enable hack)"</Description>
-      <GroupHeader>1</GroupHeader>
-      <CheatEntries>
         <CheatEntry>
-          <ID>20</ID>
-          <Description>"Rapidly-sent bloons"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055)
+          <ID>19</ID>
+          <Description>"NOT safe for unflagged accs (Check active box to enable hack)"</Description>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>20</ID>
+              <Description>"Rapidly-sent bloons"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+00000055)
 define(addy2,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005A)
 [ENABLE]
 addy:
@@ -410,29 +427,52 @@ addy2:
 db F3 0F 10 7B 34
 //movss xmm7,[rbx+34]
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>30</ID>
-          <Description>"No bloons"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+0000005F)
+            </CheatEntry>
+            <CheatEntry>
+              <ID>30</ID>
+              <Description>"Multi-bloon sends"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+000000C9)
 [ENABLE]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+push rax
+mov rax,bloonMultiplier
+imul ebp,dword ptr [rax]
+pop rax
+mov [rbx+38],ebp
+mov rbx,[rsp+50]
+jmp ret
+
 addy:
-mov ebp,[rbx+1B]
-call GameAssembly.il2cpp_method_get_declaring_type+60
+jmp newmem
+nop 3
+ret:
 
 [DISABLE]
+dealloc(newmem)
 addy:
-db 8B 6B 38 E8 19 65 3E FF
-//mov ebp,[rbx+38]
-//call GameAssembly.il2cpp_method_get_declaring_type+60
+db 89 6B 38 48 8B 5C 24 50
+//mov [rbx+38],ebp
+//mov rbx,[rsp+50]
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>34</ID>
-          <Description>"Cash-per-pop hack"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+0000008F)
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>35</ID>
+                  <Description>"multiplier"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>bloonMultiplier</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>34</ID>
+              <Description>"Cash-per-pop hack"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+0000008F)
 [ENABLE]
 alloc(newmem,2048,addy)
 label(ret)
@@ -460,12 +500,12 @@ db 0F 11 77 28 40 88 77 38
 //movups [rdi+28],xmm6
 //mov [rdi+38],sil
 </AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>24</ID>
-          <Description>"Free XP upgrades"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000003D)
+            </CheatEntry>
+            <CheatEntry>
+              <ID>24</ID>
+              <Description>"Free XP upgrades"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+0000003D)
 [ENABLE]
 addy:
 mov r13d,[rdi+1B]
@@ -477,9 +517,30 @@ db 44 8B 6F 2C 48 8B 5F 30
 //mov r13d,[rdi+2C]
 //mov rbx,[rdi+30]
 </AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
       </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
+  <LuaScript>local function initializeValues()
+    local function init(name, value, func)
+      if not getAddressSafe(name) then
+         local address = allocateMemory(4)
+         registerSymbol(name, address, true)
+         func(address, value)
+      end
+    end
+
+  init("bloonMultiplier", 10, writeInteger)
+  init("customDamage", 100000, writeFloat)
+  init("customPierce", 100000, writeFloat)
+end
+
+if getOpenedProcessID() ~= 0 then
+   initializeValues()
+end
+
+</LuaScript>
 </CheatTable>

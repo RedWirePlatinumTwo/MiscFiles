@@ -46,65 +46,158 @@ db 44 8B 74 8A 20
         </CheatEntry>
         <CheatEntry>
           <ID>3</ID>
-          <Description>"Hypersonic Towers (Do NOT use with Corvus)"</Description>
+          <Description>"Tower attack speed multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+00000073)
 [ENABLE]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+push rax
+mov rax, atkSpeedMultiplier
+movss xmm6,[rbx+68]
+mulss xmm6, [rax]
+pop rax
+jmp ret
+
 addy:
-movss xmm6,[rbx+60]
+jmp newmem
+ret:
 
 [DISABLE]
+dealloc(newmem)
 addy:
 db F3 0F 10 73 68
 //movss xmm6,[rbx+68]
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>41</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>atkSpeedMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>4</ID>
-          <Description>"Remove ability cooldowns"</Description>
+          <Description>"Ability cooldown multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+00000088)
 [ENABLE]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+push rdx
+mov rdx, abilityMultiplier
+movss xmm7,[rdi+00000094]
+mulss xmm7, [rdx]
+pop rdx
+jmp ret
+
 addy:
-movss xmm7,[rdi+00000091]
+jmp newmem
+nop 3
+ret:
 
 [DISABLE]
+dealloc(newmem)
 addy:
 db F3 0F 10 BF 94 00 00 00
 //movss xmm7,[rdi+00000094]
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>40</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>abilityMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>31</ID>
-          <Description>"Free base towers"</Description>
+          <Description>"Tower base cost multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+000000BD)
 [ENABLE]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+push rdx
+mov rdx, baseTowerMultiplier
+movss xmm7,[rsi+58]
+mulss xmm7, [rdx]
+pop rdx
+jmp ret
+
 addy:
-movss xmm7,[rsi+60]
+jmp newmem
+ret:
 
 [DISABLE]
+dealloc(newmem)
 addy:
 db F3 0F 10 7E 58
 //movss xmm7,[rsi+58]
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>39</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>baseTowerMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>8</ID>
-          <Description>"Free upgrades"</Description>
+          <Description>"Upgrade cost multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+00000063)
 [ENABLE]
-addy:
-mov eax,[rdi+40]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+push rdx
+mov rdx, upgradeMultiplier
+mov eax, [rdi+28]
+cvtsi2ss xmm0, eax
+mulss xmm0, [rdx]
+cvtss2si eax, xmm0
+pop rdx
+
 mov rdi,[rdi+50]
+jmp ret
+
+addy:
+jmp newmem
+nop 2
+ret:
 
 [DISABLE]
+dealloc(newmem)
 addy:
 db 8B 47 28 48 8B 7F 50
 //mov eax,[rdi+28]
 //mov rdi,[rdi+50]
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>38</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>upgradeMultiplier</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>29</ID>
@@ -124,15 +217,15 @@ db 0F B6 86 28 01 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>11</ID>
-          <Description>"Towers always sellable + Increased sellback"</Description>
+          <Description>"Towers always sellable + 95% sellback"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+00000341) //canAlwaysBeSold
 define(addy2,Assets.Scripts.Models.Towers.TowerModel.Clone+0000034C) //blockSelling
 define(addy3,Assets.Scripts.Models.Towers.TowerModel.Clone+000002FA) //sellbackModifierAdd
 [ENABLE]
 alloc(newmem3,2048,addy3)
-label(newSellback)
 label(ret3)
+label(newSellback)
 
 newmem3:
 movss xmm10,[newSellback]
@@ -358,7 +451,7 @@ db F3 44 0F 10 57 3C
           <CheatEntries>
             <CheatEntry>
               <ID>37</ID>
-              <Description>"Pierce value"</Description>
+              <Description>"value"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>customPierce</Address>
@@ -394,7 +487,7 @@ db F3 0F 10 77 30
           <CheatEntries>
             <CheatEntry>
               <ID>36</ID>
-              <Description>"Damage value"</Description>
+              <Description>"value"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
               <Address>customDamage</Address>
@@ -478,17 +571,16 @@ db 89 6B 38 48 8B 5C 24 50
 [ENABLE]
 alloc(newmem,2048,addy)
 label(ret)
-label(customCashAmount)
 
 newmem:
+push rax
+mov rax, cashPerPopAmount
 movups [rdi+28],xmm6
-movss xmm0, [customCashAmount]
+movss xmm0, [rax]
 movss [rdi+28], xmm0
+pop rax
 mov [rdi+38],sil
 jmp ret
-
-customCashAmount:
-dd (float)10000.0
 
 addy:
 jmp newmem
@@ -502,6 +594,15 @@ db 0F 11 77 28 40 88 77 38
 //movups [rdi+28],xmm6
 //mov [rdi+38],sil
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>42</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>cashPerPopAmount</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>24</ID>
@@ -532,10 +633,18 @@ db 44 8B 6F 2C 48 8B 5F 30
          func(address, value)
       end
     end
+    local function initF(name, value)
+          init(name, value, writeFloat)
+    end
 
   init("bloonMultiplier", 10, writeInteger)
-  init("customDamage", 100000, writeFloat)
-  init("customPierce", 100000, writeFloat)
+  initF("customDamage", 100000)
+  initF("customPierce", 100000)
+  initF("upgradeMultiplier", 0)
+  initF("baseTowerMultiplier", 0)
+  initF("abilityMultiplier", 0)
+  initF("atkSpeedMultiplier", 0)
+  initF("cashPerPopAmount", 1000)
 end
 
 if getOpenedProcessID() ~= 0 then

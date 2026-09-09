@@ -720,16 +720,13 @@ db 8B 5B 28 83 B9 E4 00 00 00 00
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+3D) //xpCost
 [ENABLE]
 alloc(newmem,2048,addy)
-label(newCost)
 label(ret)
 
 newmem:
-mov r13d,[newCost]
+mov r13d, 1
 mov rbx,[rdi+30]
 jmp ret
 
-newCost:
-dd 1
 
 addy:
 jmp newmem

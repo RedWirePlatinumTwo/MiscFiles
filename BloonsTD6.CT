@@ -686,7 +686,7 @@ nop 4
 ret3:
 
 addy4:
-jmp newmem
+jmp newmem4
 nop 5
 ret4:
 

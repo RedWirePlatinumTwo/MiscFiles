@@ -1,3 +1,9 @@
+# 5.5.0
+- The RGB to int procedure no longer supplies a manual alpha of 255
+- Changed the ARGB to int procedure text to "Convert Alpha: [a] R: [r] G: [g] B: [b]" just because it fits the order in which the numbers appear in the actual code
+- Both RGB and ARGB to int will clamp the color values from 0 to 255
+- Number-clamping for certain procedure code for generators 1.20.4 and lower now use Mth.clamp instead of a manual Math.min + Math.max (functionally the same; just more readable)
+- Added procedure: "Lerp color [x] to color [y] by scale [z]" in Utils (I took this idea from [Spidrone](https://mcreator.net/user/737845/spidrone) Spidronesorrynotsorry)
 # 5.4.0
 - Added updateJSONURL + pluginPageID to plugin.json
 - Improved helper method code "getPageOrEmpty" for minecraft versions 1.20.4 or lower

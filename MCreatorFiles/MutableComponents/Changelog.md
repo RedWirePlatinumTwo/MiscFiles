@@ -1,5 +1,5 @@
 # 5.5.0
-- The RGB to int procedure no longer supplies a manual alpha of 255
+- The RGB to int procedure no longer supplies a manual alpha of 255 (even if I was the one to put it there in the first place)
 - Changed the ARGB to int procedure text to "Convert Alpha: [a] R: [r] G: [g] B: [b]" just because it fits the order in which the numbers appear in the actual code
 - Both RGB and ARGB to int procedures will clamp the color values from 0 to 255
 - Number-clamping for certain procedure code for generators 1.20.4 and lower now use Mth.clamp instead of a manual Math.min + Math.max (functionally the same; just more readable)

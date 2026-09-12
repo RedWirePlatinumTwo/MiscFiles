@@ -1,13 +1,15 @@
 {
   "mutablecomponents": {
-    "latest": "5.5.0",
+    "latest": "5.5.1",
 	"changes": [
-		"The RGB to int procedure no longer supplies a manual alpha of 255 (even if I was the one to put it there in the first place)",
-		"Changed the ARGB to int procedure text to \"Convert Alpha: [a] R: [r] G: [g] B: [b]\" just because it fits the order in which the numbers appear in the actual code",
-		"Both RGB and ARGB to int procedures will clamp the color values from 0 to 255",
-		"Number-clamping for certain procedure code for generators 1.20.4 and lower now use Mth.clamp instead of a manual Math.min + Math.max (functionally the same; just more readable)",
-		"Added procedure: \"Lerp color [x] to color [y] by scale [z]\" in Utils (I took this idea from Spidrone sorrynotsorry)",
-		"Updated procedure code of \"Get font ID of [component]\" for 26.1.2 to prevent potential crashes"
+		"Added /*@int*/ to all number input procedures just so MCreator knows how to handle it during code-gen",
+		"Changed a procedure text \"Color [x] to number (Built-in)\" to \"Color [x] to number (2025.2-)\"",
+		"(5.5.0) The RGB to int procedure no longer supplies a manual alpha of 255 (even if I was the one to put it there in the first place)",
+		"(5.5.0) Changed the ARGB to int procedure text to \"Convert Alpha: [a] R: [r] G: [g] B: [b]\" just because it fits the order in which the numbers appear in the actual code",
+		"(5.5.0) Both RGB and ARGB to int procedures will clamp the color values from 0 to 255",
+		"(5.5.0) Number-clamping for certain procedure code for generators 1.20.4 and lower now use Mth.clamp instead of a manual Math.min + Math.max (functionally the same; just more readable)",
+		"(5.5.0) Added procedure: \"Lerp color [x] to color [y] by scale [z]\" in Utils (I took this idea from Spidrone sorrynotsorry)",
+		"(5.5.0) Updated procedure code of \"Get font ID of [component]\" for 26.1.2 to prevent potential crashes"
 	]
   }
 }

@@ -1,11 +1,10 @@
 {
   "redwiresplugin": {
-  "latest": "7.1.1",
+  "latest": "7.1.2",
 	"changes": [
-		"Added proper chinese translations for recent procedure additions",
-		"(7.1.0) Added procedure \"Set XP amount to [x] for global trigger\"",
-		"(7.1.0) Added procedure \"Set XP level amount to [x] for global trigger\"",
-		"(7.1.0) Further slightly optimized code for the text-split-foreach procedure (the _splitContent will only show up as a variable if delimiter is included in the array)"
+		"Added /*@int*/ and /*@float*/ to certain number data procedures (Mainly so MCreator knows how to handle it during certain operations)",
+		"Procedure \"Clamp [x] between min: [y] and max: [z]\" now uses Mth.clamp for generators 1.20.4 and lower",
+		"Updated procedure \"Can [entity1] find [entity2]\" so the input for entity2 is only used once"
 	]
   }
 }

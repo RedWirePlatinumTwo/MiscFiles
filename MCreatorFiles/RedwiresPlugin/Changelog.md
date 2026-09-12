@@ -1,3 +1,7 @@
+# 7.1.2
+- Added `/*@int*/` and `/*@float*/` to certain number data procedures (Mainly so MCreator knows how to handle it during certain operations)
+- Procedure "Clamp [x] between min: [y] and max: [z]" now uses `Mth.clamp` for generators 1.20.4 and lower
+- Updated procedure "Can [entity1] find [entity2]" so the input for entity2 is only used once
 # 7.1.1
 - Added proper chinese translations for recent procedure additions
 # 7.1.0

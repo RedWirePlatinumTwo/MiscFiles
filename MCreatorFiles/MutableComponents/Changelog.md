@@ -1,3 +1,6 @@
+# 5.5.1
+- Added /*@int*/ to all number input procedures just so MCreator knows how to handle it during code-gen
+- Changed a procedure text "Color [x] to number (Built-in)" to "Color [x] to number (2025.2-)"
 # 5.5.0
 - The RGB to int procedure no longer supplies a manual alpha of 255 (even if I was the one to put it there in the first place)
 - Changed the ARGB to int procedure text to "Convert Alpha: [a] R: [r] G: [g] B: [b]" just because it fits the order in which the numbers appear in the actual code

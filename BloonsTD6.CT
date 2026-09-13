@@ -35,10 +35,19 @@
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+A1)//honestly idk what this is
 [ENABLE]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+mov r14d, 0
+jmp ret
+
 addy:
-mov r14d,[rdx+rcx*4+21]
+jmp newmem
+ret:
 
 [DISABLE]
+dealloc(newmem)
 addy:
 db 44 8B 74 8A 20
 //mov r14d,[rdx+rcx*4+20]
@@ -636,16 +645,19 @@ define(addy,Assets.Scripts.Models.Powers.PowerModel.get_Cost+3D) //cost (after M
 define(addy2,pwrclone+8E) //quantity
 define(addy3,pwrclone+7A) //cost (allows paid powers to be purchased)
 define(addy4,Assets.Scripts.Models.Powers.PowerModel.get_CanBePurchasedWithMM+3D) //cost (prevent MK preventing other power purchasing)
+define(addy5,Assets.Scripts.Models.Powers.PowerProModel.Clone+BB) //quantity (but for power pro)
 [ENABLE]
 alloc(newmem,2048,addy)
 alloc(newmem2,2048,addy2)
 alloc(newmem3,2048,addy3)
 alloc(newmem4,2048,addy4)
+alloc(newmem5,2048,addy5)
 label(quantity)
 label(ret)
 label(ret2)
 label(ret3)
 label(ret4)
+label(ret5)
 
 newmem:
 mov ebx,1
@@ -666,6 +678,11 @@ newmem4:
 mov ebx,1
 cmp dword ptr [rcx+000000E4],00
 jmp ret4
+
+newmem5:
+mov eax,[quantity]
+mov [rsp+000000C8],eax
+jmp ret5
 
 quantity:
 dd #999
@@ -690,11 +707,17 @@ jmp newmem4
 nop 5
 ret4:
 
+addy5:
+jmp newmem5
+nop 5
+ret5:
+
 [DISABLE]
 dealloc(newmem)
 dealloc(newmem2)
 dealloc(newmem3)
 dealloc(newmem4)
+dealloc(newmem5)
 addy:
 db 8B 5B 28 83 B9 E4 00 00 00 00
 //mov ebx,[rbx+28]
@@ -711,6 +734,10 @@ addy4:
 db 8B 5B 28 83 B9 E4 00 00 00 00
 //mov ebx,[rbx+28]
 //cmp dword ptr [rcx+000000E4],00
+addy5:
+db 8B 46 5C 89 84 24 C8 00 00 00
+//mov eax,[rsi+5C]
+//mov [rsp+000000C8],eax
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

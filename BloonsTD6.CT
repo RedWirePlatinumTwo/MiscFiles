@@ -33,24 +33,17 @@
           <ID>0</ID>
           <Description>"Infinite Tier 5s"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked+A1)//honestly idk what this is
+          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked)//override da whole function #lmao
 [ENABLE]
-alloc(newmem,2048,addy)
-label(ret)
-
-newmem:
-mov r14d, 0
-jmp ret
-
 addy:
-jmp newmem
-ret:
+xor eax, eax
+ret
+nop 2
 
 [DISABLE]
-dealloc(newmem)
 addy:
-db 44 8B 74 8A 20
-//mov r14d,[rdx+rcx*4+20]
+db 48 89 5C 24 10
+//mov [rsp+10],rbx
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

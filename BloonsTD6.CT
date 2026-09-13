@@ -583,6 +583,43 @@ db F3 0F 10 B6 DC 00 00 00
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
+          <ID>33</ID>
+          <Description>"Damage multiplier hack"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+5D) //damage
+[ENABLE]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+push rax
+mov rax, customDamageMulti
+movss xmm6,[rdi+30]
+mulss xmm6, [rax]
+pop rax
+jmp ret
+
+addy:
+jmp newmem
+ret:
+ 
+[DISABLE]
+dealloc(newmem)
+addy:
+db F3 0F 10 77 30
+//movss xmm6,[rdi+30]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>36</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>customDamageMulti</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
           <ID>32</ID>
           <Description>"Pierce hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
@@ -769,86 +806,6 @@ db 44 8B 6F 2C 48 8B 5F 30
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>49</ID>
-          <Description>"Monkey money reward multiplier"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Gameplay.Mods.MonkeyMoneyModModel.Mutate+21) //multiplier logic
-[ENABLE]
-alloc(newmem,2048,addy)
-label(ret)
-
-newmem:
-push rax
-mov rax, monkeyMoneyMulti
-mulss xmm2,[rax]
-pop rax
-jmp ret
-
-addy:
-jmp newmem
-ret:
-
-[DISABLE]
-dealloc(newmem)
-addy:
-db F3 0F 59 51 2C
-//mulss xmm2,[rcx+2C]
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>50</ID>
-              <Description>"value"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>monkeyMoneyMulti</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>33</ID>
-          <Description>"Projectile damage multi"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+5D) //damage
-[ENABLE]
-alloc(newmem,2048,addy)
-label(ret)
-
-newmem:
-push rax
-mov rax, customDamageMulti
-movss xmm6,[rdi+30]
-mulss xmm6, [rax]
-pop rax
-jmp ret
-
-addy:
-jmp newmem
-ret:
- 
-[DISABLE]
-dealloc(newmem)
-addy:
-db F3 0F 10 77 30
-//movss xmm6,[rdi+30]
-</AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>36</ID>
-              <Description>"value"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Float</VariableType>
-              <Address>customDamageMulti</Address>
-            </CheatEntry>
-          </CheatEntries>
-        </CheatEntry>
-      </CheatEntries>
-    </CheatEntry>
-    <CheatEntry>
-      <ID>19</ID>
-      <Description>"NOT safe for unflagged accs (Check active box to enable hack)"</Description>
-      <GroupHeader>1</GroupHeader>
-      <CheatEntries>
-        <CheatEntry>
           <ID>20</ID>
           <Description>"Rapidly-sent bloons"</Description>
           <VariableType>Auto Assembler Script</VariableType>
@@ -893,7 +850,7 @@ db F3 0F 10 7B 34
         </CheatEntry>
         <CheatEntry>
           <ID>30</ID>
-          <Description>"Multi-bloon sends (safe if value isn't 0)"</Description>
+          <Description>"Multi-bloon sends"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+C9) //count
 [ENABLE]
@@ -972,7 +929,51 @@ db 0F 11 77 28 40 88 77 38
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
+        <CheatEntry>
+          <ID>49</ID>
+          <Description>"Custom monkey money reward"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Gameplay.Mods.MonkeyMoneyModModel.Mutate+28) //hijack money write-back
+//other money values won't work if u dont have Mo' Monkey Money, which is why im doing this instead
+[ENABLE]
+alloc(newmem,2048,addy)
+label(ret)
+
+newmem:
+push rax
+mov rax, monkeyMoneyReward
+movss xmm2, [rax]
+pop rax
+movss [rdx+000000BC],xmm2
+jmp ret
+
+addy:
+jmp newmem
+nop 3
+ret:
+
+[DISABLE]
+dealloc(newmem)
+addy:
+db F3 0F 11 92 BC 00 00 00
+//movss [rdx+000000BC],xmm2
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>50</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>monkeyMoneyReward</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
       </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"NOT safe for unflagged accs (Currently empty #lmfao)"</Description>
+      <GroupHeader>1</GroupHeader>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
@@ -998,7 +999,7 @@ db 0F 11 77 28 40 88 77 38
   initF("cashPerPopAmount", 1000)
   initF("sellbackMod", 0.3)
   initF("bloonSpeedMulti", 0.5)
-  initF("monkeyMoneyMulti", 10000)
+  initF("monkeyMoneyReward", 1000000)
 end
 
 </LuaScript>

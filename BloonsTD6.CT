@@ -10,13 +10,13 @@
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
-      <ID>1</ID>
-      <Description>"MAKE SURE "ACTIVATE MONO FEATURES" IS ENABLED WHEN BTD6 IS SELECTED!!"</Description>
+      <ID>26</ID>
+      <Description>"Activate the cheats you want *BEFORE* loading into a map"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
-      <ID>26</ID>
-      <Description>"Activate the cheats you want *BEFORE* loading into a map"</Description>
+      <ID>55</ID>
+      <Description>"...And also check the active box to enable each script"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -26,7 +26,7 @@
     </CheatEntry>
     <CheatEntry>
       <ID>2</ID>
-      <Description>"Safe for unflagged accs (Check active box to enable hack)"</Description>
+      <Description>"Safe for unflagged accs"</Description>
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
@@ -577,7 +577,7 @@ db F3 0F 10 B6 DC 00 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>33</ID>
-          <Description>"Damage multiplier hack"</Description>
+          <Description>"Damage hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+5D) //damage
 [ENABLE]
@@ -586,9 +586,8 @@ label(ret)
 
 newmem:
 push rax
-mov rax, customDamageMulti
-movss xmm6,[rdi+30]
-mulss xmm6, [rax]
+mov rax, customDamage
+movss xmm6,[rax]
 pop rax
 jmp ret
 
@@ -608,7 +607,7 @@ db F3 0F 10 77 30
               <Description>"value"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
-              <Address>customDamageMulti</Address>
+              <Address>customDamage</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -965,8 +964,56 @@ db F3 0F 11 92 BC 00 00 00
     </CheatEntry>
     <CheatEntry>
       <ID>19</ID>
-      <Description>"NOT safe for unflagged accs (Currently empty #lmfao)"</Description>
+      <Description>"NOT safe for unflagged accs"</Description>
       <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>52</ID>
+          <Description>"Fuck up KonFuze"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(konfuze,Assets.Scripts.Utils.KonFuze.ReadValue)
+[ENABLE]
+alloc(newmem,2048,konfuze)
+
+newmem:
+push rax
+mov rax, konFuzeValue
+movsd xmm0, [rax]
+pop rax
+ret
+
+konfuze:
+jmp newmem
+nop
+
+[DISABLE]
+dealloc(newmem)
+konfuze:
+db 40 53 48 83 EC 30
+//push rbx
+//sub rsp,30
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>53</ID>
+              <Description>"To save (most) values, buy something while hack is active"</Description>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>56</ID>
+              <Description>"(FOR COLLECTION EVENTS) enable mid-crate open to exit the UI"</Description>
+              <GroupHeader>1</GroupHeader>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>54</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Double</VariableType>
+              <Address>konFuzeValue</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
     </CheatEntry>
   </CheatEntries>
   <UserdefinedSymbols/>
@@ -983,7 +1030,7 @@ db F3 0F 11 92 BC 00 00 00
   end
 
   init("bloonMultiplier", 10, writeInteger)
-  initF("customDamageMulti", 10)
+  initF("customDamage", 1000000)
   initF("customPierce", 100000)
   initF("upgradeMultiplier", 0)
   initF("baseTowerMultiplier", 0)
@@ -993,6 +1040,7 @@ db F3 0F 11 92 BC 00 00 00
   initF("sellbackMod", 0.3)
   initF("bloonSpeedMulti", 0.5)
   initF("monkeyMoneyReward", 1000000)
+  init("konFuzeValue", 900000000, writeDouble)
 end
 
 </LuaScript>

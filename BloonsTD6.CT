@@ -550,8 +550,7 @@ label(returnhere)
 newmem:
 push rax
 mov rax, bloonSpeedMulti
-movss xmm6,[rsi+000000DC]
-mulss xmm6,[rax]
+movss xmm6,[rax]
 pop rax
 jmp returnhere
 
@@ -668,7 +667,7 @@ db 0F B6 86 D9 00 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>51</ID>
-          <Description>"1 cash powers + 999 quantity"</Description>
+          <Description>"1 cash powers + custom quantity"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(pwrclone,Assets.Scripts.Models.Powers.PowerModel.Clone)
 define(addy,Assets.Scripts.Models.Powers.PowerModel.get_Cost) //cost (after MK to prevent flag)
@@ -682,7 +681,6 @@ alloc(newmem2,2048,addy2)
 alloc(newmem3,2048,addy3)
 alloc(newmem4,2048,addy4)
 alloc(newmem5,2048,addy5)
-label(quantity)
 label(ret2)
 label(ret3)
 label(ret5)
@@ -692,7 +690,10 @@ mov eax, 1
 ret
 
 newmem2:
-mov r13d,[quantity]
+push rax
+mov rax, powerQuantity
+mov r13d,[rax]
+pop rax
 mov rdi,[rsi+38]
 jmp ret2
 
@@ -706,12 +707,12 @@ mov eax, 1
 ret
 
 newmem5:
-mov eax,[quantity]
+push rbx
+mov rbx, powerQuantity
+mov eax,[rbx]
+pop rbx
 mov [rsp+000000C8],eax
 jmp ret5
-
-quantity:
-dd #999
 
 addy:
 jmp newmem
@@ -759,6 +760,15 @@ db 8B 46 5C 89 84 24 C8 00 00 00
 //mov eax,[rsi+5C]
 //mov [rsp+000000C8],eax
 </AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>57</ID>
+              <Description>"quantity"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>powerQuantity</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>24</ID>
@@ -1032,6 +1042,7 @@ db 40 53 48 83 EC 30
   initF("bloonSpeedMulti", 0.5)
   initF("monkeyMoneyReward", 1000000)
   init("konFuzeValue", 900000000, writeDouble)
+  init("powerQuantity", 999, writeInteger)
 end
 
 </LuaScript>

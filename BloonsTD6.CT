@@ -550,7 +550,8 @@ label(returnhere)
 newmem:
 push rax
 mov rax, bloonSpeedMulti
-movss xmm6,[rax]
+movss xmm6,[rsi+000000DC]
+mulss xmm6,[rax]
 pop rax
 jmp returnhere
 

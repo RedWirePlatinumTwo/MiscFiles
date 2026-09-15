@@ -349,7 +349,7 @@ db 0F B6 47 48 F3 44 0F 10 4F 40
         </CheatEntry>
         <CheatEntry>
           <ID>15</ID>
-          <Description>"Place towers anywhere"</Description>
+          <Description>"Place towers (almost) anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(rfootprintmodel,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone)
 define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType) //make the function just return true
@@ -357,16 +357,11 @@ define(addy2,Assets.Scripts.Models.Towers.Behaviors.FootprintModel.Clone+4B) //i
 define(addy3,rfootprintmodel+4D) //xWidth
 define(addy4,rfootprintmodel+55) //yWidth
 [ENABLE]
-alloc(newmem,2048,addy)
 alloc(newmem3,2048,addy3)
 alloc(newmem4,2048,addy4)
 label(ret3)
 label(ret4)
 label(width)
-
-newmem:
-mov eax, 1
-ret
 
 newmem3:
 movss xmm6,[width]
@@ -380,8 +375,9 @@ width:
 dd (float)0.0
 
 addy:
-jmp newmem
-nop 7
+mov eax, 1
+ret
+nop 6
 
 addy2:
 mov ebp, 1
@@ -395,7 +391,6 @@ jmp newmem4
 ret4:
 
 [DISABLE]
-dealloc(newmem)
 dealloc(newmem3)
 dealloc(newmem4)
 addy:

@@ -671,10 +671,10 @@ db 0F B6 86 D9 00 00 00
           <Description>"1 cash powers + 999 quantity"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(pwrclone,Assets.Scripts.Models.Powers.PowerModel.Clone)
-define(addy,Assets.Scripts.Models.Powers.PowerModel.get_Cost+3D) //cost (after MK to prevent flag)
+define(addy,Assets.Scripts.Models.Powers.PowerModel.get_Cost) //cost (after MK to prevent flag)
 define(addy2,pwrclone+8E) //quantity
 define(addy3,pwrclone+7A) //cost (allows paid powers to be purchased)
-define(addy4,Assets.Scripts.Models.Powers.PowerModel.get_CanBePurchasedWithMM+3D) //cost (prevent MK preventing other power purchasing)
+define(addy4,Assets.Scripts.Models.Powers.PowerModel.get_CanBePurchasedWithMM) //cost (prevent MK preventing other power purchasing)
 define(addy5,Assets.Scripts.Models.Powers.PowerProModel.Clone+BB) //quantity (but for power pro)
 [ENABLE]
 alloc(newmem,2048,addy)
@@ -683,16 +683,13 @@ alloc(newmem3,2048,addy3)
 alloc(newmem4,2048,addy4)
 alloc(newmem5,2048,addy5)
 label(quantity)
-label(ret)
 label(ret2)
 label(ret3)
-label(ret4)
 label(ret5)
 
 newmem:
-mov ebx,1
-cmp dword ptr [rcx+000000E4],00
-jmp ret
+mov eax, 1
+ret
 
 newmem2:
 mov r13d,[quantity]
@@ -705,9 +702,8 @@ movzx r12d,byte ptr [rsi+2C]
 jmp ret3
 
 newmem4:
-mov ebx,1
-cmp dword ptr [rcx+000000E4],00
-jmp ret4
+mov eax, 1
+ret
 
 newmem5:
 mov eax,[quantity]
@@ -719,8 +715,6 @@ dd #999
 
 addy:
 jmp newmem
-nop 5
-ret:
 
 addy2:
 jmp newmem2
@@ -734,8 +728,6 @@ ret3:
 
 addy4:
 jmp newmem4
-nop 5
-ret4:
 
 addy5:
 jmp newmem5
@@ -749,9 +741,8 @@ dealloc(newmem3)
 dealloc(newmem4)
 dealloc(newmem5)
 addy:
-db 8B 5B 28 83 B9 E4 00 00 00 00
-//mov ebx,[rbx+28]
-//cmp dword ptr [rcx+000000E4],00
+db 48 89 5C 24 08
+//mov [rsp+08],rbx
 addy2:
 db 44 8B 6E 5C 48 8B 7E 38
 //mov r13d,[rsi+5C]
@@ -761,9 +752,8 @@ db 44 8B 7E 28 44 0F B6 66 2C
 //mov r15d,[rsi+28]
 //movzx r12d,byte ptr [rsi+2C]
 addy4:
-db 8B 5B 28 83 B9 E4 00 00 00 00
-//mov ebx,[rbx+28]
-//cmp dword ptr [rcx+000000E4],00
+db 48 89 5C 24 08
+//mov [rsp+08],rbx
 addy5:
 db 8B 46 5C 89 84 24 C8 00 00 00
 //mov eax,[rsi+5C]

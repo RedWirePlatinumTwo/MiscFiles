@@ -2,7 +2,7 @@
   "redwires_nbt_tags": {
     "latest": "2.1.3",
 	"changes": [
-		"Changed the checkbox for procedure \"Attempt to spawn entity from ALL data [x] randomize UUID [y]\" into an boolean input value (considering thats how it worked anyway)"
+		"Changed the UUID checkbox for procedure \"Attempt to spawn entity from ALL data [x] randomize UUID [y]\" into an boolean input value (considering thats how it worked anyway)"
 	]
   }
 }

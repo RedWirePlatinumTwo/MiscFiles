@@ -1,3 +1,5 @@
+# 2.1.3
+- Changed the checkbox for procedure "Attempt to spawn entity from *ALL* data [x] randomize UUID [y]" into an boolean input value (considering thats how it worked anyway)
 # 2.1.2
 - Emphasized procedure text on saving/loading all data of an entity, item, or block
 - Improved procedure code for "Sync block updates at xyz" so block entity changes actually save

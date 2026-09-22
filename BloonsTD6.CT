@@ -59,7 +59,9 @@ newmem:
 push rax
 mov rax, atkSpeedMultiplier
 movss xmm6,[rbx+68]
-mulss xmm6, [rax]
+movss xmm0, [rax]
+sqrtss xmm0, xmm0
+mulss xmm6, xmm0
 pop rax
 jmp ret
 
@@ -551,7 +553,9 @@ newmem:
 push rax
 mov rax, bloonSpeedMulti
 movss xmm6,[rsi+000000DC]
-mulss xmm6,[rax]
+movss xmm0, [rax]
+sqrtss xmm0, xmm0
+mulss xmm6, xmm0
 pop rax
 jmp returnhere
 
@@ -578,7 +582,7 @@ db F3 0F 10 B6 DC 00 00 00
         </CheatEntry>
         <CheatEntry>
           <ID>33</ID>
-          <Description>"Damage hack"</Description>
+          <Description>"Damage multiplier hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+5D) //damage
 [ENABLE]
@@ -587,8 +591,11 @@ label(ret)
 
 newmem:
 push rax
-mov rax, customDamage
-movss xmm6,[rax]
+mov rax, customDamageMulti
+movss xmm6,[rdi+30]
+movss xmm0, [rax]
+sqrtss xmm0, xmm0
+mulss xmm6, xmm0
 pop rax
 jmp ret
 
@@ -608,7 +615,7 @@ db F3 0F 10 77 30
               <Description>"value"</Description>
               <ShowAsSigned>0</ShowAsSigned>
               <VariableType>Float</VariableType>
-              <Address>customDamage</Address>
+              <Address>customDamageMulti</Address>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
@@ -1032,7 +1039,7 @@ db 40 53 48 83 EC 30
   end
 
   init("bloonMultiplier", 10, writeInteger)
-  initF("customDamage", 1000000)
+  initF("customDamageMulti", 10)
   initF("customPierce", 100000)
   initF("upgradeMultiplier", 0)
   initF("baseTowerMultiplier", 0)

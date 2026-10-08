@@ -8,7 +8,7 @@
 # Step 1
 - Open up the `Il2CppDumper GUI x86_64.exe` file (I believe `Il2CppDumper GUI x86.exe` does essentially the same thing, but BTD6 is a x64-bit game anyways, so...)
 # Step 2
-<img width="738" height="521" alt="image" src="https://github.com/user-attachments/assets/5c7ad268-b0c9-4198-8d57-5f127475f441" />
+<img width="743" height="306" alt="1" src="https://github.com/user-attachments/assets/a31c2993-951e-44ff-9340-e1764dac83f5" />
 
 - Navigate to your Bloons TD6 install directory. For example, I have it installed on my D: drive, so it's gonna be at `D:\SteamLibrary\steamapps\common\BloonsTD6`. If you have Bloons TD6 installed on steam, you can right-click on the game in your library, select [Properties > Installed Files > Browse...] to open up the games directory.
 - For "executable file", select "GameAssembly.dll" from the directory.

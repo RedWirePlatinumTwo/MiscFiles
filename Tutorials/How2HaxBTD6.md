@@ -13,4 +13,4 @@
 - Navigate to your Bloons TD6 install directory. For example, I have it installed on my D: drive, so it's gonna be at `D:\SteamLibrary\steamapps\common\BloonsTD6`. If you have Bloons TD6 installed on steam, you can right-click on the game in your library, select [Properties > Installed Files > Browse...] to open up the games directory.
 - For "executable file", select "GameAssembly.dll" from the directory.
 - For "global-metadata.dat", navigate to `BloonsTD6_Data\il2cpp_data\Metadata`, and select the `global-metadata.dat` file inside
-- Click the blue "Press start or drop APK, APKS, [...] to dump" file to begin the process, and wait for the "Done!" message in the console. If you get an error saying the output file path is denied, try moving it to a directory outside of OneDrive.
+- Click the blue "Press start or drop APK, APKS, [...] to dump" file to begin the process, and wait for the "Done!" message in the console. If you get an error saying the output file path is denied, try moving the output directory to a path outside of OneDrive, then try again.

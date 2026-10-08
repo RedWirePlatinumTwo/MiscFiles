@@ -221,22 +221,6 @@ db F3 0F 59 C8 F3 0F 2C C1
           </CheatEntries>
         </CheatEntry>
         <CheatEntry>
-          <ID>29</ID>
-          <Description>"Place towers in co-op areas"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+33D) //ignoreCoopAreas
-[ENABLE]
-addy:
-mov eax, 1
-nop 2
-
-[DISABLE]
-addy:
-db 0F B6 86 28 01 00 00
-//movzx eax,byte ptr [rsi+00000128]
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
           <ID>11</ID>
           <Description>"Towers always sellable + custom sellback"</Description>
           <VariableType>Auto Assembler Script</VariableType>
@@ -359,64 +343,52 @@ db 0F B6 43 48 F3 44 0F 10 4B 40
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
-          <ID>15</ID>
-          <Description>"Place towers (almost) anywhere"</Description>
+          <ID>60</ID>
+          <Description>"Tower availability bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(rfootprintmodel,Assets.Scripts.Models.Towers.Behaviors.RectangleFootprintModel.Clone)
-define(addy,Assets.Scripts.Models.Towers.TowerModel.IsPlaceableInAreaType) //make the function just return true
-define(addy2,Assets.Scripts.Models.Towers.Behaviors.FootprintModel.Clone+42) //ignoresPlacementCheck
-define(addy3,rfootprintmodel+47) //xWidth
-define(addy4,rfootprintmodel+4C) //yWidth
+          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.SetTowerMaxes)
 [ENABLE]
-alloc(newmem3,2048,addy3)
-alloc(newmem4,2048,addy4)
-label(ret3)
-label(ret4)
-label(width)
-
-newmem3:
-movss xmm6,[width]
-jmp ret3
-
-newmem4:
-movss xmm7,[width]
-jmp ret4
-
-width:
-dd (float)0.0
-
 addy:
-mov eax, 1
 ret
-nop 6
-
-addy2:
-mov ebp, 1
-
-addy3:
-jmp newmem3
-ret3:
-
-addy4:
-jmp newmem4
-ret4:
+nop 4
 
 [DISABLE]
-dealloc(newmem3)
-dealloc(newmem4)
 addy:
-db 48 83 EC 28 48 83 B9 B8 00 00 00 00
+db 48 89 54 24 10
+//mov [rsp+10],rdx
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>61</ID>
+          <Description>"Tower limit bypass"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.SetMaxTowerCount)
+[ENABLE]
+addy:
+ret
+nop 3
+
+[DISABLE]
+addy:
+db 48 83 EC 28
 //sub rsp,28
-//cmp qword ptr [rcx+000000B8],00
-addy2:
-db 41 0F B6 6E 29
-//movzx ebp,byte ptr [r14+29]
-addy3:
-db F3 0F 10 73 30
-//movss xmm6,[rbx+30]
-addy4:
-db F3 0F 10 7B 34
-//movss xmm7,[rbx+34]
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"Place towers anywhere"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.InputManager.CanPlaceTowerAt)
+[ENABLE]
+addy:
+xor eax, eax
+inc eax
+ret
+
+[DISABLE]
+addy:
+db 48 89 5C 24 08
+//mov [rsp+08],rbx
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -460,22 +432,6 @@ db 44 8B 7F 3C 44 8B 67 40
 addy2:
 db 0F B6 86 8A 00 00 00
 //movzx eax,byte ptr [rsi+0000008A]
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>60</ID>
-          <Description>"Hero restriction = nuh uh"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.SetTowerMaxes)
-[ENABLE]
-addy:
-ret
-nop 4
-
-[DISABLE]
-addy:
-db 48 89 54 24 10
-//mov [rsp+10],rdx
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -707,18 +663,12 @@ define(addy3,pwrclone+71) //cost (allows paid powers to be purchased)
 define(addy4,Assets.Scripts.Models.Powers.PowerModel.get_CanBePurchasedWithMM) //cost (prevent MK preventing other power purchasing)
 define(addy5,Assets.Scripts.Models.Powers.PowerProModel.Clone+9D) //quantity (but for power pro)
 [ENABLE]
-alloc(newmem,2048,addy)
 alloc(newmem2,2048,addy2)
 alloc(newmem3,2048,addy3)
-alloc(newmem4,2048,addy4)
 alloc(newmem5,2048,addy5)
 label(ret2)
 label(ret3)
 label(ret5)
-
-newmem:
-mov eax, 1
-ret
 
 newmem2:
 push rax
@@ -733,10 +683,6 @@ mov r15d,1
 movzx r12d,byte ptr [rsi+2C]
 jmp ret3
 
-newmem4:
-mov eax, 1
-ret
-
 newmem5:
 push rbx
 mov rbx, powerQuantity
@@ -746,7 +692,9 @@ mov rdi,[rsi+38]
 jmp ret5
 
 addy:
-jmp newmem
+xor eax, eax
+inc eax
+ret
 
 addy2:
 jmp newmem2
@@ -759,7 +707,9 @@ nop 4
 ret3:
 
 addy4:
-jmp newmem4
+xor eax, eax
+inc eax
+ret
 
 addy5:
 jmp newmem5
@@ -767,10 +717,8 @@ nop 3
 ret5:
 
 [DISABLE]
-dealloc(newmem)
 dealloc(newmem2)
 dealloc(newmem3)
-dealloc(newmem4)
 dealloc(newmem5)
 addy:
 db 48 89 5C 24 08
@@ -870,22 +818,6 @@ db F3 0F 10 73 30
 addy2:
 db F3 0F 10 7B 34
 //movss xmm7,[rbx+34]
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>61</ID>
-          <Description>"Tower limit bypass"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.SetMaxTowerCount)
-[ENABLE]
-addy:
-ret
-nop 3
-
-[DISABLE]
-addy:
-db 48 83 EC 28
-//sub rsp,28
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>

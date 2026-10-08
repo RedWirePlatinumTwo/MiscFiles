@@ -272,7 +272,6 @@ ret3:
 addy4:
 mov eax, 1
 nop 2
-ret4:
 
 [DISABLE]
 dealloc(newmem3)

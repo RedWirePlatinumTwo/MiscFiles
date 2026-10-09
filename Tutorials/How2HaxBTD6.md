@@ -7,6 +7,9 @@
 
 # Step 1
 - Open up the `Il2CppDumper GUI x86_64.exe` file (I believe `Il2CppDumper GUI x86.exe` does essentially the same thing, but BTD6 is a x64-bit game anyways, so...)
+<img width="705" height="499" alt="1a" src="https://github.com/user-attachments/assets/896c72ee-be6b-4951-97ab-89191e7dff69" />
+
+- (Personally, I recommend turning every setting except for "Check for updates" & "Generate dummy DLL" off, as those are the only 2 settings that matter for for us)
 # Step 2
 <img width="743" height="306" alt="1" src="https://github.com/user-attachments/assets/a31c2993-951e-44ff-9340-e1764dac83f5" />
 

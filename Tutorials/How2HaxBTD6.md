@@ -33,7 +33,10 @@ In this tutorial, we will be learning how to enable hypersonic towers
 **IMPORTANT INFO:**
   - The offset for `rate` currently is 0x68 as of **BTD6 57.0**. It ***may change in future updates,*** which is why having an updated dump file is important.
 # Part 6 (Cheat Engine time)
-- In Cheat Engine, open up "Memory View", right-click on any random address shown, click on "Go to address" from the context menu, and then go to `Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone`. Float fields like `rate` will typically have `xmm0`, `xmm1`, `xmm2`, etc. shown in the opcode, so it's safe to assume that the address the picture points at is what we want.
+- In Cheat Engine, open up "Memory View", right-click on any random address shown, click on "Go to address" from the context menu, and then go to `Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone`. Float fields like `rate` will typically have `xmm0`, `xmm1`, `xmm2`, etc. shown in the opcode, so it's safe to assume that the address the picture points at is what we want. Note: the `+68` matches the `0x68` offset as shown in dnSpy.
 <img width="651" height="463" alt="image" src="https://github.com/user-attachments/assets/f7371dc9-f62c-4e9c-9ad8-882749f68802" />
 
 - Fun fact: Most classes inside the `Assets.Scripts.Models.*` directly have a `Clone` method, which is helpful for us to track down certain fields that it uses. (You cannot go-to the address of the class itself, but *might* be able to poke around a `..ctor` method)
+- Some opcodes may be represented in 8 digits instead of just 2. For example, an offset of a field with `0x12A` will be represented as `0000012A` in Cheat Engine
+
+# Step 6

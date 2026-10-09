@@ -1,4 +1,4 @@
-<img width="651" height="463" alt="image" src="https://github.com/user-attachments/assets/32eeda84-ffac-4e6d-8b8b-e0c33571521f" /># Using DnSpy + Il2Cpp dumper & how to cheat in BTD6 using said tools
+# Using DnSpy + Il2Cpp dumper & how to cheat in BTD6 using said tools
 <img width="1027" height="582" alt="BTD6 screenshot of a hypersonic Monkey Ace" src="https://github.com/user-attachments/assets/37a9709a-f7bf-4fc3-8c0d-6335d42b22a0" />
 
 In this tutorial, we will be learning how to enable hypersonic towers

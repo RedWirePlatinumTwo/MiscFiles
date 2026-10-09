@@ -1,4 +1,4 @@
-# Using DnSpy + Il2Cpp dumper & how to cheat in BTD6 using said tools
+<img width="651" height="463" alt="image" src="https://github.com/user-attachments/assets/32eeda84-ffac-4e6d-8b8b-e0c33571521f" /># Using DnSpy + Il2Cpp dumper & how to cheat in BTD6 using said tools
 <img width="1027" height="582" alt="BTD6 screenshot of a hypersonic Monkey Ace" src="https://github.com/user-attachments/assets/37a9709a-f7bf-4fc3-8c0d-6335d42b22a0" />
 
 In this tutorial, we will be learning how to enable hypersonic towers
@@ -32,3 +32,8 @@ In this tutorial, we will be learning how to enable hypersonic towers
 
 **IMPORTANT INFO:**
   - The offset for `rate` currently is 0x68 as of **BTD6 57.0**. It ***may change in future updates,*** which is why having an updated dump file is important.
+# Part 6 (Cheat Engine time)
+- In Cheat Engine, open up "Memory View", right-click on any random address shown, click on "Go to address" from the context menu, and then go to `Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone`. Float fields like `rate` will typically have `xmm0`, `xmm1`, `xmm2`, etc. shown in the opcode, so it's safe to assume that the address the picture points at is what we want.
+<img width="651" height="463" alt="image" src="https://github.com/user-attachments/assets/f7371dc9-f62c-4e9c-9ad8-882749f68802" />
+
+- Fun fact: Most classes inside the `Assets.Scripts.Models.*` directly have a `Clone` method, which is helpful for us to track down certain fields that it uses. (You cannot go-to the address of the class itself, but *might* be able to poke around a `..ctor` method)

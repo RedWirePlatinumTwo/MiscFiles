@@ -42,13 +42,16 @@ Fun facts:
   - Some opcodes may be represented in 8 digits instead of just 2. For example, an offset of a field with `0x12A` will be represented as `0000012A` in Cheat Engine
 
 # Step 7
-- Because Cheat Table scripts are basically a whole other topic of its own to go over, we're going to use another method: right click the address that points to the offset you may need, and click "Find out what addresses this instruction accesses".
+- Because Cheat Table scripts are basically a whole other topic of its own to go over, we're going to use another (slightly longer) method: right click the address that points to the offset you may need, and click "Find out what addresses this instruction accesses".
 <img width="734" height="235" alt="image" src="https://github.com/user-attachments/assets/f2e47ebe-8dff-4349-bf5e-3d9aff9d57d0" />
 
 # Step 8
 - Open up any map in BTD6. The in-game loading might take longer while CE grabs every address, but you should start to notice a bunch of addresses present once the loading finishes.
-<img width="408" height="350" alt="image" src="https://github.com/user-attachments/assets/b948c35e-9c20-4733-9e85-2709501e0c22" />
+<img width="411" height="359" alt="8" src="https://github.com/user-attachments/assets/535789c7-e652-4783-962f-f8c25c25568e" />
 
 # Step 9
 - Select the very first address in the list. Scroll all the way down to the bottom, then **hold Shift** when selecting the address at the very bottom to highlight all addresses. Right click on any address in the list + press "Change value" (or press Enter), enter "0", then press "OK". In the window with the address list, press "Stop", then "Close".
-<img width="477" height="395" alt="image" src="https://github.com/user-attachments/assets/f5fcc67f-498c-4d97-a526-4e011862f241" />
+<img width="494" height="421" alt="9" src="https://github.com/user-attachments/assets/1c9a79f0-18b8-411c-bdec-3ae6352a47dc" />
+
+# You did it!!!!!!!!!!
+- Enjoy hypersonic monke :)

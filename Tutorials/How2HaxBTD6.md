@@ -29,5 +29,6 @@ In this tutorial, we will be learning how to enable hypersonic towers
 # Step 5
 - Click on the `rate: float` field inside `WeaponModel` and take note of the `FieldOffset` number inside it.
 <img width="763" height="146" alt="5" src="https://github.com/user-attachments/assets/8a032a73-85c6-4c57-b3ed-9cbd0eb638a3" />
+
 **IMPORTANT INFO:**
   - The offset for `rate` currently is 0x68 as of **BTD6 57.0**. It ***may change in future updates,*** which is why having an updated dump file is important.

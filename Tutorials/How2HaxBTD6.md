@@ -33,6 +33,7 @@ In this tutorial, we will be learning how to enable hypersonic towers
 **IMPORTANT INFO:**
   - The offset for `rate` currently is 0x68 as of **BTD6 57.0**. It ***may change in future updates,*** which is why having an updated dump file is important.
 # Part 6 (Cheat Engine time)
+- Open up Bloons TD6 and Cheat Engine, then select the BTD6 process from Cheat Engine. (Select "Activate Mono Features" in Cheat Engines "Mono" tab if not already active)
 - In Cheat Engine, open up "Memory View", right-click on any random address shown, click on "Go to address" from the context menu, and then go to `Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone`. Float fields like `rate` will typically have `xmm0`, `xmm1`, `xmm2`, etc. shown in the opcode, so it's safe to assume that the address the picture points at is what we want. Note: the `+68` matches the `0x68` offset as shown in dnSpy.
 <img width="651" height="463" alt="image" src="https://github.com/user-attachments/assets/f7371dc9-f62c-4e9c-9ad8-882749f68802" />
 
@@ -45,4 +46,9 @@ Fun facts:
 <img width="734" height="235" alt="image" src="https://github.com/user-attachments/assets/f2e47ebe-8dff-4349-bf5e-3d9aff9d57d0" />
 
 # Step 8
-- jork it
+- Open up any map in BTD6. The in-game loading might take longer while CE grabs every address, but you should start to notice a bunch of addresses present once the loading finishes.
+<img width="408" height="350" alt="image" src="https://github.com/user-attachments/assets/b948c35e-9c20-4733-9e85-2709501e0c22" />
+
+# Step 9
+- Select the very first address in the list. Scroll all the way down to the bottom, then **hold Shift** when selecting the address at the very bottom to highlight all addresses. Right click on any address in the list + press "Change value" (or press Enter), enter "0", then press "OK". In the window with the address list, press "Stop", then "Close".
+<img width="477" height="395" alt="image" src="https://github.com/user-attachments/assets/f5fcc67f-498c-4d97-a526-4e011862f241" />

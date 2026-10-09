@@ -19,6 +19,13 @@ In this tutorial, we will be learning how to enable hypersonic towers
 - For "global-metadata.dat", navigate to `BloonsTD6_Data\il2cpp_data\Metadata`, and select the `global-metadata.dat` file inside
 - Click the blue "Press start or drop APK, APKS, [...] to dump" file to begin the process, and wait for the "Done!" message in the console. If you get an error saying the output file path is denied, try moving the output directory to a path outside of OneDrive, then try again.
 # Step 3
-- Open up `Assembly-CSharp.dll` in dnSpy, which should look like this:
+- Open up `Assembly-CSharp.dll` in dnSpy from the Output directory's `DummyDll` folder, which should look like this:
 <img width="1296" height="723" alt="3" src="https://github.com/user-attachments/assets/b9293016-76b8-47bc-b240-578dd603c34f" />
 
+# Step 4
+- Navigate to `Assets.Scripts.Models.Towers.Weapons.WeaponModel`, which is going to have the information we'll need for hypersonic towers
+<img width="395" height="690" alt="4" src="https://github.com/user-attachments/assets/711d1138-5b40-407b-9fe6-b18992cd735a" />
+
+# Step 5
+- Click on the `rate: float` field inside `WeaponModel` and take note of the `FieldOffset` number inside it.
+<img width="763" height="146" alt="5" src="https://github.com/user-attachments/assets/8a032a73-85c6-4c57-b3ed-9cbd0eb638a3" />

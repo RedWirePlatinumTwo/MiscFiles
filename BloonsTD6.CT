@@ -197,7 +197,6 @@ ret:
 
 addy2:
 movss xmm0,xmm0
-cvttss2si eax,xmm1
 
 [DISABLE]
 dealloc(newmem)
@@ -206,9 +205,8 @@ db 8B 47 28 48 8B 7F 50
 //mov eax,[rdi+28]
 //mov rdi,[rdi+50]
 addy2:
-db F3 0F 59 C8 F3 0F 2C C1
+db F3 0F 59 C8
 //mulss xmm1,xmm0
-//cvttss2si eax,xmm1
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -291,55 +289,29 @@ define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+D9)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+103) //ignoreBlockers
 //addy3 is so a 4-x-x and 5-x-x Dartling Gunner can also bypass LoS (even if not visually)
 [ENABLE]
-alloc(newmem,2048,addy)
-alloc(newmem2,2048,addy2)
-alloc(newmem3,2048,addy3)
-label(ret)
-label(ret2)
-label(ret3)
-
-newmem:
-mov eax, 1
-mov [rsp+00000188],al
-jmp ret
-
-newmem2:
-mov r12d, 1
-jmp ret2
-
-newmem3:
-mov eax, 1
-movss xmm9,[rbx+40]
-jmp ret3
-
 addy:
-jmp newmem
-nop 6
-ret:
+xor eax, eax
+inc eax
 
 addy2:
-jmp newmem2
-ret2:
+push 1
+pop r12
+nop
 
 addy3:
-jmp newmem3
-nop 5
-ret3:
+xor eax, eax
+inc eax
 
 [DISABLE]
-dealloc(newmem)
-dealloc(newmem2)
 addy:
-db 0F B6 47 44 88 84 24 88 01 00 00
+db 0F B6 47 44
 //movzx eax,byte ptr [rdi+44]
-//mov [rsp+00000188],al
 addy2:
 db 44 0F B6 63 54
 //movzx r12d,byte ptr [rbx+54]
 addy3:
-db 0F B6 43 48 F3 44 0F 10 4B 40
+db 0F B6 43 48
 //movzx eax,byte ptr [rbx+48]
-//movss xmm9,[rbx+40]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -398,37 +370,18 @@ db 48 89 5C 24 08
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+6B) //immuneBloonProperties
 define(addy2,Assets.Scripts.Models.Bloons.BloonModel.Clone+194) //isCamo
 [ENABLE]
-alloc(newmem,2048,addy)
-alloc(newmem2,2048,addy2)
-label(ret)
-label(ret2)
-
-newmem:
-mov r15d, 0
-mov r12d,[rdi+40]
-jmp ret
-
-newmem2:
-mov eax, 0
-jmp ret2
-
 addy:
-jmp newmem
-nop 3
-ret:
+xor r15d, r15d
+nop
 
 addy2:
-jmp newmem2
-nop 2
-ret2:
+xor eax, eax
+nop 5
 
 [DISABLE]
-dealloc(newmem)
-dealloc(newmem2)
 addy:
-db 44 8B 7F 3C 44 8B 67 40
+db 44 8B 7F 3C
 //mov r15d,[rdi+3C]
-//mov r12d,[rdi+40]
 addy2:
 db 0F B6 86 8A 00 00 00
 //movzx eax,byte ptr [rsi+0000008A]
@@ -440,23 +393,11 @@ db 0F B6 86 8A 00 00 00
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+43) //costPerXpToLevel
 [ENABLE]
-alloc(newmem,2048,addy)
-label(newCost)
-label(ret)
-
-newmem:
-movss xmm7,[newCost]
-jmp ret
-
-newCost:
-dd (float)0.0
-
 addy:
-jmp newmem
-ret:
+xorps xmm7, xmm7
+nop 2
 
 [DISABLE]
-dealloc(newmem)
 addy:
 db F3 0F 10 7F 2C
 //movss xmm7,[rdi+2C]
@@ -468,24 +409,11 @@ db F3 0F 10 7F 2C
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.GoldenBloonModel.Clone+80) //invulnerableTime
 [ENABLE]
-alloc(newmem,2048,addy)
-label(invulTime)
-label(ret)
-
-newmem:
-movss xmm11,[invulTime]
-jmp ret
-
-invulTime:
-dd (float)0.0
-
 addy:
-jmp newmem
-nop
-ret:
+xorps xmm11, xmm11
+nop 2
 
 [DISABLE]
-dealloc(newmem)
 addy:
 db F3 45 0F 10 5D 3C
 //movss xmm11,[r13+3C]
@@ -497,24 +425,11 @@ db F3 45 0F 10 5D 3C
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.BloonModel.Clone+1CC) //leakDamage
 [ENABLE]
-alloc(newmem,2048,addy)
-label(dmg)
-label(ret)
-
-newmem:
-movss xmm9,[dmg]
-jmp ret
-
-dmg:
-dd (float)0.0
-
 addy:
-jmp newmem
-nop 4
-ret:
+xorps xmm9, xmm9
+nop 5
 
 [DISABLE]
-dealloc(newmem)
 addy:
 db F3 44 0F 10 8E BC 00 00 00
 //movss xmm9,[rsi+000000BC]
@@ -664,10 +579,8 @@ define(addy4,Assets.Scripts.Models.Powers.PowerModel.get_CanBePurchasedWithMM) /
 define(addy5,Assets.Scripts.Models.Powers.PowerProModel.Clone+9D) //quantity (but for power pro)
 [ENABLE]
 alloc(newmem2,2048,addy2)
-alloc(newmem3,2048,addy3)
 alloc(newmem5,2048,addy5)
 label(ret2)
-label(ret3)
 label(ret5)
 
 newmem2:
@@ -677,11 +590,6 @@ mov r13d,[rax]
 pop rax
 mov rdi,[rsi+38]
 jmp ret2
-
-newmem3:
-mov r15d,1
-movzx r12d,byte ptr [rsi+2C]
-jmp ret3
 
 newmem5:
 push rbx
@@ -702,9 +610,8 @@ nop 3
 ret2:
 
 addy3:
-jmp newmem3
-nop 4
-ret3:
+push 1
+pop r15
 
 addy4:
 xor eax, eax
@@ -718,7 +625,6 @@ ret5:
 
 [DISABLE]
 dealloc(newmem2)
-dealloc(newmem3)
 dealloc(newmem5)
 addy:
 db 48 89 5C 24 08
@@ -728,9 +634,8 @@ db 44 8B 6E 5C 48 8B 7E 38
 //mov r13d,[rsi+5C]
 //mov rdi,[rsi+38]
 addy3:
-db 44 8B 7E 28 44 0F B6 66 2C
+db 44 8B 7E 28
 //mov r15d,[rsi+28]
-//movzx r12d,byte ptr [rsi+2C]
 addy4:
 db 48 89 5C 24 08
 //mov [rsp+08],rbx
@@ -755,26 +660,14 @@ db 44 8B 6E 5C 48 8B 7E 38
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+37) //xpCost
 [ENABLE]
-alloc(newmem,2048,addy)
-label(ret)
-
-newmem:
-mov r13d, 1
-mov rbx,[rdi+30]
-jmp ret
-
-
 addy:
-jmp newmem
-nop 3
-ret:
+push 1
+pop r13
 
 [DISABLE]
-dealloc(newmem)
 addy:
-db 44 8B 6F 2C 48 8B 5F 30
+db 44 8B 6F 2C
 //mov r13d,[rdi+2C]
-//mov rbx,[rdi+30]
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -784,34 +677,17 @@ db 44 8B 6F 2C 48 8B 5F 30
           <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+4C) //start
 define(addy2,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+51) //end
 [ENABLE]
-alloc(newmem,2048,addy)
-alloc(newmem2,2048,addy2)
-label(newTime)
-label(ret)
-label(ret2)
-
-newmem:
-movss xmm6,[newTime]
-jmp ret
-
-newmem2:
-movss xmm7,[newTime]
-jmp ret2
-
-newTime:
-dd (float)0.0
-
 addy:
-jmp newmem
+xorps xmm6, xmm6
+nop 2
 ret:
 
 addy2:
-jmp newmem2
+xorps xmm7, xmm7
+nop 2
 ret2:
 
 [DISABLE]
-dealloc(newmem)
-dealloc(newmem2)
 addy:
 db F3 0F 10 73 30
 //movss xmm6,[rbx+30]

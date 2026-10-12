@@ -6,7 +6,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 57.0.12144 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 57.1.12175 (may crash on newer versions)"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -402,6 +402,41 @@ addy:
 db F3 0F 10 7F 2C
 //movss xmm7,[rdi+2C]
 </AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>62</ID>
+          <Description>"Hero XP scale mod"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+3E)
+[ENABLE]
+alloc(newmem,2048,addy)
+label(return)
+
+newmem:
+push rax
+mov rax, heroXPScale
+movss xmm6,[rax]
+pop rax
+jmp return
+
+addy:
+jmp newmem
+return:
+
+[DISABLE]
+addy:
+db F3 0F 10 77 28
+//movss xmm6,[rdi+28]
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>63</ID>
+              <Description>"value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>Float</VariableType>
+              <Address>heroXPScale</Address>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>18</ID>
@@ -898,6 +933,7 @@ db 40 53 48 83 EC 30
   initF("monkeyMoneyReward", 1000000)
   init("konFuzeValue", 900000000, writeDouble)
   init("powerQuantity", 999, writeInteger)
+  initF("heroXPScale", 10)
 end
 
 </LuaScript>

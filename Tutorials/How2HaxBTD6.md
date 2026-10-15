@@ -39,7 +39,7 @@ In this tutorial, we will be learning how to enable hypersonic towers
 
 Fun facts:
   - Most classes inside the `Assets.Scripts.Models.*` directly have a `Clone` method, which is helpful for us to track down certain fields that it uses. (You cannot go-to the address of the class itself, but *might* be able to poke around a `..ctor` method)
-  - If an offset starts with 0x80 or higher (ex: 0x92, 0x10A), they will be represented in 8 digits instead of just 2. For example, an offset of a field with `0x12A` will be represented as `0000012A` in Cheat Engine
+  - If an offset is 0x80 or greater (ex: 0x92, 0x10A), they will be represented in 8 digits instead of just 2. For example, an offset of a field with `0x12A` will be represented as `0000012A` in Cheat Engine
 
 # Step 7
 - Because Cheat Table scripts are basically a whole other topic of its own to go over, we're going to use another (slightly longer) method: right click the address that points to the offset you may need, and click "Find out what addresses this instruction accesses".

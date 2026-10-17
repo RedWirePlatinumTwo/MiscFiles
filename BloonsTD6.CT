@@ -6,7 +6,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 57.1.12175 (may crash on newer versions)"</Description>
+      <Description>"Current supported version: 57.2.12199"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -34,7 +34,9 @@
           <Description>"Tier unblocker (aka inf T5s)"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked)//override da whole function #lmao
+define(bytes,48 89 5C 24 10)
 [ENABLE]
+assert(addy, bytes)
 addy:
 xor eax, eax
 ret
@@ -42,8 +44,7 @@ nop 2
 
 [DISABLE]
 addy:
-db 48 89 5C 24 10
-//mov [rsp+10],rbx
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -51,7 +52,9 @@ db 48 89 5C 24 10
           <Description>"Tower attack speed multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Weapons.WeaponModel.Clone+73) //rate
+define(bytes, F3 0F 10 7B 68)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -72,8 +75,7 @@ ret:
 [DISABLE]
 dealloc(newmem)
 addy:
-db F3 0F 10 7B 68
-//movss movss xmm7,[rbx+68]
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -90,7 +92,9 @@ db F3 0F 10 7B 68
           <Description>"Ability cooldown multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.Abilities.AbilityModel.Clone+85) //cooldown
+define(bytes, F3 0F 10 BF 94 00 00 00)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -110,8 +114,7 @@ ret:
 [DISABLE]
 dealloc(newmem)
 addy:
-db F3 0F 10 BF 94 00 00 00
-//movss xmm7,[rdi+00000094]
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -128,8 +131,12 @@ db F3 0F 10 BF 94 00 00 00
           <Description>"Tower base cost multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+C5) //cost
-define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+24A) //gamemode multiplier
+define(bytes, F3 44 0F 10 56 58)
+define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+23A) //gamemode multiplier
+define(bytes2, F3 0F 59 46 58)
 [ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -153,11 +160,9 @@ nop
 [DISABLE]
 dealloc(newmem)
 addy:
-db F3 44 0F 10 56 58
-//movss xmm10,[rsi+58]
+db bytes
 addy2:
-db F3 0F 59 46 58
-//mulss xmm0,[rsi+58]
+db bytes2
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -174,8 +179,12 @@ db F3 0F 59 46 58
           <Description>"Upgrade cost multi"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+5D) //cost
-define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+462)
+define(bytes, 8B 47 28 48 8B 7F 50)
+define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+452)
+define(bytes2, F3 0F 59 C8)
 [ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -201,12 +210,9 @@ movss xmm0,xmm0
 [DISABLE]
 dealloc(newmem)
 addy:
-db 8B 47 28 48 8B 7F 50
-//mov eax,[rdi+28]
-//mov rdi,[rdi+50]
+db bytes
 addy2:
-db F3 0F 59 C8
-//mulss xmm1,xmm0
+db bytes2
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -224,10 +230,18 @@ db F3 0F 59 C8
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(towermodel,Assets.Scripts.Models.Towers.TowerModel.Clone)
 define(addy,towermodel+347) //canAlwaysBeSold
+define(bytes, 0F B6 86 2A 01 00 00)
 define(addy2,towermodel+351) //blockSelling
+define(bytes2, 0F B6 86 2B 01 00 00)
 define(addy3,towermodel+30C) //sellbackModifierAdd
+define(bytes3, F3 44 0F 10 B6 40 01 00 00)
 define(addy4,towermodel+370) //ignoreMaxSellPercent
+define(bytes4, 0F B6 86 2D 01 00 00)
 [ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
+assert(addy3, bytes3)
+assert(addy4, bytes4)
 alloc(newmem3,2048,addy3)
 label(ret3)
 
@@ -258,17 +272,13 @@ nop 2
 [DISABLE]
 dealloc(newmem3)
 addy:
-db 0F B6 86 2A 01 00 00
-//movzx eax,byte ptr [rsi+0000012A]
+db bytes
 addy2:
-db 0F B6 86 2B 01 00 00
-//movzx eax,byte ptr [rsi+0000012B]
+db bytes2
 addy3:
-db F3 44 0F 10 B6 40 01 00 00
-//movss xmm14,[rsi+00000140]
+db bytes3
 addy4:
-db 0F B6 86 2D 01 00 00
-//movzx eax,byte ptr [rsi+0000012D]
+db bytes4
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -285,10 +295,16 @@ db 0F B6 86 2D 01 00 00
           <Description>"Line of sight bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+120) //ignoreBlockers
+define(bytes, 0F B6 47 44)
 define(addy2,Assets.Scripts.Models.Towers.Behaviors.Attack.AttackModel.Clone+D9) //attackThroughWalls
+define(bytes2, 44 0F B6 63 54)
 define(addy3,Assets.Scripts.Models.Towers.Behaviors.Emissions.LineProjectileEmissionModel.Clone+103) //ignoreBlockers
+define(bytes3, 0F B6 43 48)
 //addy3 is so a 4-x-x and 5-x-x Dartling Gunner can also bypass LoS (even if not visually)
 [ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
+assert(addy3, bytes3)
 addy:
 xor eax, eax
 inc eax
@@ -304,14 +320,11 @@ inc eax
 
 [DISABLE]
 addy:
-db 0F B6 47 44
-//movzx eax,byte ptr [rdi+44]
+db bytes
 addy2:
-db 44 0F B6 63 54
-//movzx r12d,byte ptr [rbx+54]
+db bytes2
 addy3:
-db 0F B6 43 48
-//movzx eax,byte ptr [rbx+48]
+db bytes3
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -319,15 +332,16 @@ db 0F B6 43 48
           <Description>"Tower availability bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.SetTowerMaxes)
+define(bytes, 48 89 54 24 10)
 [ENABLE]
+assert(addy, bytes)
 addy:
 ret
 nop 4
 
 [DISABLE]
 addy:
-db 48 89 54 24 10
-//mov [rsp+10],rdx
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -335,15 +349,16 @@ db 48 89 54 24 10
           <Description>"Tower limit bypass"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.SetMaxTowerCount)
+define(bytes, 48 83 EC 28)
 [ENABLE]
+assert(addy, bytes)
 addy:
 ret
 nop 3
 
 [DISABLE]
 addy:
-db 48 83 EC 28
-//sub rsp,28
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -351,7 +366,9 @@ db 48 83 EC 28
           <Description>"Place towers anywhere"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.InputManager.CanPlaceTowerAt)
+define(bytes, 48 89 5C 24 08)
 [ENABLE]
+assert(addy, bytes)
 addy:
 xor eax, eax
 inc eax
@@ -359,8 +376,7 @@ ret
 
 [DISABLE]
 addy:
-db 48 89 5C 24 08
-//mov [rsp+08],rbx
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -368,8 +384,12 @@ db 48 89 5C 24 08
           <Description>"Pop all bloon types"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+6B) //immuneBloonProperties
+define(bytes, 44 8B 7F 3C)
 define(addy2,Assets.Scripts.Models.Bloons.BloonModel.Clone+194) //isCamo
+define(bytes2, 0F B6 86 8A 00 00 00)
 [ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
 addy:
 xor r15d, r15d
 nop
@@ -380,11 +400,9 @@ nop 5
 
 [DISABLE]
 addy:
-db 44 8B 7F 3C
-//mov r15d,[rdi+3C]
+db bytes
 addy2:
-db 0F B6 86 8A 00 00 00
-//movzx eax,byte ptr [rsi+0000008A]
+db bytes2
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -392,15 +410,16 @@ db 0F B6 86 8A 00 00 00
           <Description>"11 dollah hero upgrades"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+43) //costPerXpToLevel
+define(bytes, F3 0F 10 7F 2C)
 [ENABLE]
+assert(addy, bytes)
 addy:
 xorps xmm7, xmm7
 nop 2
 
 [DISABLE]
 addy:
-db F3 0F 10 7F 2C
-//movss xmm7,[rdi+2C]
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -408,7 +427,9 @@ db F3 0F 10 7F 2C
           <Description>"Hero XP scale mod"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Behaviors.HeroModel.Clone+3E)
+define(bytes, F3 0F 10 77 28)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(return)
 
@@ -425,8 +446,7 @@ return:
 
 [DISABLE]
 addy:
-db F3 0F 10 77 28
-//movss xmm6,[rdi+28]
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -443,15 +463,16 @@ db F3 0F 10 77 28
           <Description>"Remove golden bloon I-frames"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.GoldenBloonModel.Clone+80) //invulnerableTime
+define(bytes, F3 45 0F 10 5D 3C)
 [ENABLE]
+assert(addy, bytes)
 addy:
 xorps xmm11, xmm11
 nop 2
 
 [DISABLE]
 addy:
-db F3 45 0F 10 5D 3C
-//movss xmm11,[r13+3C]
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -459,15 +480,16 @@ db F3 45 0F 10 5D 3C
           <Description>"Bloons deal 0 damage"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.BloonModel.Clone+1CC) //leakDamage
+define(bytes, F3 44 0F 10 8E BC 00 00 00)
 [ENABLE]
+assert(addy, bytes)
 addy:
 xorps xmm9, xmm9
 nop 5
 
 [DISABLE]
 addy:
-db F3 44 0F 10 8E BC 00 00 00
-//movss xmm9,[rsi+000000BC]
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -475,14 +497,16 @@ db F3 44 0F 10 8E BC 00 00 00
           <Description>"Bloon speed mod"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.BloonModel.Clone+BD) //speed
+define(bytes, F3 0F 10 B6 E4 00 00 00)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(returnhere)
 
 newmem:
 push rax
 mov rax, bloonSpeedMulti
-movss xmm6,[rsi+000000DC]
+movss xmm6,[rsi+000000E4]
 movss xmm0, [rax]
 sqrtss xmm0, xmm0
 mulss xmm6, xmm0
@@ -497,8 +521,7 @@ returnhere:
 [DISABLE]
 dealloc(newmem)
 addy:
-db F3 0F 10 B6 DC 00 00 00
-//movss xmm6,[rsi+000000DC]
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -515,7 +538,9 @@ db F3 0F 10 B6 DC 00 00 00
           <Description>"Damage multiplier hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.Behaviors.DamageModel.Clone+54) //damage
+define(bytes, F3 0F 10 77 30)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -536,8 +561,7 @@ ret:
 [DISABLE]
 dealloc(newmem)
 addy:
-db F3 0F 10 77 30
-//movss xmm6,[rdi+30]
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -554,7 +578,9 @@ db F3 0F 10 77 30
           <Description>"Pierce hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Projectiles.ProjectileModel.Clone+A0) //pierce
+define(bytes, F3 44 0F 10 57 3C)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -573,8 +599,7 @@ ret:
 [DISABLE]
 dealloc(newmem)
 addy:
-db F3 44 0F 10 57 3C
-//movss xmm10,[rdi+3C]
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -591,15 +616,16 @@ db F3 44 0F 10 57 3C
           <Description>"Reveal dev sandbox options"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.BloonModel.Clone+285) //dontShowInSandboxOnRelease
+define(bytes, 0F B6 86 E1 00 00 00)
 [ENABLE]
+assert(addy, bytes)
 addy:
 mov eax, 0
 nop 2
 
 [DISABLE]
 addy:
-db 0F B6 86 D9 00 00 00
-//movzx eax,byte ptr [rsi+000000D9]
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -608,11 +634,21 @@ db 0F B6 86 D9 00 00 00
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(pwrclone,Assets.Scripts.Models.Powers.PowerModel.Clone)
 define(addy,Assets.Scripts.Models.Powers.PowerModel.get_Cost) //cost (after MK to prevent flag)
+define(bytes, 48 89 5C 24 08)
 define(addy2,pwrclone+85) //quantity
+define(bytes2, 44 8B 6E 5C 48 8B 7E 38)
 define(addy3,pwrclone+71) //cost (allows paid powers to be purchased)
+define(bytes3, 44 8B 7E 28)
 define(addy4,Assets.Scripts.Models.Powers.PowerModel.get_CanBePurchasedWithMM) //cost (prevent MK preventing other power purchasing)
+define(bytes4, 48 89 5C 24 08)
 define(addy5,Assets.Scripts.Models.Powers.PowerProModel.Clone+9D) //quantity (but for power pro)
+define(bytes5, 44 8B 6E 5C 48 8B 7E 38)
 [ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
+assert(addy3, bytes3)
+assert(addy4, bytes4)
+assert(addy5, bytes5)
 alloc(newmem2,2048,addy2)
 alloc(newmem5,2048,addy5)
 label(ret2)
@@ -662,22 +698,15 @@ ret5:
 dealloc(newmem2)
 dealloc(newmem5)
 addy:
-db 48 89 5C 24 08
-//mov [rsp+08],rbx
+db bytes
 addy2:
-db 44 8B 6E 5C 48 8B 7E 38
-//mov r13d,[rsi+5C]
-//mov rdi,[rsi+38]
+db bytes2
 addy3:
-db 44 8B 7E 28
-//mov r15d,[rsi+28]
+db bytes3
 addy4:
-db 48 89 5C 24 08
-//mov [rsp+08],rbx
+db bytes4
 addy5:
-db 44 8B 6E 5C 48 8B 7E 38
-//mov r13d,[rsi+5C]
-//mov rdi,[rsi+38]
+db bytes5
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -694,15 +723,16 @@ db 44 8B 6E 5C 48 8B 7E 38
           <Description>"1 XP upgrades"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+37) //xpCost
+define(bytes, 44 8B 6F 2C)
 [ENABLE]
+assert(addy, bytes)
 addy:
 push 1
 pop r13
 
 [DISABLE]
 addy:
-db 44 8B 6F 2C
-//mov r13d,[rdi+2C]
+db bytes
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -710,8 +740,12 @@ db 44 8B 6F 2C
           <Description>"Rapidly-sent bloons"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+4C) //start
+define(bytes, F3 0F 10 73 30)
 define(addy2,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+51) //end
+define(bytes2, F3 0F 10 7B 34)
 [ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
 addy:
 xorps xmm6, xmm6
 nop 2
@@ -724,11 +758,9 @@ ret2:
 
 [DISABLE]
 addy:
-db F3 0F 10 73 30
-//movss xmm6,[rbx+30]
+db bytes
 addy2:
-db F3 0F 10 7B 34
-//movss xmm7,[rbx+34]
+db bytes2
 </AssemblerScript>
         </CheatEntry>
         <CheatEntry>
@@ -736,7 +768,9 @@ db F3 0F 10 7B 34
           <Description>"Multi-bloon sends"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Rounds.BloonGroupModel.Clone+CC) //count
+define(bytes, 89 6B 38 48 8B 5C 24 50)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -757,9 +791,7 @@ ret:
 [DISABLE]
 dealloc(newmem)
 addy:
-db 89 6B 38 48 8B 5C 24 50
-//mov [rbx+38],ebp
-//mov rbx,[rsp+50]
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -776,7 +808,9 @@ db 89 6B 38 48 8B 5C 24 50
           <Description>"Cash-per-pop hack"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Bloons.Behaviors.DistributeCashModel.Clone+86) //cash
+define(bytes, 0F 11 77 28 40 88 77 38)
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -798,9 +832,7 @@ ret:
 [DISABLE]
 dealloc(newmem)
 addy:
-db 0F 11 77 28 40 88 77 38
-//movups [rdi+28],xmm6
-//mov [rdi+38],sil
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -817,8 +849,10 @@ db 0F 11 77 28 40 88 77 38
           <Description>"Custom monkey money reward"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Gameplay.Mods.MonkeyMoneyModModel.Mutate+28) //hijack money write-back
+define(bytes, F3 0F 11 92 BC 00 00 00)
 //other money values won't work if u dont have Mo' Monkey Money, which is why im doing this instead
 [ENABLE]
+assert(addy, bytes)
 alloc(newmem,2048,addy)
 label(ret)
 
@@ -838,8 +872,7 @@ ret:
 [DISABLE]
 dealloc(newmem)
 addy:
-db F3 0F 11 92 BC 00 00 00
-//movss [rdx+000000BC],xmm2
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>
@@ -863,7 +896,9 @@ db F3 0F 11 92 BC 00 00 00
           <Description>"Fuck up KonFuze"</Description>
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(konfuze,Assets.Scripts.Utils.KonFuze.ReadValue)
+define(bytes, 40 53 48 83 EC 30)
 [ENABLE]
+assert(konfuze, bytes)
 alloc(newmem,2048,konfuze)
 
 newmem:
@@ -880,9 +915,7 @@ nop
 [DISABLE]
 dealloc(newmem)
 konfuze:
-db 40 53 48 83 EC 30
-//push rbx
-//sub rsp,30
+db bytes
 </AssemblerScript>
           <CheatEntries>
             <CheatEntry>

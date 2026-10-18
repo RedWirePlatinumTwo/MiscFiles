@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable UsesMono="1" CheatEngineTableVersion="52">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>17</ID>
+      <Description>"Pro-plant haxx"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>4</ID>
+          <Description>"Instant seed refresh"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.SeedPacket.Update+19A)
+define(bytes, 3B 43 74)
+[ENABLE]
+assert(addy, bytes)
+addy:
+nop 3
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>3</ID>
+          <Description>"Plant anti-death (restores HP)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Plant.Die)
+define(bytes, 48 89 5C 24 10)
+[ENABLE]
+assert(addy, bytes)
+alloc(newmem,2048,addy)
+
+newmem:
+mov eax, [rcx+90]
+mov [rcx+8C], eax //restore full plant health to prevent gulp SFX spam
+ret
+
+addy:
+jmp newmem
+
+[DISABLE]
+dealloc(newmem)
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>2</ID>
+          <Description>"Eating *increases* HP"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Zombie.EatPlant+226)
+define(bytes, 83 AB 8C 00 00 00 04)
+[ENABLE]
+assert(addy, bytes)
+addy:
+add dword ptr [rbx+0000008C],04
+ 
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>8</ID>
+          <Description>"Anti-squish (Squash not included)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Plant.Squish)
+define(bytes, 40 53)
+[ENABLE]
+assert(addy, bytes)
+addy:
+ret
+nop
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>6</ID>
+          <Description>"Plant attack speed hax"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(shooter,Reloaded.Gameplay.Plant.UpdateShooter)
+define(tfire,Reloaded.Gameplay.Plant.FindTargetAndFire)
+define(shootVal, #2)
+define(launchcounter,shooter+79)
+define(bytes, 89 BB A4 00 00 00)
+define(shootc1,shooter+264)
+define(bytes2, C7 83 DC 00 00 00 28 00 00 00)
+define(shootc2,tfire+123)
+define(bytes3, C7 83 DC 00 00 00 1A 00 00 00)
+define(shootc3,tfire+234)
+define(bytes4, C7 83 DC 00 00 00 64 00 00 00)
+define(shootc4,tfire+26B)
+define(bytes5, C7 83 DC 00 00 00 1A 00 00 00)
+define(shootc5,tfire+3E7)
+define(bytes6, C7 83 DC 00 00 00 1E 00 00 00)
+define(shootc6,tfire+3F8)
+define(bytes7, C7 83 DC 00 00 00 24 00 00 00)
+define(shootc7,tfire+409)
+define(bytes8, C7 83 DC 00 00 00 20 00 00 00)
+define(shootc8,tfire+41A)
+define(bytes9, C7 83 DC 00 00 00 19 00 00 00)
+define(shootc9,tfire+42B)
+define(bytes10, C7 83 DC 00 00 00 1D 00 00 00)
+define(shootc10,tfire+46E)
+define(bytes11, C7 83 DC 00 00 00 32 00 00 00)
+define(shootc11,tfire+4B0)
+define(bytes12, C7 83 DC 00 00 00 C8 00 00 00)
+define(shootc12,tfire+4EE)
+define(bytes13, C7 83 DC 00 00 00 17 00 00 00)
+define(shootc13,tfire+364)
+define(bytes14, 89 83 DC 00 00 00)
+define(shootc14,tfire+1EA)
+define(bytes15, C7 83 DC 00 00 00 23 00 00 00)
+define(shootc15,Reloaded.Gameplay.Plant.LaunchThreepeater+211)
+define(bytes16, C7 83 DC 00 00 00 23 00 00 00)
+[ENABLE]
+assert(launchcounter, bytes)
+assert(shootc1, bytes2)
+assert(shootc2, bytes3)
+assert(shootc3, bytes4)
+assert(shootc4, bytes5)
+assert(shootc5, bytes6)
+assert(shootc6, bytes7)
+assert(shootc7, bytes8)
+assert(shootc8, bytes9)
+assert(shootc9, bytes10)
+assert(shootc10, bytes11)
+assert(shootc11, bytes12)
+assert(shootc12, bytes13)
+assert(shootc13, bytes14)
+assert(shootc14, bytes15)
+assert(shootc15, bytes16)
+alloc(newmem,2048,launchcounter)
+label(returnhere)
+alloc(newmem2,2048,shootc13)
+label(return2)
+
+newmem:
+push rdx
+mov rdx,Firerate
+mov edx,[rdx]
+mov [rbx+000000A4],edx
+pop rdx
+jmp returnhere
+
+newmem2:
+mov [rbx+000000DC],shootVal
+jmp return2
+
+launchcounter:
+jmp newmem
+nop
+returnhere:
+
+shootc1:
+mov [rbx+000000DC],shootVal
+// i dont know which edits are useful or not under FindTargetAndFire,
+//so we're changing all of them (surely the devs couldve optimized this better)
+shootc2:
+mov [rbx+000000DC],shootVal
+shootc3:
+mov [rbx+000000DC],shootVal
+shootc4:
+mov [rbx+000000DC],shootVal
+shootc5:
+mov [rbx+000000DC],shootVal
+shootc6:
+mov [rbx+000000DC],shootVal
+shootc7:
+mov [rbx+000000DC],shootVal
+shootc8:
+mov [rbx+000000DC],shootVal
+shootc9:
+mov [rbx+000000DC],shootVal
+shootc10:
+mov [rbx+000000DC],shootVal
+shootc11:
+mov [rbx+000000DC],shootVal
+shootc12:
+mov [rbx+000000DC],shootVal
+shootc13:
+jmp newmem2
+nop
+return2:
+shootc14:
+mov [rbx+000000DC],shootVal
+shootc15:
+mov [rbx+000000DC],shootVal
+
+[DISABLE]
+launchcounter:
+db bytes
+shootc1:
+db bytes2
+shootc2:
+db bytes3
+shootc3:
+db bytes4
+shootc4:
+db bytes5
+shootc5:
+db bytes6
+shootc6:
+db bytes7
+shootc7:
+db bytes8
+shootc8:
+db bytes9
+shootc9:
+db bytes10
+shootc10:
+db bytes11
+shootc11:
+db bytes12
+shootc12:
+db bytes13
+shootc13:
+db bytes14
+shootc14:
+db bytes15
+shootc15:
+db bytes16
+dealloc(newmem)
+dealloc(newmem2)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>21</ID>
+              <Description>"Fire rate (2 = fastest)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>Firerate</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>15</ID>
+          <Description>"Plant HP haxx on initialize"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Plant.PlantInitialize+125C)
+define(bytes, 8B 83 8C 00 00 00)
+[ENABLE]
+assert(addy, bytes)
+alloc(newmem,2048,addy)
+label(returnhere)
+
+newmem:
+push rdx
+mov rdx, HPAmount
+mov edx, [rdx]
+mov [rbx+8C], edx
+pop rdx
+mov eax,[rbx+8C]
+jmp returnhere
+
+addy:
+jmp newmem
+nop
+returnhere:
+
+[DISABLE]
+dealloc(newmem)
+addy:
+db bytes
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>22</ID>
+              <Description>"HP value"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>HPAmount</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>10</ID>
+          <Description>"Anti-Bungee Zombie"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Zombie.BungeeLanding+1B1)
+define(bytes, E8 CA C4 00 00)
+[ENABLE]
+assert(addy, bytes)
+addy:
+call Reloaded.Gameplay.Zombie.DieNoLoot
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>14</ID>
+          <Description>"Allow chompers to eat pogo + dolphin rider"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Zombie.IsImmobilizied)
+define(bytes, 83 B9 0C 01 00 00 00)
+//yes i know "immobilized" is spelled wrong, the devs made it that way
+[ENABLE]
+assert(addy, bytes)
+addy:
+mov eax, 1
+ret
+nop
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>27</ID>
+          <Description>"Kernelpult butter % hax"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Plant.FindTargetAndFire+388)
+define(bytes, B9 04 00 00 00)
+[ENABLE]
+assert(addy, bytes)
+alloc(newmem,2048,addy)
+label(return)
+
+newmem:
+push rdx
+mov rdx, KernelButter
+mov edx, [rdx]
+mov ecx, edx
+pop rdx
+jmp return
+
+addy:
+jmp newmem
+return:
+
+[DISABLE]
+addy:
+db bytes
+dealloc(newmem)
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>30</ID>
+              <Description>"0 = 100%, 4 = 25% (vanilla)"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>KernelButter</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>28</ID>
+          <Description>"Slower zombies"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(chilled,Reloaded.Gameplay.Zombie.IsMovingAtChilledSpeed)
+define(bytes, 48 89 5C 24 08)
+[ENABLE]
+assert(chilled, bytes)
+chilled:
+xor eax, eax
+inc eax
+ret
+
+[DISABLE]
+chilled:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>29</ID>
+          <Description>"Nocturnal plants always-awake"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(sleeping,Reloaded.Gameplay.Plant.SetSleeping)
+define(bytes, 48 89 5C 24 08)
+[ENABLE]
+assert(sleeping, bytes)
+alloc(newmem,2048,sleeping)
+label(returnhere)
+
+newmem:
+mov dl, 0
+mov [rsp+08],rbx
+jmp returnhere
+
+sleeping:
+jmp newmem
+returnhere:
+
+[DISABLE]
+dealloc(newmem)
+sleeping:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>18</ID>
+      <Description>"Pro-zombie haxx"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>16</ID>
+          <Description>"Anti-magnet shroom"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Plant.MagnetShroomAttactItem)
+define(bytes, 48 89 5C 24 18)
+//another spelling error, wowzas
+[ENABLE]
+assert(addy, bytes)
+addy:
+ret
+nop 4
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>23</ID>
+          <Description>"Zombie anti-death (restores HP)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(dropHead,Reloaded.Gameplay.Zombie.DropHead)
+define(bytes, 40 53 55 48 81 EC A8 00 00 00)
+define(die,Reloaded.Gameplay.Zombie.DieNoLoot)
+define(bytes2, 48 89 5C 24 18)
+[ENABLE]
+assert(dropHead, bytes)
+assert(die, bytes2)
+alloc(newmem,2048,dropHead)
+
+newmem:
+mov eax, [rcx+124]
+mov [rcx+120], eax
+ret
+
+dropHead:
+jmp newmem
+nop 5
+
+die:
+ret
+nop 4
+
+[DISABLE]
+dealloc(newmem)
+dropHead:
+db bytes
+die:
+db bytes2
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"Plant-targeting behavior"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>12</ID>
+          <Description>"All plants targetable"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Zombie.CanTargetPlant)
+define(bytes, 48 89 5C 24 08)
+[ENABLE]
+assert(addy, bytes)
+addy:
+xor eax, eax
+inc eax
+ret
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>13</ID>
+          <Description>"NO plants targetable"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Zombie.CanTargetPlant)
+define(bytes, 48 89 5C 24 08)
+[ENABLE]
+assert(addy, bytes)
+addy:
+xor eax, eax
+ret
+nop 2
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>19</ID>
+      <Description>"Misc"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>0</ID>
+          <Description>"Infinite sun (9000 on decrease)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Board.MouseDownWithPlant+9A0)
+define(bytes, 44 29 60 10 44 8B 44 24 44)
+define(addy2,Reloaded.Gameplay.Board.TakeSunMoney+ED)
+define(bytes2, 29 68 10 B0 01)
+[ENABLE]
+assert(addy, bytes)
+assert(addy2, bytes2)
+alloc(newmem,2048,addy)
+alloc(newmem2,2048,addy2)
+label(return)
+label(return2)
+
+newmem:
+mov [rax+10],#9000
+mov r8d,[rsp+44]
+jmp return
+
+newmem2:
+mov [rax+10],#9000
+mov al,01
+jmp return2
+
+addy:
+jmp newmem
+nop 4
+return:
+
+addy2:
+jmp newmem2
+return2:
+
+[DISABLE]
+dealloc(newmem)
+dealloc(newmem2)
+addy:
+db bytes
+addy2:
+db bytes2
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>9</ID>
+          <Description>"Last stand flag setter (on completion)"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(addy,Reloaded.Gameplay.Challenge.LastStandCompletedStage+24A)
+define(bytes, FF 43 70 48 85 C0)
+[ENABLE]
+assert(addy, bytes)
+alloc(newmem,2048,addy)
+label(returnhere)
+
+newmem:
+push rdx
+mov rdx, LastStandFlag
+mov edx, [rdx]
+mov [rbx+70], edx
+pop rdx
+test rax,rax
+jmp returnhere
+
+addy:
+jmp newmem
+nop
+returnhere:
+
+[DISABLE]
+dealloc(newmem)
+addy:
+db bytes
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>24</ID>
+              <Description>"flag"</Description>
+              <ShowAsSigned>0</ShowAsSigned>
+              <VariableType>4 Bytes</VariableType>
+              <Address>LastStandFlag</Address>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>11</ID>
+          <Description>"Place plants (and in i, zombie) anywhere"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(challengePlantAt,Reloaded.Gameplay.Challenge.CanPlantAt)
+define(bytes, 48 89 5C 24 08)
+//allows unrestricted i,zombie placement
+define(boardPlantAt,Reloaded.Gameplay.Board.CanPlantAt)
+define(bytes2, 40 53 55 57 41 57)
+//allows unrestricted plant placement
+define(requirementsMet,Reloaded.Gameplay.Board.PlantingRequirementsMet)
+define(bytes3, 40 53 48 81 EC 80 00 00 00)
+//allows special plants to be always selected w/o upgradeable counterpart first
+[ENABLE]
+assert(challengePlantAt, bytes)
+assert(boardPlantAt, bytes2)
+assert(requirementsMet, bytes3)
+challengePlantAt:
+xor eax, eax
+ret
+nop 2
+
+boardPlantAt:
+xor eax, eax
+ret
+nop 3
+
+requirementsMet:
+mov eax, 1
+ret
+nop 3
+
+[DISABLE]
+challengePlantAt:
+db bytes
+boardPlantAt:
+db bytes2
+requirementsMet:
+db bytes3
+</AssemblerScript>
+        </CheatEntry>
+        <CheatEntry>
+          <ID>25</ID>
+          <Description>"Last stand: endless mode"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(lastStandCheck,Reloaded.Gameplay.Board.IsLastStandStageWithRepick+45)
+define(bytes, 83 78 70 04)
+[ENABLE]
+assert(lastStandCheck, bytes)
+lastStandCheck:
+cmp dword ptr [rax+70],-01
+
+[DISABLE]
+lastStandCheck:
+db bytes
+</AssemblerScript>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>32</ID>
+      <Description>"Profile haxx (might need to swap profiles)"</Description>
+      <GroupHeader>1</GroupHeader>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>31</ID>
+          <Description>"Enable store"</Description>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>define(storeAvailable,Reloaded.Services.UserService.IsStoreAvailable)
+define(bytes, 40 53 48 83 EC 20)
+[ENABLE]
+assert(storeAvailable, bytes)
+storeAvailable:
+mov eax, 1
+ret
+
+[DISABLE]
+storeAvailable:
+db bytes
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>26</ID>
+              <Description>"All store items purchaseable"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(soldOut,Reloaded.DataModels.StoreEntryModel.IsItemSoldOut)
+define(bytes, 48 89 5C 24 10)
+define(itemUnavailable,Reloaded.DataModels.StoreEntryModel.IsItemUnavailable)
+define(bytes2, 40 53 48 83 EC 20)
+define(affordItem,Reloaded.DataModels.StoreEntryModel.CanAffordItem)
+define(bytes3, 48 89 5C 24 08)
+define(comingSoon,Reloaded.DataModels.StoreEntryModel.IsComingSoon)
+define(bytes4, 40 53 48 83 EC 20)
+[ENABLE]
+assert(soldOut, bytes)
+assert(itemUnavailable, bytes2)
+assert(affordItem, bytes3)
+assert(comingSoon, bytes4)
+soldOut:
+xor eax, eax
+ret
+nop 2
+
+itemUnavailable:
+mov eax, 0
+ret
+
+affordItem:
+xor eax, eax
+inc eax
+ret
+
+comingSoon:
+mov eax, 0
+ret
+
+[DISABLE]
+soldOut:
+db bytes
+itemUnavailable:
+db bytes2
+affordItem:
+db bytes3
+comingSoon:
+db bytes4
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+  <LuaScript>if getOpenedProcessID() ~= 0 then
+  local function init(name, value, func)
+    if not getAddressSafe(name) then
+       local address = allocateMemory(4)
+       registerSymbol(name, address, true)
+       func(address, value)
+    end
+  end
+  local function initInt(name, value)
+      init(name, value, writeInteger)
+  end
+   initInt("Firerate", 2)
+   initInt("HPAmount", 8000)
+   initInt("LastStandFlag", 50)
+   initInt("KernelButter", 0)
+end
+
+</LuaScript>
+</CheatTable>

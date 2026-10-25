@@ -1,3 +1,5 @@
+# 7.2.1
+- Fixed crash regarding removing multiple active effects from an entity whilst iterating through them
 # 7.2.0
 - Added procedure "For each active effect of [entity] as ID: [string id] do [foreach]" in the Actions tab
 - Added the following active effect getters in the Utils tab: Duration, Amplifier, (is) Ambient, (is) Visible (aka are particles visible)

@@ -1,10 +1,11 @@
 {
   "redwiresplugin": {
-  "latest": "7.1.2",
+  "latest": "7.2.0",
 	"changes": [
-		"Added /*@int*/ and /*@float*/ to certain number data procedures (Mainly so MCreator knows how to handle it during certain operations)",
-		"Procedure \"Clamp [x] between min: [y] and max: [z]\" now uses Mth.clamp for generators 1.20.4 and lower",
-		"Updated procedure \"Can [entity1] find [entity2]\" so the input for entity2 is only used once"
+		"Added procedure \"For each active effect of [entity] as ID: [string id] do [foreach]\" in the Actions tab",
+		"Added the following active effect getters in the Utils tab: Duration, Amplifier, (is) Ambient, (is) Visible (aka are particles visible)",
+		"Added procedure \"Remove active effect\" in Utils",
+		"Edited json data for some foreach procedures that prevented placeholder procedure blocks from being meaningfully right-clicked to duplicate or copy on Chromium MCreator versions (which, unfortunately, doesn't retroactively apply to existing procedures)"
 	]
   }
 }

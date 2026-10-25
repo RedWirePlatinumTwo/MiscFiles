@@ -1,11 +1,12 @@
 {
   "redwiresplugin": {
-  "latest": "7.2.0",
+  "latest": "7.2.1",
 	"changes": [
-		"Added procedure \"For each active effect of [entity] as ID: [string id] do [foreach]\" in the Actions tab",
-		"Added the following active effect getters in the Utils tab: Duration, Amplifier, (is) Ambient, (is) Visible (aka are particles visible)",
-		"Added procedure \"Remove active effect\" in Utils",
-		"Removed unnecessary restrictions for placeholder procedure blocks that prevented it from being meaningfully right-clicked to duplicate or copy on Chromium MCreator versions (which, unfortunately, doesn't retroactively apply to existing procedures)"
+		"Fixed crash regarding removing multiple active effects from an entity whilst iterating through them",
+		"(7.2.0) Added procedure \"For each active effect of [entity] as ID: [string id] do [foreach]\" in the Actions tab",
+		"(7.2.0) Added the following active effect getters in the Utils tab: Duration, Amplifier, (is) Ambient, (is) Visible (aka are particles visible)",
+		"(7.2.0) Added procedure \"Remove active effect\" in Utils",
+		"(7.2.0) Removed unnecessary restrictions for placeholder procedure blocks that prevented it from being meaningfully right-clicked to duplicate or copy on Chromium MCreator versions (which, unfortunately, doesn't retroactively apply to existing procedures)"
 	]
   }
 }

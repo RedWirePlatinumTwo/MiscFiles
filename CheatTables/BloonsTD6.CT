@@ -6,7 +6,7 @@
   <CheatEntries>
     <CheatEntry>
       <ID>25</ID>
-      <Description>"Current supported version: 57.2.12199"</Description>
+      <Description>"Current supported version: 57.4.12224"</Description>
       <GroupHeader>1</GroupHeader>
     </CheatEntry>
     <CheatEntry>
@@ -30,10 +30,15 @@
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>0</ID>
-          <Description>"Tier unblocker (aka inf T5s)"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked)//override da whole function #lmao
+          <ID>64</ID>
+          <Description>"Can be enabled/disabled whenever"</Description>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>0</ID>
+              <Description>"Tier unblocker (aka inf T5s)"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.TowerInventory.IsPathTierLocked)//override da whole function #lmao
 define(bytes,48 89 5C 24 10)
 [ENABLE]
 assert(addy, bytes)
@@ -46,6 +51,26 @@ nop 2
 addy:
 db bytes
 </AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>15</ID>
+              <Description>"Place towers anywhere"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.InputManager.CanPlaceTowerAt)
+define(bytes, 48 89 5C 24 08)
+[ENABLE]
+assert(addy, bytes)
+addy:
+xor eax, eax
+inc eax
+ret
+
+[DISABLE]
+addy:
+db bytes
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
         </CheatEntry>
         <CheatEntry>
           <ID>3</ID>
@@ -132,7 +157,7 @@ db bytes
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.TowerModel.Clone+C5) //cost
 define(bytes, F3 44 0F 10 56 58)
-define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+23A) //gamemode multiplier
+define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+24A) //gamemode multiplier
 define(bytes2, F3 0F 59 46 58)
 [ENABLE]
 assert(addy, bytes)
@@ -180,7 +205,7 @@ db bytes2
           <VariableType>Auto Assembler Script</VariableType>
           <AssemblerScript>define(addy,Assets.Scripts.Models.Towers.Upgrades.UpgradeModel.Clone+5D) //cost
 define(bytes, 8B 47 28 48 8B 7F 50)
-define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+452)
+define(addy2,Assets.Scripts.Models.Gameplay.Mods.GlobalCostModModel.Mutate+462)
 define(bytes2, F3 0F 59 C8)
 [ENABLE]
 assert(addy, bytes)
@@ -355,24 +380,6 @@ assert(addy, bytes)
 addy:
 ret
 nop 3
-
-[DISABLE]
-addy:
-db bytes
-</AssemblerScript>
-        </CheatEntry>
-        <CheatEntry>
-          <ID>15</ID>
-          <Description>"Place towers anywhere"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(addy,Assets.Scripts.Simulation.Input.InputManager.CanPlaceTowerAt)
-define(bytes, 48 89 5C 24 08)
-[ENABLE]
-assert(addy, bytes)
-addy:
-xor eax, eax
-inc eax
-ret
 
 [DISABLE]
 addy:
@@ -892,10 +899,15 @@ db bytes
       <GroupHeader>1</GroupHeader>
       <CheatEntries>
         <CheatEntry>
-          <ID>52</ID>
-          <Description>"Fuck up KonFuze"</Description>
-          <VariableType>Auto Assembler Script</VariableType>
-          <AssemblerScript>define(konfuze,Assets.Scripts.Utils.KonFuze.ReadValue)
+          <ID>65</ID>
+          <Description>"Can be enabled/disabled whenever"</Description>
+          <GroupHeader>1</GroupHeader>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>52</ID>
+              <Description>"Fuck up KonFuze"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>define(konfuze,Assets.Scripts.Utils.KonFuze.ReadValue)
 define(bytes, 40 53 48 83 EC 30)
 [ENABLE]
 assert(konfuze, bytes)
@@ -917,23 +929,25 @@ dealloc(newmem)
 konfuze:
 db bytes
 </AssemblerScript>
-          <CheatEntries>
-            <CheatEntry>
-              <ID>53</ID>
-              <Description>"To save (most) values, buy something while hack is active"</Description>
-              <GroupHeader>1</GroupHeader>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>56</ID>
-              <Description>"(FOR COLLECTION EVENTS) enable mid-crate open to exit the UI"</Description>
-              <GroupHeader>1</GroupHeader>
-            </CheatEntry>
-            <CheatEntry>
-              <ID>54</ID>
-              <Description>"value"</Description>
-              <ShowAsSigned>0</ShowAsSigned>
-              <VariableType>Double</VariableType>
-              <Address>konFuzeValue</Address>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>53</ID>
+                  <Description>"To save (most) values, buy something while hack is active"</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>56</ID>
+                  <Description>"(FOR COLLECTION EVENTS) enable mid-crate open to exit the UI"</Description>
+                  <GroupHeader>1</GroupHeader>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>54</ID>
+                  <Description>"value"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Double</VariableType>
+                  <Address>konFuzeValue</Address>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>

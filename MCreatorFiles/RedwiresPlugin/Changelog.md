@@ -1,3 +1,5 @@
+# 7.2.2
+- Added chinese translations for recent procedure additions
 # 7.2.1
 - Fixed crash regarding removing multiple active effects from an entity whilst iterating through them
 # 7.2.0
